@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Simple Laravel 10 User Roles and Permissions - AllPHPTricks.com</title>
+    <title>Inventario 1.0</title>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.bunny.net">
@@ -21,7 +21,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    AllPHPTricks.com
+                    Inventario 1.0
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -92,17 +92,13 @@
                             </div>
                         @endif
 
-                        <h3 class="text-center mt-3 mb-3">Simple Laravel 10 User Roles and Permissions - <a href="https://www.allphptricks.com/">AllPHPTricks.com</a></h3>
-                        @yield('content')
+                           @yield('content')
                         
                         <div class="row justify-content-center text-center mt-3">
                             <div class="col-md-12">
-                                <p>Back to Tutorial: 
-                                    <a href="https://www.allphptricks.com/simple-laravel-10-user-roles-and-permissions/"><strong>Tutorial Link</strong></a>
-                                </p>
+                                
                                 <p>
-                                    For More Web Development Tutorials Visit: <a href="https://www.allphptricks.com/"><strong>AllPHPTricks.com</strong></a>
-                                </p>
+                                    © 2024 Ezequiel Perez. Todos los derechos reservados.</p>
                             </div>
                         </div>
 

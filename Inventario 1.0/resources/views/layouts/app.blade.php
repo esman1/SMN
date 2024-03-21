@@ -56,7 +56,7 @@
                                 <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
                             @endcanany
                             @canany(['create-product', 'edit-product', 'delete-product'])
-                                <li><a class="nav-link" href="{{ route('products.index') }}">Manage Products</a></li>
+                                <li><a class="nav-link" href="{{ route('products.index') }}">em</a></li>
                             @endcanany
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -67,7 +67,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Cerrar Sesion') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

@@ -29,6 +29,12 @@ class SuperAdminSeeder extends Seeder
             'password' => Hash::make('ahsan1234')
         ]);
         $admin->assignRole('Admin');
+        $admin = User::create([
+            'name' => 'Ezequiel Nahun Perez Carbajal', 
+            'email' => 'eperez@smnat.com',
+            'password' => Hash::make('12345678')
+        ]);
+        $admin->assignRole('Admin');
 
         // Creating Product Manager User
         $productManager = User::create([

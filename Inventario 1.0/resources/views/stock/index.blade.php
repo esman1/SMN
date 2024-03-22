@@ -24,11 +24,7 @@
                               @endcan
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                  
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -55,9 +51,9 @@
                                         <tr>
                                            
 											<td>{{ $stock->Nserie }}</td>
-											<td>{{ $stock->modelo ? $stock->modelo->modelo : 'N/A' }}</td>
-											<td>{{ $stock->tipo ? $stock->tipo->tipo : 'N/A' }}</td>
-											<td>{{ $stock->marca ? $stock->marca->marca : 'N/A' }}</td>
+											<td>{{ $stock->modelo ? $stock->modelo->nomMod : 'N/A' }}</td>
+											<td>{{ $stock->tipo ? $stock->tipo->nomTipo : 'N/A' }}</td>
+											<td>{{ $stock->marca ? $stock->marca->nomMar : 'N/A' }}</td>
 											<td>{{ $stock->sisop ? $stock->sisop->nomSis : 'N/A' }}</td>
 											<td>{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
 											<td>{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
@@ -74,7 +70,7 @@
                                                    @can('delete-stock')
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                    @endcan
                                                 </form>
                                             </td>

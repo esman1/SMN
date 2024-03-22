@@ -24,11 +24,7 @@
                               @endcan
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                  
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -79,7 +75,7 @@
                                                     @can('delete-empleado')
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm">onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                     @endcan
                                                 </form>
                                             </td>

@@ -30,7 +30,7 @@
                         <a class="btn btn-warning" href="{{ route('products.index') }}">
                             <i class="bi bi-bag"></i> Productos</a>
                     @endcanany
-                    @canany(['create-empleado', 'edit-empleado', 'delete-empleado','show-empelado'])
+                    @canany(['create-empleado', 'edit-empleado', 'delete-empleado','show-empleado'])
                         <a class="btn btn-warning" href="{{ route('empleado.index') }}">
                             <i class="bi bi-bag"></i> Empleados</a>
                     @endcanany

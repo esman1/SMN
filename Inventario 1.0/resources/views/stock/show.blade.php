@@ -28,15 +28,15 @@
                         </div>
                         <div class="form-group">
                             <strong>Modelo:</strong>
-                            {{ $stock->modelo ? $stock->modelo->modelo : 'N/A' }}
+                            {{ $stock->modelo ? $stock->modelo->nomMod : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Tipo:</strong>
-                            {{ $stock->tipo ? $stock->tipo->tipo : 'N/A' }}
+                            {{ $stock->tipo ? $stock->tipo->nomTipo : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Marca:</strong>
-                            {{ $stock->marca ? $stock->marca->marca : 'N/A' }}
+                            {{ $stock->marca ? $stock->marca->nomMar : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Sistema Operativo:</strong>

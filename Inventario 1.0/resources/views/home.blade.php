@@ -34,6 +34,10 @@
                         <a class="btn btn-warning" href="{{ route('empleado.index') }}">
                             <i class="bi bi-bag"></i> Empleados</a>
                     @endcanany
+                    @canany(['create-stock', 'edit-stock', 'delete-stock','show-stock'])
+                        <a class="btn btn-warning" href="{{ route('stock.index') }}">
+                            <i class="bi bi-bag"></i> Stock</a>
+                    @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>

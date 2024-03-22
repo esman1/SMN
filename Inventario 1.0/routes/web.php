@@ -6,6 +6,8 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EmpleadoController;
+use App\Http\Controllers\StockController;
+use App\Http\Controllers\AsigaperController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,4 +32,6 @@ Route::resources([
     'users' => UserController::class,
     'products' => ProductController::class,
     'empleado' => EmpleadoController::class,
+    'stock' => StockController::class,
+    'asigaper'=> AsigaperController::class
 ]);

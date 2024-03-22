@@ -48,17 +48,9 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
-                            @canany(['create-role', 'edit-role', 'delete-role'])
-                                <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Roles</a></li>
-                            @endcanany
-                            @canany(['create-user', 'edit-user', 'delete-user'])
-                                <li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
-                            @endcanany
-                            @canany(['create-product', 'edit-product', 'delete-product'])
-                                <li><a class="nav-link" href="{{ route('products.index') }}">em</a></li>
-                            @endcanany
+                       @else
                             <li class="nav-item dropdown">
+                            
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>

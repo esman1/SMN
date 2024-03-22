@@ -21,9 +21,6 @@ class RoleSeeder extends Seeder
             'create-user',
             'edit-user',
             'delete-user',
-            'create-product',
-            'edit-product',
-            'delete-product',
             'create-empleado', 
             'edit-empleado', 
             'delete-empleado',
@@ -35,13 +32,18 @@ class RoleSeeder extends Seeder
             'create-asigaper',
             'show-asigaper',
             'edit-asigaper',
-            'delete-asigaper'
+            'delete-asigaper',
+            'create-puesto',
+            'show-puesto',
+            'edit-puesto',
+            'delete-puesto'
         ]);
 
         $invitado->givePermissionTo([
            'show-empleado',
            'show-stock',
-           'show-asigaper'
+           'show-asigaper',
+            
         ]);
     }
 }

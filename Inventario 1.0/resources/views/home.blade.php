@@ -38,6 +38,10 @@
                         <a class="btn btn-warning" href="{{ route('stock.index') }}">
                             <i class="bi bi-bag"></i> Stock</a>
                     @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                        <a class="btn btn-warning" href="{{ route('asigaper.index') }}">
+                            <i class="bi bi-bag"></i> Asignar-Personal</a>
+                    @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>

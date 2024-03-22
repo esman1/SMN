@@ -15,19 +15,16 @@
                             <span id="card_title text-center">
                                 {{ __('Asignacion de Equipo-Personal') }}
                             </span>
-
+@can('create-asigaper')
                              <div class="float-right">
                                 <a href="{{ route('asigaper.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
                                   {{ __('+') }}
                                 </a>
                               </div>
+                              @endcan
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                   
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -59,11 +56,17 @@
                                             <td>{{$asigaper->stock ? $asigaper->stock->tipo->tipo : 'N/A'}}</td>
                                             <td>
                                                 <form action="{{ route('asigaper.destroy',$asigaper->id_asigaper) }}" method="POST">
+                                                    @can('show-asigaper')
                                                     <a class="btn btn-sm btn-outline-primary " href="{{ route('asigaper.show',$asigaper->id_asigaper) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    @endcan
+                                                    @can('edit-asigaper')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('asigaper.edit',$asigaper->id_asigaper) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    @endcan
+                                                    @can('delete-asigaper')
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" onclick="return confirm('Seguro que quieres eliminarlo?');" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                @endcan
                                                 </form>
                                             </td>
                                         </tr>

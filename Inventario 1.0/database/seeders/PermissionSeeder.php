@@ -30,7 +30,11 @@ class PermissionSeeder extends Seeder
             'create-stock',
             'edit-stock',
             'show-stock',
-            'delete-stock'
+            'delete-stock',
+            'create-asigaper',
+            'show-asigaper',
+            'edit-asigaper',
+            'delete-asigaper',
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

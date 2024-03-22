@@ -11,6 +11,15 @@ use Illuminate\Http\Request;
  */
 class AsigaperController extends Controller
 {
+
+    public function __construct()
+    {
+       $this->middleware('auth');
+       $this->middleware('permission:create-asigaper|edit-asigaper|delete-asigaper|show-asigaper', ['only' => ['index','show']]);
+       $this->middleware('permission:create-asigaper', ['only' => ['create','store']]);
+       $this->middleware('permission:edit-asigaper', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete-asigaper', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

@@ -28,8 +28,9 @@ class StockController extends Controller
     {
         $stocks = Stock::paginate();
 
-        return view('stock.index', compact('stocks'))
-            ->with('i', (request()->input('page', 1) - 1) * $stocks->perPage());
+        return view('stock.index', [
+            'stocks' => Stock::latest('id_stock')->paginate(6)
+        ]);
     }
 
     /**

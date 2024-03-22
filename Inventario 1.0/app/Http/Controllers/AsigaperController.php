@@ -29,8 +29,9 @@ class AsigaperController extends Controller
     {
         $asigapers = Asigaper::paginate();
 
-        return view('asigaper.index', compact('asigapers'))
-            ->with('i', (request()->input('page', 1) - 1) * $asigapers->perPage());
+        return view('asigaper.index', [
+            'asigapers' => Asigaper::latest('id_asigaper')->paginate(6)
+        ]);
     }
 
     /**

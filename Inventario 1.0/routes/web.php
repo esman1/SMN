@@ -4,7 +4,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProductController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\AsigaperController;
@@ -30,7 +29,6 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
-    'products' => ProductController::class,
     'empleado' => EmpleadoController::class,
     'stock' => StockController::class,
     'asigaper'=> AsigaperController::class

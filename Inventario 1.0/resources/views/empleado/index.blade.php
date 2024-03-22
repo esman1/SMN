@@ -36,8 +36,6 @@
 										<th>Nombre</th>
 										<th>Apellidop</th>
 										<th>Apellidom</th>
-										<th>Email</th>
-										<th>Celular</th>
 										<th>Puesto</th>
 										<th>Departamento</th>
 										<th>Sucursal</th>
@@ -57,9 +55,7 @@
                                             <td>{{ $empleado->nombre }}</td>
 											<td>{{ $empleado->apellidoP }}</td>
 											<td>{{ $empleado->apellidoM }}</td>
-											<td>{{ $empleado->email }}</td>
-											<td>{{ $empleado->celular }}</td>
-                                            <td>{{ $empleado->puesto ? $empleado->puesto->descripcion : 'N/A' }}</td>
+										    <td>{{ $empleado->puesto ? $empleado->puesto->descripcion : 'N/A' }}</td>
 											<td>{{$empleado->departamento ? $empleado->departamento->Desc_corta_d : 'N/A' }}</td>
                                             <td>{{ $empleado->sucursal ? $empleado->sucursal->Nom_sucursal : 'N/A' }}</td>
 											
@@ -75,7 +71,7 @@
                                                     @can('delete-empleado')
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm">onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                     @endcan
                                                 </form>
                                             </td>

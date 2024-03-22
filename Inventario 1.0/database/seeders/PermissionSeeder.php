@@ -25,7 +25,8 @@ class PermissionSeeder extends Seeder
             'delete-product',
             'create-empleado', 
             'edit-empleado', 
-            'delete-empleado'
+            'delete-empleado',
+            'show-empleado'
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

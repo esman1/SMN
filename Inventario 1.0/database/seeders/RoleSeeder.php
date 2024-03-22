@@ -15,7 +15,7 @@ class RoleSeeder extends Seeder
     {
         Role::create(['name' => 'Super Admin']);
         $admin = Role::create(['name' => 'Admin']);
-        $productManager = Role::create(['name' => 'Product Manager']);
+        $invitado = Role::create(['name' => 'Invitado']);
 
         $admin->givePermissionTo([
             'create-user',
@@ -29,10 +29,8 @@ class RoleSeeder extends Seeder
             'delete-empleado'
         ]);
 
-        $productManager->givePermissionTo([
-            'create-product',
-            'edit-product',
-            'delete-product'
+        $invitado->givePermissionTo([
+           'show-empleado'
         ]);
     }
 }

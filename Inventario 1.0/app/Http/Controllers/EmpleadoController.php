@@ -11,6 +11,14 @@ use Illuminate\Http\Request;
  */
 class EmpleadoController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+       $this->middleware('permission:create-empleado|edit-empleado|delete-empleado|show-empleado', ['only' => ['index','show']]);
+       $this->middleware('permission:create-empleado', ['only' => ['create','store']]);
+       $this->middleware('permission:edit-empleado', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete-empleado', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

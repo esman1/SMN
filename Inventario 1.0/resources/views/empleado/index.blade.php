@@ -15,12 +15,13 @@
                             <span id="card_title">
                                 {{ __('Empleado') }}
                             </span>
-
+                            @can('create-empleado')
                              <div class="float-right">
-                                <a href="{{ route('empleado.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
+                                  <a href="{{ route('empleado.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
                                   {{ __('+') }}
                                 </a>
                               </div>
+                              @endcan
                         </div>
                     </div>
                     @if ($message = Session::get('success'))
@@ -69,11 +70,17 @@
 
                                             <td>
                                                 <form action="{{ route('empleado.destroy',$empleado->id_empleado) }}" method="POST">
+                                                    @can('show-empleado')
                                                     <a class="btn btn-sm btn-outline-primary " href="{{ route('empleado.show',$empleado->id_empleado) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    @endcan
+                                                    @can('edit-empleado')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('empleado.edit',$empleado->id_empleado) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    @endcan
+                                                    @can('delete-empleado')
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>

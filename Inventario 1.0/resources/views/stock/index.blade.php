@@ -43,7 +43,7 @@
 										<th>Memoria</th>
 										<th>Disco Duro</th>
 
-                                        <th></th>
+                                        <th style="width: 250px"></th>
                                     </tr>
                                 </thead>
                                 <tbody>

@@ -23,11 +23,7 @@
                               </div>
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                  
 
                     <div class="card-body">
                         <div class="table-responsive">
@@ -35,20 +31,20 @@
                                 <thead class="thead">
                                     <tr>
                                         
-										<th>Clave Puesto</th>
-										<th>Des Cort P</th>
-										<th>Descripcion</th>
+										<th class="border">Clave</th>
+										<th class="border">Puesto</th>
+										<th class="border">Descripcion</th>
 
-                                        <th></th>
+                                <th ></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($puestos as $puesto)
                                         <tr>
                                             
-											<td>{{ $puesto->Clave_puesto }}</td>
-											<td>{{ $puesto->Des_cort_p }}</td>
-											<td>{{ $puesto->descripcion }}</td>
+											<td class="border">{{ $puesto->Clave_puesto }}</td>
+											<td class="border">{{ $puesto->Des_cort_p }}</td>
+											<td class="border">{{ $puesto->descripcion }}</td>
 
                                             <td>
                                                 <form action="{{ route('puesto.destroy',$puesto->id_puesto) }}" method="POST">

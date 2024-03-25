@@ -1,11 +1,7 @@
 <div class="box box-info padding-1">
     <div class="box-body">
         
-        <div class="form-group">
-            {{ Form::label('id_sucursal') }}
-            {{ Form::text('id_sucursal', $sucursal->id_sucursal, ['class' => 'form-control' . ($errors->has('id_sucursal') ? ' is-invalid' : ''), 'placeholder' => 'Id Sucursal']) }}
-            {!! $errors->first('id_sucursal', '<div class="invalid-feedback">:message</div>') !!}
-        </div>
+        
         <div class="form-group">
             {{ Form::label('Clave_sucursal') }}
             {{ Form::text('Clave_sucursal', $sucursal->Clave_sucursal, ['class' => 'form-control' . ($errors->has('Clave_sucursal') ? ' is-invalid' : ''), 'placeholder' => 'Clave Sucursal']) }}
@@ -19,6 +15,6 @@
 
     </div>
     <div class="box-footer mt20">
-        <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
+        <button type="submit" class="btn btn-outline-primary">{{ __('Guardar') }}</button>
     </div>
 </div>

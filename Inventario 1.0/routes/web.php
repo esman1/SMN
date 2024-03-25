@@ -7,6 +7,10 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EmpleadoController;
 use App\Http\Controllers\StockController;
 use App\Http\Controllers\AsigaperController;
+use App\Http\Controllers\DepartamentoController;
+use App\Http\Controllers\SucursalController;
+use App\Http\Controllers\PuestoController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,5 +35,8 @@ Route::resources([
     'users' => UserController::class,
     'empleado' => EmpleadoController::class,
     'stock' => StockController::class,
-    'asigaper'=> AsigaperController::class
-]);
+    'asigaper'=> AsigaperController::class, 
+    'departamento' => DepartamentoController::class, 
+    'sucursal' => SucursalController::class,
+    'puesto' => PuestoController::class
+]); 

@@ -8,7 +8,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-12">
-                <div class="card">
+                <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
 
@@ -17,48 +17,41 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('sucursals.create') }}" class="btn btn-primary btn-sm float-right"  data-placement="left">
-                                  {{ __('Create New') }}
+                                <a href="{{ route('sucursal.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
+                                  {{ __('+') }}
                                 </a>
                               </div>
                         </div>
                     </div>
-                    @if ($message = Session::get('success'))
-                        <div class="alert alert-success">
-                            <p>{{ $message }}</p>
-                        </div>
-                    @endif
+                   
 
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
                                 <thead class="thead">
                                     <tr>
-                                        <th>No</th>
-                                        
-										<th>Id Sucursal</th>
-										<th>Clave Sucursal</th>
-										<th>Nom Sucursal</th>
+                                    
+										<th class="border">Clave</th>
+										<th class="border">Sucursal</th>
 
                                         <th></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @foreach ($sucursals as $sucursal)
-                                        <tr>
-                                            <td>{{ ++$i }}</td>
+                                        <tr >
                                             
-											<td>{{ $sucursal->id_sucursal }}</td>
-											<td>{{ $sucursal->Clave_sucursal }}</td>
-											<td>{{ $sucursal->Nom_sucursal }}</td>
+											
+											<td class="border">{{ $sucursal->Clave_sucursal ? $sucursal->Clave_sucursal : 'N/A' }}</td>
+											<td class="border">{{ $sucursal->Nom_sucursal ? $sucursal->Nom_sucursal: 'N/A' }}</td>
 
                                             <td>
-                                                <form action="{{ route('sucursals.destroy',$sucursal->id) }}" method="POST">
-                                                    <a class="btn btn-sm btn-primary " href="{{ route('sucursals.show',$sucursal->id) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Show') }}</a>
-                                                    <a class="btn btn-sm btn-success" href="{{ route('sucursals.edit',$sucursal->id) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Edit') }}</a>
+                                                <form action="{{ route('sucursal.destroy',$sucursal->id_sucursal) }}" method="POST">
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('sucursal.show',$sucursal->id_sucursal) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('sucursal.edit',$sucursal->id_sucursal) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Delete') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

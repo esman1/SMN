@@ -21,7 +21,7 @@ class Sucursal extends Model
 {
     
     static $rules = [
-		'id_sucursal' => 'required',
+	
 		'Clave_sucursal' => 'required',
 		'Nom_sucursal' => 'required|string',
     ];
@@ -33,7 +33,8 @@ class Sucursal extends Model
      *
      * @var array
      */
-    protected $fillable = ['id_sucursal','Clave_sucursal','Nom_sucursal'];
+    protected $primaryKey = 'id_sucursal';
+    protected $fillable = ['Clave_sucursal','Nom_sucursal'];
 
 
     /**

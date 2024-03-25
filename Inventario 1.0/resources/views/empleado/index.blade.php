@@ -28,7 +28,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover align-middle">
+                            <table class="table table-striped table-hover align-middle table-bordered">
                                 <thead class="thead">
                                     <tr>
                                         <th>Foto</th>
@@ -41,7 +41,7 @@
 										<th>Sucursal</th>
 										
 
-                                        <th></th>
+                                        <th style="width: 250px;">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>

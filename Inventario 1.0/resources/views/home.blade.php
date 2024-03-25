@@ -29,15 +29,27 @@
                     
                     @canany(['create-empleado', 'edit-empleado', 'delete-empleado','show-empleado'])
                         <a class="btn btn-warning" href="{{ route('empleado.index') }}">
-                            <i class="bi bi-bag"></i> Empleados</a>
+                            <i class="bi bi-person-badge"></i> Empleados</a>
                     @endcanany
                     @canany(['create-stock', 'edit-stock', 'delete-stock','show-stock'])
                         <a class="btn btn-warning" href="{{ route('stock.index') }}">
-                            <i class="bi bi-bag"></i> Stock</a>
+                            <i class="bi bi-archive"></i> Stock</a>
                     @endcanany
                     @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
                         <a class="btn btn-warning" href="{{ route('asigaper.index') }}">
-                            <i class="bi bi-bag"></i> Asignar-Personal</a>
+                            <i class="bi bi-person-add"></i> Asignar-Personal</a>
+                    @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                        <a class="btn btn-warning" href="{{ route('departamento.index') }}">
+                            <i class="bi bi-building-fill-add"></i> Departamento</a>
+                    @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                        <a class="btn btn-warning" href="{{ route('sucursal.index') }}">
+                            <i class="bi bi-shop"></i> Sucursal</a>
+                    @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                        <a class="btn btn-warning" href="{{ route('puesto.index') }}">
+                            <i class="bi bi-person-workspace"></i> Puesto</a>
                     @endcanany
                     <p>&nbsp;</p>
                 </div>

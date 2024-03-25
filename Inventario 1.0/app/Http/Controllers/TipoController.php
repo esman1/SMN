@@ -31,7 +31,7 @@ class TipoController extends Controller
      */
     public function create()
     {
-        $tipo = new Tipo();
+        $nomTipo = new Tipo();
         return view('tipo.create', compact('tipo'));
     }
 
@@ -45,9 +45,9 @@ class TipoController extends Controller
     {
         request()->validate(Tipo::$rules);
 
-        $tipo = Tipo::create($request->all());
+        $nomTipo = Tipo::create($request->all());
 
-        return redirect()->route('tipos.index')
+        return redirect()->route('tipo.index')
             ->with('success', 'Tipo created successfully.');
     }
 
@@ -59,7 +59,7 @@ class TipoController extends Controller
      */
     public function show($id)
     {
-        $tipo = Tipo::find($id);
+        $nomTipo = Tipo::find($id);
 
         return view('tipo.show', compact('tipo'));
     }
@@ -72,7 +72,7 @@ class TipoController extends Controller
      */
     public function edit($id)
     {
-        $tipo = Tipo::find($id);
+        $nomTipo = Tipo::find($id);
 
         return view('tipo.edit', compact('tipo'));
     }
@@ -84,13 +84,13 @@ class TipoController extends Controller
      * @param  Tipo $tipo
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tipo $tipo)
+    public function update(Request $request, Tipo $nomTipo)
     {
         request()->validate(Tipo::$rules);
 
-        $tipo->update($request->all());
+        $nomTipo->update($request->all());
 
-        return redirect()->route('tipos.index')
+        return redirect()->route('tipo.index')
             ->with('success', 'Tipo updated successfully');
     }
 
@@ -103,7 +103,7 @@ class TipoController extends Controller
     {
         $tipo = Tipo::find($id)->delete();
 
-        return redirect()->route('tipos.index')
+        return redirect()->route('tipo.index')
             ->with('success', 'Tipo deleted successfully');
     }
 }

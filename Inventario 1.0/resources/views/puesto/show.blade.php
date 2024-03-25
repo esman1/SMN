@@ -20,16 +20,13 @@
 
                     <div class="card-body">
                         
+                        
                         <div class="form-group">
-                            <strong>Id Puesto:</strong>
-                            {{ $puesto->id_puesto }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Clave Puesto:</strong>
+                            <strong>Clave:</strong>
                             {{ $puesto->Clave_puesto }}
                         </div>
                         <div class="form-group">
-                            <strong>Des Cort P:</strong>
+                            <strong>Puesto:</strong>
                             {{ $puesto->Des_cort_p }}
                         </div>
                         <div class="form-group">

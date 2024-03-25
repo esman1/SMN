@@ -11,26 +11,23 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="float-left">
-                            <span class="card-title">{{ __('Show') }} Sucursal</span>
+                            <span class="card-title">{{ __('Ver') }} Sucursal</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('sucursals.index') }}"> {{ __('Back') }}</a>
+                            <a class="btn btn-primary" href="{{ route('sucursal.index') }}"> {{ __('volver') }}</a>
                         </div>
                     </div>
 
                     <div class="card-body">
                         
+                       
                         <div class="form-group">
-                            <strong>Id Sucursal:</strong>
-                            {{ $sucursal->id_sucursal }}
+                            <strong>Clave:</strong>
+                            {{ $sucursal->Clave_sucursal ? $sucursal->Clave_sucursal: 'N/A' }}
                         </div>
                         <div class="form-group">
-                            <strong>Clave Sucursal:</strong>
-                            {{ $sucursal->Clave_sucursal }}
-                        </div>
-                        <div class="form-group">
-                            <strong>Nom Sucursal:</strong>
-                            {{ $sucursal->Nom_sucursal }}
+                            <strong>Sucursal:</strong>
+                            {{ $sucursal->Nom_sucursal ? $sucursal->Nom_sucursal: 'N/A' }}
                         </div>
 
                     </div>

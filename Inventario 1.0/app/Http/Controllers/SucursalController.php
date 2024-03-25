@@ -47,7 +47,7 @@ class SucursalController extends Controller
 
         $sucursal = Sucursal::create($request->all());
 
-        return redirect()->route('sucursals.index')
+        return redirect()->route('sucursal.index')
             ->with('success', 'Creado Correctamente.');
     }
 
@@ -103,7 +103,7 @@ class SucursalController extends Controller
     {
         $sucursal = Sucursal::find($id)->delete();
 
-        return redirect()->route('sucursals.index')
+        return redirect()->route('sucursal.index')
             ->with('success', 'Eliminado Correctamente');
     }
 }

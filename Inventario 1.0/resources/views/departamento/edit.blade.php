@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Departamento</span>
+                        <span class="card-title">{{ __('Actualizar') }} Departamento</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('departamentos.update', $departamento->id) }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('departamento.update', $departamento->id_depart) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}
                             @csrf
 

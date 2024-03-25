@@ -13,10 +13,10 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Create') }} Sucursal</span>
+                        <span class="card-title">{{ __('Crear') }} Sucursal</span>
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="{{ route('sucursals.store') }}"  role="form" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('sucursal.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
                             @include('sucursal.form')

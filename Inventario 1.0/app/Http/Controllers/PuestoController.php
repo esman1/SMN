@@ -11,6 +11,14 @@ use Illuminate\Http\Request;
  */
 class PuestoController extends Controller
 {
+    public function __construct()
+    {
+       $this->middleware('auth');
+       $this->middleware('permission:create-puestp|edit-puesto|delete-puesto|show-puesto', ['only' => ['index','show']]);
+       $this->middleware('permission:create-puesto', ['only' => ['create','store']]);
+       $this->middleware('permission:edit-puesto', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete-puesto', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

@@ -35,6 +35,10 @@ class PermissionSeeder extends Seeder
             'show-asigaper',
             'edit-asigaper',
             'delete-asigaper',
+            'create-puesto',
+            'show-puesto',
+            'edit-puesto',
+            'delete-puesto'
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

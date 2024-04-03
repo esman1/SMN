@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
+     * agregar factura, provedor, fecha de adquisicion, costo agregar columnas
      * Run the migrations.
      */
     public function up(): void

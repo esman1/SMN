@@ -39,15 +39,15 @@
                         <a class="btn btn-warning" href="{{ route('asigaper.index') }}">
                             <i class="bi bi-person-add"></i> Asignar-Personal</a>
                     @endcanany
-                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                   @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
                         <a class="btn btn-warning" href="{{ route('departamento.index') }}">
                             <i class="bi bi-building-fill-add"></i> Departamento</a>
                     @endcanany
-                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
-                        <a class="btn btn-warning" href="{{ route('sucursal.index') }}">
+                  @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                     <a class="btn btn-warning" href="{{ route('sucursal.index') }}">
                             <i class="bi bi-shop"></i> Sucursal</a>
                     @endcanany
-                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
+                    @canany(['create-puesto', 'edit-puesto', 'delete-puesto','show-puesto'])
                         <a class="btn btn-warning" href="{{ route('puesto.index') }}">
                             <i class="bi bi-person-workspace"></i> Puesto</a>
                     @endcanany

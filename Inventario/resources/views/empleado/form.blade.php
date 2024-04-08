@@ -38,22 +38,22 @@
             {!! $errors->first('foto_emple', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('puesto_id') }}
+            {{ Form::label('Puesto') }}
             {{ Form::text('puesto_id', $empleado->puesto_id, ['class' => 'form-control' . ($errors->has('puesto_id') ? ' is-invalid' : ''), 'placeholder' => 'Puesto Id']) }}
             {!! $errors->first('puesto_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('departamento_id') }}
-            {{ Form::text('departamento_id', $empleado->departamento_id, ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
+            {{ Form::label('Departamento') }}
+            {{ Form::select('departamento_id',$departamentos->pluck('Desc_corta_d','id_depart'), ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
             {!! $errors->first('departamento_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('sucursal_id') }}
+            {{ Form::label('Sucursal') }}
             {{ Form::text('sucursal_id', $empleado->sucursal_id, ['class' => 'form-control' . ($errors->has('sucursal_id') ? ' is-invalid' : ''), 'placeholder' => 'Sucursal Id']) }}
             {!! $errors->first('sucursal_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">
-            {{ Form::label('estatus') }}
+            {{ Form::label('Estatus') }}
             {{ Form::text('estatus', $empleado->estatus, ['class' => 'form-control' . ($errors->has('estatus') ? ' is-invalid' : ''), 'placeholder' => 'Estatus']) }}
             {!! $errors->first('estatus', '<div class="invalid-feedback">:message</div>') !!}
         </div>

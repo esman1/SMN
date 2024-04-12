@@ -44,7 +44,7 @@
         </div>
         <div class="form-group">
             {{ Form::label('Departamento') }}
-            {{ Form::select('departamento_id',$departamentos->pluck('Desc_corta_d','id_depart'), ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
+            {{ Form::text('departamento_id',$empleado->departamento_id, ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
             {!! $errors->first('departamento_id', '<div class="invalid-feedback">:message</div>') !!}
         </div>
         <div class="form-group">

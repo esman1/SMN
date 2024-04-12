@@ -34,7 +34,7 @@ class SuperAdminSeeder extends Seeder
             'email' => 'clanderos@smn.com.mx',
             'password' => Hash::make('SMN2024.')
         ]);
-        $admin->assignRole('Admin');
+        $admin->assignRole('Admin'); 
 
 
         // Creating Product Manager User

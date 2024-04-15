@@ -24,7 +24,7 @@ class Puesto extends Model
     static $rules = [
 		'id_puesto' => 'required',
 		'Clave_puesto' => 'required',
-		'Des_cort_p' => 'required|string',
+		'Des_cort_p' => 'string',
 		'descripcion' => 'required|string',
     ];
 

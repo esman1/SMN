@@ -13,8 +13,8 @@ return new class extends Migration
         Schema::create('puestos', function (Blueprint $table) {
             $table->id('id_puesto');
             $table->integer('Clave_puesto')->unique();
-            $table->string('Des_cort_p', 100);
-            $table->string('descripcion', 100);
+            $table->string('Des_cort_p', 100)->nullable();
+            $table->string('descripcion', 100)->nullable();
             $table->timestamps();
         });
     }

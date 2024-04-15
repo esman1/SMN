@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('departamentos', function (Blueprint $table) {
             $table->id('id_depart');
             $table->integer('Clave_dep')->unique;
-            $table->string('Desc_corta_d', 100);
+            $table->string('Desc_corta_d', 100)->nullable();
             $table->string('Desc_d', 100);
-
+            $table->timestamps();
 
         });
     }

@@ -1,0 +1,190 @@
+1,PSMN001,Admin de Comp e Inv
+2,PSMN002,Administrador de Operaciones
+3,PSMN003,Agente de Compras
+4,PSMN004,Analista de Inventario
+5,PSMN005,ANALISTA DE RECLUTAMIENTO Y SELECCIÓN
+6,PSMN006,Asesor Comercial Jr
+7,PSMN007,Asesor Comercial Master
+8,PSMN008,Asesor Comercial Senior
+9,PSMN009,Asesor Comercial Telemarketing
+10,PSMN010,Asist de CyC
+11,PSMN011,Asist de Embarques
+12,PSMN012,Asist de Gerencia
+13,PSMN013,Asist de Sistemas
+14,PSMN014,Asist de Tesoreria
+15,PSMN015,Asist de Vtas
+16,PSMN016,Asistente Cuentas Clave
+17,PSMN017,ASISTENTE DE DIR ADMVA
+18,PSMN018,Asistente de Diseño
+19,PSMN019,Asistente de Logistica
+20,PSMN020,ASISTENTE DE MERCADOTECNIA
+21,PSMN021,AUDITOR INTERNO
+22,PSMN022,Aux Admvo
+23,PSMN023,Aux Contable
+24,PSMN024,Aux de Acomodo
+25,PSMN025,Aux de Almacen
+26,PSMN026,Aux de Almacen Nocturno
+27,PSMN027,Aux de Embarques
+28,PSMN028,Aux de Intendencia
+29,PSMN029,Aux de Recibo
+30,PSMN030,Aux de Sistemas
+31,PSMN031,Aux de Surtido y Empaque
+32,PSMN032,Aux General
+33,PSMN033,Aux. de Produccion
+34,PSMN034,Auxiliar de Auditoria
+35,PSMN035,AUXILIAR DE MANTENIMIENTO
+36,PSMN036,Ay de Chofer
+37,PSMN037,Ay General
+38,PSMN038,Cajero
+39,PSMN039,Capturista
+40,PSMN040,Chofer
+41,PSMN041,Coordinador de Infraestructura
+42,PSMN042,Coordinador de Mercadotecnia
+43,PSMN043,Coordinador de Nuevos Proyectos
+44,PSMN044,Coordinador de Reclutamiento y Seleccion
+45,PSMN045,COORDINADORA DE CAPACITACIÓN
+46,PSMN046,Ejecutivo de Cuentas Clave
+47,PSMN047,Encapsulador
+48,PSMN048,Encargado de CXP
+49,PSMN049,Encargado de Devoluciones
+50,PSMN050,Encargado de Vitrinas
+51,PSMN051,Especialista en WMS
+52,PSMN052,Facturista
+53,PSMN053,Gerente Capacitador
+54,PSMN054,Gerente de Almacen
+55,PSMN055,GERENTE DE AUDITORIA
+56,PSMN056,Gerente de Compras
+57,PSMN057,Gerente de Contabilidad
+58,PSMN058,Gerente de Credito y Cobranza
+59,PSMN059,Gerente de Finanzas
+60,PSMN060,Gerente de Laboratorio
+61,PSMN061,Gerente de Recursos Humanos
+62,PSMN062,Gerente de Sistemas
+63,PSMN063,Gerente de Tesoreria
+64,PSMN064,Gerente de Tienda
+65,PSMN065,Gerente de Tiendas
+66,PSMN066,Gerente de Ventas
+67,PSMN067,Gerente Regional Noroeste
+68,PSMN068,Gestor de Cobranza
+69,PSMN069,Jefa de Aseguramiento de Calidad
+70,PSMN070,Jefa de Produccion
+71,PSMN071,Jefe de Seguridad
+72,PSMN072,Jefe de Almacen
+73,PSMN073,Jefe de Embarques
+74,PSMN074,Jefe de Recibo
+75,PSMN075,Mensajero
+76,PSMN076,Monitorista
+77,PSMN077,Montacarguista
+78,PSMN078,Nominista
+79,PSMN079,Operador de Produccion
+80,PSMN080,Operador de Produccion Vesp
+81,PSMN081,Programador Jr
+82,PSMN082,Quimico Analista
+83,PSMN083,Recepcionista
+84,PSMN084,SOPORTE TECNICO
+85,PSMN085,Sub-Contador
+86,PSMN086,SUB-GERENTE DE ALMACEN
+87,PSMN087,SUBGERENTE DE RECURSOS HUMANOS
+88,PSMN088,Subgerente de Tienda
+89,PSMN089,Supervisor de Acomodo
+90,PSMN090,Supervisor de Almacen
+91,PSMN091,Supervisor de Corporativos
+92,PSMN092,Supervisor de Metronegocios
+93,PSMN093,Supervisor de Producción
+94,PSMN094,Supervisor de Reabasto
+95,PSMN095,Supervisor de Surtido y Empaque
+96,PSMN096,Supervisor de Telemarketing
+97,PSMN097,Supervisor de Tiendas
+98,PSMN098,Vendedor de Piso
+99,,Diseñador Grafico
+100,,COORDINADOR DE OPERACIONES
+101,,ESPECIALISTA EN EXPANCION
+102,PSMN102,Auxiliar Compras
+103,PSM099,Gerente de Obras y Mantenimiento
+104,,Auxiliar de Expansion
+105,,ASISTENTE DE OBRAS
+106,,Abogado Jr
+107,PSMN099,Ejecutivo de Medios Publicitarios
+108,,Coordinador de Seguridad Patrimonial
+109,Admin de Operaciones,Administrador de Operaciones
+110,,Administrador de Redes Sociales
+111,,Coordinador de Almacen
+112,Tableteador,Tableteador
+113,Analista de Marca,Analista de Marca
+114,,Ejecutivo de Fotografia
+115,Desarrorrador,Desarrollador WEB
+116,PSM045,COORDINADOR DE DESAROLLO ORGANIZACIONAL
+117,,Responsable Sanitario
+118,,Contador General
+119,A.Expansion,Alalista de Expansion
+120,Analista Ecommerce,Analista Ecommerce
+121,,Responsable de Normatividad y Salud en el Trabajo
+122,,Fotografo Mercadotecnia
+123,Calidad,Ingeniero de Calidad
+124,,Coordinador de Tesoreria
+125,Auxiliar ,Auxiliar de Seguridad e Higiene
+126,,Analista de Calidad
+127, Protección Civil,Analista de Protección Civil
+128,GERENTE DE EXPANSION,GERENTE DE EXPANSION
+129,Auxiliar Juridico,Auxiliar Juridico
+130,,Generalista de Recursos Humanos
+131,Analista Datos,Analista de Datos
+132,ANALISTA METODOS,ANALISTA DE METODOS Y PROCEDIMIENTOS
+133,Especialista,Especialista de Desarrollo Organizacional
+134,Analista CxP,Analista de Cuentas por Pagar
+135,Devoluciones,Asistente de Devoluciones
+136,Analista,Analista de procesos
+137,Auxiliar,Auxiliar de Banda
+138,Promotor,Promotor
+139,,COORDINADOR ADMINISTRATIVO
+140,,SUBGERENTE ADMINISTRATIVO
+141,,Asistente de Contraloría
+142,,ADMON DE REDES Y SISTEMAS DE SEGURIDAD
+143,,Gerente de Cuentas Clave
+145,Analista,Analista de Expansión
+146,Manager,Community Manager
+147,Nominas,Aux de Nóminas
+148,Proyectista,Proyectista
+149,Seguridad e Higiene,Analista de Seguridad e Higiene
+150,Auxiliar de IMSS,Auxiliar de IMSS
+151,Importaciones,Coordinador de Importaciones y Regulación
+152,Ventas,Subgerente de Ventas
+153,Coordinador ,Coordinador de Supervision de Tiendas
+154,Compras,Coordinador de Compras
+155,Sistemas,Operador de Sistemas
+156,,Category Manager
+157,Laboratorio,Encargado de Almacen
+158,Analista,Analista de Información Financiera
+159,Obras,Supervisor de Obra
+160,Sistemas,Analista de Sistemas
+161,Recursos Humanos,Especialista de Seguridad Social
+162,Ventas,Asesor Comercial Generador
+163,Seguridad e Higiene,Coordinador de Seguridad e Higiene
+164,Guadalajara I,Supervisor de Ventas Mayoreo
+165,Juridico,Gerente Jurídico
+166,Importaciones,Gestor de Tramites
+167,Sistemas,Coordinador de Desarrollo y Aplicaciones
+168,Almacen,Operador de Apilador 
+169,Planeacion,Analista de Planogramas
+170,Laboratorio,Quimico de Desarrollo
+171,Almacen,Coordinador de Embarques
+172,Contraloria,Contralor General
+173,Contabilidad,Coordinador de Contabilidad
+174,Almacen,Operador de Patin
+175,Importaciones,Analista de Asuntos Regulatorios
+176,Mercadotecnia,Coordinador Ecommerce
+177,Guadalajara I,Jefe Administrativo
+178,Laboratorio,Responsable de documentación
+179,Obras,Coordinador de Obras y Mantenimiento
+180,Obras,Supervisor de Mantenimiento y Obras
+181,Contraloría,Auditor de Contraloría
+182,Sistemas,Ingeniero en redes y seguridad informatica
+183,,Encargado de sucursal
+184,,Encargado de sucursal
+185,,Coordinador de materias primas y surtido
+186,,Operador de Producción Master
+187,,Operador de Producción Junior
+188,,Auxiliar de mantenimiento
+189,,Aux de mantenimiento
+190,,Subgerente de logistica
+191,,Sub oficial

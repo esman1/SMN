@@ -1,0 +1,193 @@
+1,Aca,Acapulco
+2,Aca 2,Acapulco 2
+3,Alamcen,Almacen
+4,Aragon,Plaza Aragon
+5,Auditoria,Auditoria Interna
+6,CancunAme,Cancun Americas
+7,CancunMall,Cancun Mall
+8,cdjuarez,Ciudad Juarez
+9,Ceda,Central de Abastos
+11,Chapultepec,Chapultepec
+12,Chetumal,Chetumal
+13,Chihuahua,Chihuahua
+14,Coacalco,Coacalco
+15,Coacalco2,Plaza Coacalco
+16,Compras,Compras
+17,Contabilidad,Contabilidad
+18,Credito y Cobranza,Credito y Cobranza
+19,Cuernavaca,Cuernavaca
+20,Cuernavaca 2,Cuernavaca 2
+21,Culiacan,Culiacan
+22,Direccion General,Direccion General
+23,Eugenia,Eugenia
+24,Guadalajara I,Guadalajara I
+25,Guadalajara II,Guadalajara II
+26,Guadalajara III,Guadalajara III
+27,Hermosillo,Hermosillo
+28,Irapuato,Irapuato
+29,Izazaga,Izazaga
+30,La Joya,La Joya
+31,La Viga,La Viga
+32,Laboratorio,Laboratorio
+33,Leon,Leon
+34,Lincoln,Patio Lincoln MTY
+35,Losreyes,Los Reyes la Paz
+36,Mercadotecnia,Mercadotecnia
+37,Merced,Merced
+38,Merida,Merida
+39,Merida 2,Merida 2
+40,Mexipuerto,Mexipuerto
+41,Monterrey,Monterrey
+42,Monterrey 2,Monterrey 2
+43,Morelia,Morelia
+44,Naucalpan,Naucalpan
+45,NicolasRomero,Nicolas Romero
+46,Normal,Normal
+47,Patriotismo,Patriotismo
+48,Portales,Portales
+49,PueblaPD,Plaza Dorada Puebla
+50,Qro ,Queretaro
+51,Qro2,Patio Queretaro
+52,RH,Recursos Humanos
+53,Rosario,Cetram Rosario
+54,Seguridad,Seguridad Corporativa
+55,Sistemas,Sistemas
+56,SLP,San Luis Potosi
+57,SLP2,San Luis Potosi 2
+58,Supervision,Supervision de Tiendas
+59,Tacubaya,Tacubaya
+60,Tampico,Tampico
+61,Tehuacan,Tehuacan
+62,Tesoreria,Tesoreria
+63,Tijuana,Tijuana
+64,Toluca,Toluca
+65,Toluca 2,Toluca 2
+66,Tolucasendero,Plaza Sendero Toluca
+67,Toreo,Cetram 4 Caminos
+68,Torreon,Torreon
+69,Tuxtla,Tuxtla Gutierrez
+70,Ventas,Ventas
+71,Veracruz,Veracruz
+72,Viaducto,Viaducto
+73,VillaAmericas,Villahermosa Americas
+74,Villahermosa,Villahermosa
+75,Xochimilco,Xochimilco
+76,Zacatecas,Zacatecas
+77,SALTILLO,SALTILLO
+78,Toluca3,Toluca3
+79,Mixcoac,Mixcoac
+80,Texcoco,Patio Texcoco
+81,Merida3,Merida3
+82,5 de Febrero,5 de Febrero
+83,Patio Merida,Patio Merida
+84,Plaza Central,Plaza Central Iztapalapa
+85,Ayotla,Patio Ayotla
+86,Hacienda,Hacienda
+87,Patio Ecatepec,Patio Ecatepec
+88,Puebla Blvd,Puebla Blvd
+89,TUXPAN,TUXPAN
+90,CONDESA,CONDESA
+91,,EXPANSION
+92,OLIVO,OLIVO
+93,Plaza Jardines,Plaza Jardines Tultitlan
+94,Cardenas,Cardenas Tabasco
+95,Merida 4 ,Merida 4 BH Center
+96,Cordoba,Cordoba Veracruz
+97,Xochimilco 2,Xochimilco 2
+98,IZCALLI,CUAUTITLAN IZCALLI
+99,QRO 3 PM,QUERETARO 3 PM
+100,HUIPULCO,HUIPULCO TLALPAN
+101,ORIZABA,ORIZABA CENTRO
+102,XALAPA,XALAPA
+103,Puebla 3,Puebla 3 Centro
+104,Tampico 2,Tampico 2
+105,Ermita,Ermita Iztapalapa
+106,MAZATLAN,MAZATLAN
+107,TUXTLA,TUXTLA GUTIERREZ
+108,TAPACHULA,TAPACHULA
+110,Chapultepec 2,Chapultepec 2
+111,Balderas,Balderas
+112,C. DE SAN JUAN,CANAL DE SAN JUAN
+113,Supervicon,Supervicion
+114,POLANCO,POLANCO
+115,TEPIC,TEPIC
+116,Ermita2,Ermita 2
+117,PEMEX,PEMEX
+118,AYUNTAMIENTO,AYUNTAMIENTO
+119,EL SALADO,EL SALADO
+120,Apodaca,Sendero Apodaca
+121,Eje Central,Eje Central
+122,INSURGENTES,INSURGENTES EJE CENTRAL
+123,Aguascalientes,Aguascalientes
+124,Playa del Carmen,Playa del Carmen
+125,Gdl PT,Guadalajara PT
+126,Moctezuma,Metro Moctezuma
+127,Poza Rica,Poza Rica
+128,Culiacan 2,Culiacan 2
+129,Minatitlan,Minatitlan
+130,Coatzacoalcos,Coatzacoalcos
+131,San Antonio Abad,San Antonio Abad
+132,Tuxtepec,Tuxtepec
+133,Macroplaza,Macroplaza Oaxaca
+134,Plaza del Sol,Plaza del Sol Gdl
+135,Boca del Rio,Boca del Rio Americas
+136,Fortuna,Encuentro Fortuna
+137,Desarrollo,Innovación y Desarrollo
+138,Tlaquepaque,Tlaquepaque
+139,Plaza Coapa,Plaza Coapa
+140,Normatividad ,Normatividad y Salud en el Trabajo
+141,Plaza Crystal,Plaza Crystal Xalapa
+142,Pestalozzi,Pestalozzi
+143,Mundo E,Mundo E
+144,SLP El Dorado,San Luis Potosi el Dorado
+145,Aguascalientes Villa,Aguascalientes Villasuncion
+146,Plaza Torres,Leon Plaza las Torres
+147,Aca Palmas,Acapulco Palmas
+148,Patio Aca,Patio Acapulco
+149,Patio Pachuca,Patio Pachuca
+150,MPlazaSantin,Multiplaza Santin
+151,EstadioMorelia2,Plaza Estadio Morelia 2
+152,Santa Fe,Patio Santa Fe
+153,Merida Americas,Merida Americas
+154,Juridico,Juridico
+155,P y Estrategia,Planeacion y Estrategia
+156,Atizapan A.,Atizapan Alamedas
+157,Chilpancingo,Chilpancingo
+158,Galerias,Galerias Campeche
+159,Tlalnepantla,Tlalnepantla
+160,SM Izcalli,SM Izcalli
+161,Gran Sur,Gran Sur
+162,Perinorte,Perinorte
+163,Tuxtla A,Tuxtla Americas
+164,Chimalhuacan,Parque Chimalhuacan
+165,Lindavista,Plaza Lindavista
+166,Interlomas,Magnocentro Interlomas
+167,Tulum,Puerto Tulum
+168,Obras ,Obras y Mantenimiento
+169,Mexicali,Mexicali Cachanilla
+170,Contraloría,Contraloría
+171,Mochis,Los Mochis
+172,Plaza Bella,Plaza Bella Oaxaca
+173,Plaza Citadel,Monterrey 5 Plaza Citadel
+174,Irapuato,Irapuato Zona Centro
+175,Plaza Sendero,Plaza Sendero Cd Obregon
+176,Chalco,Patio Valle de Chalco
+177,Barranca del Muerto,Barranca del Muerto
+178,Gran Terraza,Gran Terraza Oblatos GDL
+179,Seguridad e Higiene,Seguridad e Higiene
+180,Importaciones,Importaciones y Regulación
+181,Tijuana,Macro Plaza Tijuana
+182,Las Antenas,Parque las Antenas
+183,Ciudad Juarez,Patio Zaragoza Ciudad Juarez
+184,Lomas Estrella,Portal Lomas Estrella
+185,Sendero sur,Sendero Sur Saltillo Coahuila
+186,,Tepeyac
+187,,Fitsi Museo
+188,San Agustin,San Agustin
+189,,Tezontle
+190,,Toreo parque
+191,Centro Maya,Centro Maya
+192,Forum,Forum Coatzacoalcos
+193,,San Esteban
+194,,Obras y Mantenimiento
+195,,Mantenimiento

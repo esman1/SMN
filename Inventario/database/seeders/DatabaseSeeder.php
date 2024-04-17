@@ -18,7 +18,10 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
             SuperAdminSeeder::class,
             PuestoSeeder::class,
-            DepartamentoSeeder::class
+            DepartamentoSeeder::class,
+            SucursalSeeder::class,
+            EmpleadoSeeder::class
+            
         ]);
     }
 }

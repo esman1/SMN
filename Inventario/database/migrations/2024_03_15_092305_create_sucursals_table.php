@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id('id_sucursal');
             $table->integer('Clave_sucursal')->unique();
             $table->string('Nom_sucursal', 255);
+            $table->string('ext', 100)->nullable();
+            $table->string('tel',20)->nullable();
             $table->timestamps();
         });
     }

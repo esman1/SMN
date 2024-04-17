@@ -15,20 +15,20 @@ return new class extends Migration
             $table->id('id_empleado');
             $table->integer('Clave_empleado')->unique();
             $table->string('nombre', 55);
-            $table->string('apellidoP', 55);
-            $table->string('apellidoM', 55);
+            $table->string('apellidoP', 55)->nullable();
+            $table->string('apellidoM', 55)->nullable();
       
-            $table->string('email', 55);
+            $table->string('email', 55)->nullable()->nullable();
          
-            $table->string('celular', 55);
-            $table->string('foto_emple', 255);
-            $table->unsignedBigInteger('puesto_id');
-            $table->unsignedBigInteger('departamento_id');
-            $table->unsignedBigInteger('sucursal_id');
+            $table->string('celular', 55)->nullable()->nullable();
+            $table->string('foto_emple', 255)->nullable();
+            $table->unsignedBigInteger('puesto_id')->nullable();
+            $table->unsignedBigInteger('departamento_id')->nullable();
+            $table->unsignedBigInteger('sucursal_id')->nullable();
             $table->string('estatus', 55);
-            $table->date('fecha_contrat')->nullable();
-            $table->date('fecha_alta')->nullable();
-            $table->date('fecha_baja')->nullable();
+            $table->datetime('fecha_contrat')->nullable();
+            $table->datetime('fecha_alta')->nullable();
+            $table->datetime('fecha_baja')->nullable();
 
             
             $table->foreign('puesto_id')->references('id_puesto')->on('puestos');

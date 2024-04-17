@@ -29,6 +29,15 @@
                             <strong>Sucursal:</strong>
                             {{ $sucursal->Nom_sucursal ? $sucursal->Nom_sucursal: 'N/A' }}
                         </div>
+                        <div class="form-group">
+                            <strong>Ext:</strong>
+                            {{$sucursal->ext ? $sucursal->ext: 'N/A'}}
+                        </div>
+                        
+                        <div class="form-group">
+                            <strong>Telefono:</strong>
+                            {{$sucursal->tel ? $sucursal->tel: 'N/A'}}
+                        </div>
 
                     </div>
                 </div>

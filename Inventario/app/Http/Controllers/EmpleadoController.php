@@ -116,3 +116,4 @@ class EmpleadoController extends Controller
             ->with('success', 'Eliminado Exitosamente');
     }
 }
+

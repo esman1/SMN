@@ -39,18 +39,33 @@
         </div>
         <div class="form-group">
             {{ Form::label('Puesto') }}
-            {{ Form::text('puesto_id', $empleado->puesto_id, ['class' => 'form-control' . ($errors->has('puesto_id') ? ' is-invalid' : ''), 'placeholder' => 'Puesto Id']) }}
-            {!! $errors->first('puesto_id', '<div class="invalid-feedback">:message</div>') !!}
+            <select class="form-control select2" name="tipo_id">
+                <option value="">Selecciona una Opcion ...</option>
+                @foreach($puestos as $pue)
+                    <option value="{{ $pue->id_puesto }}"{{$pue->id_puesto == $empleado->puesto_id ? 'selected' : '' }}>
+                        {{ $pue->Des_cort_d }}</option>
+                @endforeach
+             </select>
         </div>
         <div class="form-group">
-            {{ Form::label('Departamento') }}
-            {{ Form::text('departamento_id',$empleado->departamento_id, ['class' => 'form-control' . ($errors->has('departamento_id') ? ' is-invalid' : ''), 'placeholder' => 'Departamento Id']) }}
-            {!! $errors->first('departamento_id', '<div class="invalid-feedback">:message</div>') !!}
+            {{ Form::label('Departamento:') }}
+            <select class="form-control select2" name="tipo_id">
+                <option value="">Selecciona una Opcion ...</option>
+                @foreach($departamentos as $dep)
+                    <option value="{{ $dep->id_depart }}"{{$dep->id_depart == $empleado->departamento_id ? 'selected' : '' }}>
+                        {{ $dep->Desc_d }}</option>
+                @endforeach
+             </select>
         </div>
         <div class="form-group">
             {{ Form::label('Sucursal') }}
-            {{ Form::text('sucursal_id', $empleado->sucursal_id, ['class' => 'form-control' . ($errors->has('sucursal_id') ? ' is-invalid' : ''), 'placeholder' => 'Sucursal Id']) }}
-            {!! $errors->first('sucursal_id', '<div class="invalid-feedback">:message</div>') !!}
+            <select class="form-control select2" name="tipo_id">
+                <option value="">Selecciona una Opcion ...</option>
+                @foreach($sucursales as $suc)
+                    <option value="{{ $suc->id_sucursal }}"{{$suc->id_sucursal == $empleado->sucursal_id ? 'selected' : '' }}>
+                        {{ $suc->Nom_sucursal }}</option>
+                @endforeach
+             </select>
         </div>
         <div class="form-group">
             {{ Form::label('Estatus') }}

@@ -31,15 +31,15 @@
                             {{ $empleado->Clave_empleado }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre:</strong>
+                            <strong>Nombre(s):</strong>
                             {{ $empleado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidop:</strong>
+                            <strong>Apellido Paterno:</strong>
                             {{ $empleado->apellidoP }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidom:</strong>
+                            <strong>Apellido Materno:</strong>
                             {{ $empleado->apellidoM }}
                         </div>
                         <div class="form-group">
@@ -58,7 +58,7 @@
 						</div>
                         <div class="form-group">
                             <strong>Departamento:</strong>
-                            {{$empleado->departamento ? $empleado->departamento->Desc_corta_d : 'N/A' }}
+                            {{$empleado->departamento ? $empleado->departamento->Desc_d : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Sucursal:</strong>
@@ -66,18 +66,18 @@
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $empleado->estatus }}
+                            {{ $empleado->estatus ? $empleado->estatus->estat : 'N/A' }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Contrat:</strong>
+                            <strong>Fecha de Contratacion:</strong>
                             {{ $empleado->fecha_contrat }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Alta:</strong>
+                            <strong>Fecha de Alta:</strong>
                             {{ $empleado->fecha_alta }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Baja:</strong>
+                            <strong>Fecha de Baja:</strong>
                             {{ $empleado->fecha_baja }}
                         </div>
 

@@ -85,6 +85,10 @@ class Empleado extends Model
     {
         return $this->belongsTo(\App\Models\Sucursal::class, 'sucursal_id', 'id_sucursal');
     }
+    public function estatus()
+    {
+        return $this->belongsTo(\App\Models\Estatus::class, 'estatus_id', 'id_estat');
+    }
     
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany

@@ -103,7 +103,7 @@ class DepartamentoController extends Controller
     {
         $departamento = Departamento::find($id)->delete();
 
-        return redirect()->route('departamentos.index')
-            ->with('success', 'Departamento deleted successfully');
+        return redirect()->route('departamento.index')
+            ->with('success', 'Eliminado Correctamente');
     }
 }

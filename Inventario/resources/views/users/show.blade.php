@@ -6,23 +6,23 @@
         <div class="card">
             <div class="card-header">
                 <div class="float-start">
-                    User Information
+                Informacion del Usuario
                 </div>
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Volver</a>
                 </div>
             </div>
             <div class="card-body">
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Nombre:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->name }}
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email Address:</strong></label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Correo Electronico:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->email }}
                         </div>

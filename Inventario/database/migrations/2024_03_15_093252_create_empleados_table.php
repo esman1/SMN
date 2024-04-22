@@ -22,10 +22,10 @@ return new class extends Migration
          
             $table->string('celular', 55)->nullable()->nullable();
             $table->string('foto_emple', 255)->nullable();
-            $table->unsignedBigInteger('puesto_id')->nullable();
-            $table->unsignedBigInteger('departamento_id')->nullable();
-            $table->unsignedBigInteger('sucursal_id')->nullable();
-            $table->unsignedBigInteger('estatus_id')->nullable();
+            $table->unsignedBigInteger('puesto_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('departamento_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('sucursal_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('estatus_id')->nullable()->onDelete('set null');
             $table->datetime('fecha_contrat')->nullable();
             $table->datetime('fecha_alta')->nullable();
             $table->datetime('fecha_baja')->nullable();

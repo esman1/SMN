@@ -56,7 +56,7 @@ class UserController extends Controller
         $user->assignRole($request->roles);
 
         return redirect()->route('users.index')
-                ->withSuccess('New user is added successfully.');
+                ->withSuccess('Se agrego correctamente.');
     }
 
     /**
@@ -77,7 +77,7 @@ class UserController extends Controller
         // Check Only Super Admin can update his own Profile
         if ($user->hasRole('Super Admin')){
             if($user->id != auth()->user()->id){
-                abort(403, 'USER DOES NOT HAVE THE RIGHT PERMISSIONS');
+                abort(403, 'EL USUARIO NO TIENE LOS PERMISOS ADECUADOS');
             }
         }
 
@@ -106,7 +106,7 @@ class UserController extends Controller
         $user->syncRoles($request->roles);
 
         return redirect()->back()
-                ->withSuccess('User is updated successfully.');
+                ->withSuccess('Usuario Actualizado Correctamente.');
     }
 
     /**
@@ -117,12 +117,12 @@ class UserController extends Controller
         // About if user is Super Admin or User ID belongs to Auth User
         if ($user->hasRole('Super Admin') || $user->id == auth()->user()->id)
         {
-            abort(403, 'USER DOES NOT HAVE THE RIGHT PERMISSIONS');
+            abort(403, 'EL USUARIO NO TIENE LOS PERMISOS ADECUADOS.');
         }
 
         $user->syncRoles([]);
         $user->delete();
         return redirect()->route('users.index')
-                ->withSuccess('User is deleted successfully.');
+                ->withSuccess('Se elimino Correctamente.');
     }
 }

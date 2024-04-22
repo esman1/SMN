@@ -14,8 +14,8 @@ return new class extends Migration
     {
         Schema::create('asigapers', function (Blueprint $table) {
             $table->id('id_asigaper');
-            $table->unsignedBigInteger('empleado_id');
-            $table->unsignedBigInteger('stock_id'); 
+            $table->unsignedBigInteger('empleado_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('stock_id')->nullable()->onDelete('set null'); 
             $table->string('Nactivo',50)->unique();
             $table->foreign('empleado_id')->references('id_empleado')->on('empleados');
             $table->foreign('stock_id')->references('id_stock')->on('stocks');

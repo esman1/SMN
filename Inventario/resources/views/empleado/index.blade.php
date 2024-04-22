@@ -33,9 +33,9 @@
                                     <tr>
                                         <th>Foto</th>
 										<th>N.Empleado</th>
-										<th>Nombre</th>
-										<th>Apellidop</th>
-										<th>Apellidom</th>
+										<th>Nombre(s)</th>
+										<th>Apellido Paterno</th>
+										<th>Apellido Materno</th>
 										<th>Puesto</th>
 										<th>Departamento</th>
 										<th>Sucursal</th>
@@ -56,7 +56,7 @@
 											<td>{{ $empleado->apellidoP }}</td>
 											<td>{{ $empleado->apellidoM }}</td>
 										    <td>{{ $empleado->puesto ? $empleado->puesto->descripcion : 'N/A' }}</td>
-											<td>{{$empleado->departamento ? $empleado->departamento->Desc_corta_d : 'N/A' }}</td>
+											<td>{{$empleado->departamento ? $empleado->departamento->Desc_d : 'N/A' }}</td>
                                             <td>{{ $empleado->sucursal ? $empleado->sucursal->Nom_sucursal : 'N/A' }}</td>
 											
 

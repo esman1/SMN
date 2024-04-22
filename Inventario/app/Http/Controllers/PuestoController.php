@@ -112,6 +112,6 @@ class PuestoController extends Controller
         $puesto = Puesto::find($id_puesto)->delete();
 
         return redirect()->route('puesto.index')
-            ->with('success', 'Puesto deleted successfully');
+            ->with('success', 'Eliminado Correctamente');
     }
 }

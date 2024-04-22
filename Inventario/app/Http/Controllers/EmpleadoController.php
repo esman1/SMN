@@ -6,6 +6,7 @@ use App\Models\Empleado;
 use App\Models\Puesto;
 use App\Models\Departamento;
 use App\Models\Sucursal;
+use App\Models\Estatus;
 use Illuminate\Http\Request;
 
 /**
@@ -47,7 +48,8 @@ class EmpleadoController extends Controller
         $puestos = Puesto::all();
         $departamentos = Departamento::all();
         $sucursales = Sucursal::all();
-        return view('empleado.create', compact('empleado','puestos','departamentos','sucursales'));
+        $estatus = Estatus::all();
+        return view('empleado.create', compact('empleado','puestos','departamentos','sucursales', 'estatus'));
     }
 
     /**
@@ -88,11 +90,11 @@ class EmpleadoController extends Controller
     public function edit($id)
     {
         $empleado = Empleado::find($id);
-
-        $puestos = Puesto::all();
-        $departamentos = Departamento::all();
-        $sucursales = Sucursal::all();
-        return view('empleado.edit', compact('empleado','puestos','departamentos','sucursales'));
+        $puestos = Puesto::All();
+        $departamentos = Departamento::All();
+        $sucursales = Sucursal::All();
+        $estatus = Estatus::All();
+        return view('empleado.edit', compact('empleado','puestos','departamentos','sucursales','estatus'));
     }
 
     /**

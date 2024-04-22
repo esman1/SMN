@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asigaper;
+use App\Models\Empleado;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 /**
@@ -42,7 +44,9 @@ class AsigaperController extends Controller
     public function create()
     {
         $asigaper = new Asigaper();
-        return view('asigaper.create', compact('asigaper'));
+        $empleados = Empleado::All();
+        $stocks = Stock::All();
+        return view('asigaper.create', compact('asigaper','empleados','stocks'));
     }
 
     /**
@@ -83,8 +87,10 @@ class AsigaperController extends Controller
     public function edit($id)
     {
         $asigaper = Asigaper::find($id);
-
-        return view('asigaper.edit', compact('asigaper'));
+        $empleados = Empleado::All();
+        $stocks = Stock::All();
+        return view('asigaper.edit', compact('asigaper','empleados','stocks'));
+        
     }
 
     /**

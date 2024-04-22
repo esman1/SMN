@@ -74,7 +74,7 @@
             <select class="form-control select2" name="tipo_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($discs as $disc)
-                    <option value="{{ $disc->id_disc }}"{{$disc_id_disc == $stock->disc_d ? 'selected' : '' }}>
+                    <option value="{{ $disc->id_disc }}"{{$disc->id_disc == $stock->disc_d ? 'selected' : '' }}>
                         {{ $disc->nomDis }}</option>
                 @endforeach
              </select>

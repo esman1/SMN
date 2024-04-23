@@ -75,6 +75,9 @@
                             </table>
                         </div>
                     </div>
+                    <div class="card-footer text-muted d-flex justify-content-end">
+                        <a href="{{route ('home')}}" class="btn btn-outline-secondary">Volver</a>
+                    </div>
                 </div>
                 {!! $asigapers->links() !!}
             </div>

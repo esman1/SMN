@@ -15,13 +15,19 @@
                             <span id="card_title">
                                 {{ __('Stock') }}
                             </span>
-@can('create-stock')
+
                              <div class="float-right">
-                                <a href="{{ route('stock.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
-                                    {{ __('+') }}
+                                @can('create-stock')
+                                <a href="{{ route('stock.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+                      
+                                
                                 </a>
+                                @endcan
+                                 
+                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Volver</a> 
+                             
                               </div>
-                              @endcan
+                             
                         </div>
                     </div>
                   

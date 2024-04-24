@@ -11,17 +11,19 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="float-left">
+                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i> Volver</a> 
+                        </div>
                             <span id="card_title">
                                 {{ __('Empleado') }}
                             </span>
                             
                              <div class="float-right">
                                 @can('create-empleado')
-                                     <a href="{{ route('empleado.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+                                     <a href="{{ route('empleado.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
                                     </a>
                                      @endcan
-                                     <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Volver</a> 
-                              
+                                    
                                
                               </div>
                               
@@ -59,15 +61,15 @@
                                             <td>
                                                 <form action="{{ route('empleado.destroy',$empleado->id_empleado) }}" method="POST">
                                                     @can('show-empleado')
-                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('empleado.show',$empleado->id_empleado) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('empleado.show',$empleado->id_empleado) }}"><i class="bi bi-eye"></i> {{ __('Ver') }}</a>
                                                     @endcan
                                                     @can('edit-empleado')
-                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('empleado.edit',$empleado->id_empleado) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('empleado.edit',$empleado->id_empleado) }}"><i class="bi bi-pencil-square"></i> {{ __('Editar') }}</a>
                                                     @endcan
                                                     @can('delete-empleado')
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>
                                                     @endcan
                                                 </form>
                                             </td>

@@ -13,7 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="float-left">
+                            <a href="{{route('empleado.index')}}" class="btn btn-outline-primary btn-sm ml-2 "><i class="bi bi-arrow-left-circle"></i></a>
+                            </div>
                         <span class="card-title">{{ __('Actualizar') }} Empleado</span>
+                        
+                    </div>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('empleado.update', $empleado->id_empleado) }}"  role="form" enctype="multipart/form-data">

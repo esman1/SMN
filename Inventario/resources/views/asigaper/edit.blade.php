@@ -13,8 +13,13 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Update') }} Asigaper</span>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span class="card-title">{{ __('Editar') }} Asignacion-Personal</span>
+                    <div class="float-right">
+                <a href="{{route('home')}}" class="btn btn-outline-secondary "><i class="bi bi-house"></i> Inicio</a>
+                </div>
                     </div>
+            </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('asigaper.update', $asigaper->id_asigaper) }}"  role="form" enctype="multipart/form-data">
                             {{ method_field('PATCH') }}

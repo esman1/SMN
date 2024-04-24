@@ -15,13 +15,21 @@
                             <span id="card_title text-center">
                                 {{ __('Asignacion de Equipo-Personal') }}
                             </span>
-@can('create-asigaper')
+
                              <div class="float-right">
-                                <a href="{{ route('asigaper.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
-                                  {{ __('+') }}
-                                </a>
+                                @can('create-asigaper')
+                                <a href="{{ route('asigaper.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+                      
+                                
+                            </a>
+                                @endcan
+                               
+                               
+                                 
+                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Volver</a> 
+                             
                               </div>
-                              @endcan
+                              
                         </div>
                     </div>
                    
@@ -75,9 +83,7 @@
                             </table>
                         </div>
                     </div>
-                    <div class="card-footer text-muted d-flex justify-content-end">
-                        <a href="{{route ('home')}}" class="btn btn-outline-secondary">Volver</a>
-                    </div>
+              
                 </div>
                 {!! $asigapers->links() !!}
             </div>

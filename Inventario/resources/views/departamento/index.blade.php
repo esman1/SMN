@@ -19,9 +19,9 @@
                              <div class="float-right">
                                   @can('departamento-create')
        
-        <a href="{{ route('departamento.create') }}" class="btn btn-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+        <a href="{{ route('departamento.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
         
-        @endcan<a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Volver</a> 
+        @endcan<a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Inicio</a> 
                              
                               </div>
                         </div>
@@ -34,11 +34,11 @@
                                 <thead class="thead">
                                     <tr>
                                        
-										<th>Clave</th>
-										<th>Departamento</th>
-										<th>Descripcion</th>
+										<th class="border">Clave</th>
+										<th class="border">Departamento</th>
+										<th class="border">Descripcion</th>
 
-                                        <th></th>
+                                        <th class="border" style="width: 250px"> Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>

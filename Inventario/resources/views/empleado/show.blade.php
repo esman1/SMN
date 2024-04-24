@@ -10,13 +10,20 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                       <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="float-left">
+                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i> Volver</a> 
+                        </div>
+                        <div class="float-left">
+                            <a href="{{route('empleado.index')}}" class="btn btn-outline-primary btn-sm ml-2 "><i class="bi bi-arrow-left-circle"></i></a>
+                            </div>
                         <div class="float-left">
                             <span class="card-title">{{ __('Visualizar') }} Empleado</span>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-outline-primary" href="{{ route('empleado.index') }}"> {{ __('Regresar') }}</a>
+                        
                         </div>
-                    </div>
+                </div>  
+                    
 
                     <div class="card-body">
                         

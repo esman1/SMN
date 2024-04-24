@@ -17,9 +17,12 @@
                             </span>
 
                              <div class="float-right">
-                                <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
-                                  {{ __('+') }}
-                                </a>
+                                @can('puesto-create')
+                                 <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+                                @endcan
+                                <a href="{{route('home')}}" class="btn btn-outline-secondary btn-sm my-2"><i class="bi bi-house"></i> Volver</a>
+
+                               
                               </div>
                         </div>
                     </div>
@@ -35,7 +38,7 @@
 										<th class="border">Puesto</th>
 										<th class="border">Descripcion</th>
 
-                                <th ></th>
+                                <th class="border" style="width: 250px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,11 +51,11 @@
 
                                             <td>
                                                 <form action="{{ route('puesto.destroy',$puesto->id_puesto) }}" method="POST">
-                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('puesto.show',$puesto->id_puesto) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('puesto.edit',$puesto->id_puesto) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('puesto.show',$puesto->id_puesto) }}"><i class="bi bi-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('puesto.edit',$puesto->id_puesto) }}"><i class="bi bi-pencil-square"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -14,8 +14,11 @@
                             <span class="card-title">{{ __('Ver') }} Asignacion</span>
                         </div>
                         <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('asigaper.index') }}"> {{ __('Volver') }}</a>
+                            
+                        <a href="{{route('home')}}" class="btn btn-outline-secondary "><i class="bi bi-house"></i> Inicio</a>
                         </div>
+                            </div>
+                    </div>     </div>
                     </div>
 
                     <div class="card-body">

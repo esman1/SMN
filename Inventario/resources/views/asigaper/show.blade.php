@@ -10,16 +10,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <div class="float-right">
+                            
+                            <a href="{{route('asigaper.index')}}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+                            </div>
                         <div class="float-left">
-                            <span class="card-title">{{ __('Ver') }} Asignacion</span>
+                            <strong class="card-title">{{ __('Ver') }} Asignacion</strong>
                         </div>
                         <div class="float-right">
                             
-                        <a href="{{route('home')}}" class="btn btn-outline-secondary "><i class="bi bi-house"></i> Inicio</a>
+                        <a href="{{route('home')}}" class="btn btn-outline-secondary btn-sm ml-2" title="Panel Principal"><i class="bi bi-house"></i></a>
                         </div>
                             </div>
-                    </div>     </div>
-                    </div>
+                    </div>     
+                    
 
                     <div class="card-body">
                     <div class="form-group">
@@ -49,19 +54,19 @@
                         </div>
                         <div class="form-group">
                             <strong>N.activo: </strong>
-                            <td>{{ $asigaper-> Nactivo ? $asigaper->Nactivo : 'N/A'}}</td>
+                            <td>{{ $asigaper->Nactivo ? $asigaper->Nactivo : 'N/A'}}</td>
                         </div>
                         <div class="form-group">
                             <strong>Tipo: </strong>
-                            <td>{{ $asigaper->stock ? $asigaper->stock->tipo->tipo : 'N/A' }}</td>
+                            <td>{{ $asigaper->stock ? $asigaper->stock->tipo->nomTipo : 'N/A' }}</td>
                         </div>
                         <div class="form-group">
                             <strong>Marca: </strong>
-                            <td>{{ $asigaper->stock ? $asigaper->stock->marca->marca : 'N/A' }}</td>
+                            <td>{{ $asigaper->stock ? $asigaper->stock->marca->nomMar : 'N/A' }}</td>
                         </div>
                         <div class="form-group">
                             <strong>Modelo: </strong>
-                            <td>{{ $asigaper->stock ? $asigaper->stock->modelo->modelo : 'N/A' }}</td>
+                            <td>{{ $asigaper->stock ? $asigaper->stock->modelo->nomMod: 'N/A' }}</td>
                         </div>
                         <div class="form-group">
                             <strong>Sistema Operativo: </strong>

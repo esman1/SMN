@@ -11,23 +11,22 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
+                            <div class="float-left">
+                                <a href="{{ route('home') }}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        
+                            </div>
+                            <strong id="card_title">
                                 {{ __('Puesto') }}
-                            </span>
+                            </strong>
 
                              <div class="float-right">
-                                @can('puesto-create')
-                                 <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
-                                @endcan
-                                <a href="{{route('home')}}" class="btn btn-outline-secondary btn-sm my-2"><i class="bi bi-house"></i> Volver</a>
-
-                               
-                              </div>
+                                  @can('puesto-create')
+       
+        <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
+        
+        @endcan              </div>
                         </div>
                     </div>
-                  
-
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">

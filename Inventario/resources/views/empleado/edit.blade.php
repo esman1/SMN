@@ -14,11 +14,15 @@
                 <div class="card card-default">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
+                      
                             <div class="float-left">
-                            <a href="{{route('empleado.index')}}" class="btn btn-outline-primary btn-sm ml-2 "><i class="bi bi-arrow-left-circle"></i></a>
+                            <a href="{{route('empleado.index')}}"title="Volver" class="btn btn-outline-primary btn-sm ml-2 "><i class="bi bi-arrow-left-circle"></i></a>
                             </div>
-                        <span class="card-title">{{ __('Actualizar') }} Empleado</span>
-                        
+                        <strong class="card-title">{{ __('Actualizar') }} Empleado</strong>
+                    <div class="float-right">
+                    <a href="{{route('home')}}"title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2 "><i class="bi bi-house"></i></a>
+                       
+                </div>
                     </div>
                     </div>
                     <div class="card-body">

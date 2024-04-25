@@ -12,15 +12,16 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="float-left">
-                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i> Volver</a> 
+                            <a href="{{route ('home')}}" title="Panel Principal"class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a>
+                             
                         </div>
-                            <span id="card_title">
+                            <strong id="card_title">
                                 {{ __('Empleado') }}
-                            </span>
+                            </strong>
                             
                              <div class="float-right">
                                 @can('create-empleado')
-                                     <a href="{{ route('empleado.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+                                     <a href="{{ route('empleado.create') }}"title="Nuevo" class="btn btn-outline-success btn-sm ml-2"><i class="bi bi-plus-circle"></i> </a>
                                     </a>
                                      @endcan
                                     

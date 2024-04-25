@@ -5,12 +5,18 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <div class="float-start">
-                Informacion del Usuario
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="float-left">
+                    <a href="{{ route('users.index') }}"title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle"></i></a>
                 </div>
+                <strong class="card-title">
+               {{__ ('Usuario')}}
+                </strong>
+                
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Volver</a>
+                    <a href="{{ route('home') }}"title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house"></i></a>
                 </div>
+            </div>
             </div>
             <div class="card-body">
 

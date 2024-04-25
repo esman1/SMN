@@ -10,11 +10,21 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Ver') }} Departamento</span>
-                        </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('departamento.index') }}"> {{ __('Volver') }}</a>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="float-left">
+                                <a href="{{ route('departamento.index') }}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        
+                            </div>
+                            <strong id="card_title">
+                                {{ __('Departamento') }}
+                            </strong>
+
+                             <div class="float-right">
+                                 
+       
+        <a href="{{ route('home') }}" class="btn btn-outline-secondary btn-sm ml-2" title="Panel Principa"><i class="bi bi-house"></i></a>
+        
+                   </div>
                         </div>
                     </div>
 

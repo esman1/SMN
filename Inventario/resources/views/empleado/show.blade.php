@@ -9,19 +9,21 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header ">
                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                       
                         <div class="float-left">
-                            <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i> Volver</a> 
-                        </div>
-                        <div class="float-left">
-                            <a href="{{route('empleado.index')}}" class="btn btn-outline-primary btn-sm ml-2 "><i class="bi bi-arrow-left-circle"></i></a>
-                            </div>
-                        <div class="float-left">
-                            <span class="card-title">{{ __('Visualizar') }} Empleado</span>
-                        </div>
+                            <a href="{{route ('empleado.index')}}" title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
                         
+                            </div>
+                            <strong class="card-title" >{{ __('Visualizar') }} Empleado</strong>
+                            
+                        <div class="float-right">
+                            <a href="{{route('home')}}" title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2 "><i class="bi bi-house" aria-hidden="true"></i></a>
+                            
                         </div>
+                       </div>
+                        
                 </div>  
                     
 

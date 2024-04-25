@@ -11,19 +11,20 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
+                            <div class="float-left">
+                                <a href="{{ route('home') }}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        
+                            </div>
+                            <strong id="card_title">
                                 {{ __('Departamento') }}
-                            </span>
+                            </strong>
 
                              <div class="float-right">
                                   @can('departamento-create')
        
-        <a href="{{ route('departamento.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+        <a href="{{ route('departamento.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
         
-        @endcan<a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Inicio</a> 
-                             
-                              </div>
+        @endcan              </div>
                         </div>
                     </div>
                    
@@ -45,17 +46,17 @@
                                     @foreach ($departamentos as $departamento)
                                         <tr>
                                            
-											<td>{{ $departamento->Clave_dep ? $departamento->Clave_dep : 'N/A' }}</td>
-											<td>{{ $departamento->Desc_corta_d ? $departamento->Desc_corta_d : 'N/A'}}</td>
-											<td>{{ $departamento->Desc_d ? $departamento->Desc_d : 'N/A'}}</td>
+											<td class="border">{{ $departamento->Clave_dep ? $departamento->Clave_dep : 'N/A' }}</td>
+											<td class="border">{{ $departamento->Desc_corta_d ? $departamento->Desc_corta_d : 'N/A'}}</td>
+											<td class="border">{{ $departamento->Desc_d ? $departamento->Desc_d : 'N/A'}}</td>
 
-                                            <td>
+                                            <td class="border">
                                                 <form action="{{ route('departamento.destroy',$departamento->id_depart) }}" method="POST">
-                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('departamento.show',$departamento->id_depart) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('departamento.edit',$departamento->id_depart) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('departamento.show',$departamento->id_depart) }}"><i class="fa fa-fw bi-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('departamento.edit',$departamento->id_depart) }}"><i class="fa fa-fw bi-pencil-square"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar ') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw bi-trash"></i> {{ __('Eliminar ') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

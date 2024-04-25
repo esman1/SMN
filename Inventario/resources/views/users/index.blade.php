@@ -11,15 +11,16 @@ Usuarios
 <div class="card text-center">
     <div class="card-header">
         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-        <span id="card_title">
+            <div class="float-left">
+            <a href="{{route('home')}}"title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle"></i></a>
+            </div>
+        <strong id="card_title">
             {{ __('Usuarios') }}
-        </span>
+        </strong>
 
          <div class="float-right">
-            <a href="{{ route('users.create') }}" class="btn btn-outline-success btn-sm my-2"><i class="bi bi-plus-circle"></i> Nuevo</a>
+            <a href="{{ route('users.create') }}" title="Agregar" class="btn btn-outline-success btn-sm ml-2"><i class="bi bi-plus-circle"></i></a>
       
-        <a href="{{route ('home')}}" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house" aria-hidden="true"></i> Volver</a> 
           </div>
     </div>
 </div>
@@ -56,20 +57,20 @@ Usuarios
                             @csrf
                             @method('DELETE')
 
-                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-warning btn-sm"><i class="bi bi-eye"></i> Ver</a>
+                            <a href="{{ route('users.show', $user->id) }}" class="btn btn-outline-primary btn-sm"><i class="bi bi-eye"></i> Ver</a>
 
                             @if (in_array('Super Admin', $user->getRoleNames()->toArray() ?? []) )
                                 @if (Auth::user()->hasRole('Super Admin'))
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>
                                 @endif
                             @else
                                 @can('edit-user')
-                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-primary btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>   
+                                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-outline-warning btn-sm"><i class="bi bi-pencil-square"></i> Editar</a>   
                                 @endcan
 
                                 @can('delete-user')
                                     @if (Auth::user()->id!=$user->id)
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Do you want to delete this user?');"><i class="bi bi-trash"></i> Eliminar</button>
+                                        <button type="submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('¿Quieres eliminar este usuario?');"><i class="bi bi-trash"></i> Eliminar</button>
                                     @endif
                                 @endcan
                             @endif

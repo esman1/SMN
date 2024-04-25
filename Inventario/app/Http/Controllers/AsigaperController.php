@@ -30,7 +30,7 @@ class AsigaperController extends Controller
     public function index()
     {
         $asigapers = Asigaper::paginate();
-
+      
         return view('asigaper.index', [
             'asigapers' => Asigaper::latest('id_asigaper')->paginate(6)
         ]);

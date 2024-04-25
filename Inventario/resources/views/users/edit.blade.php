@@ -5,12 +5,18 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <div class="float-start">
-                    Editar Usuario
-                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div class="float-left">
+                        <a href="{{ route('users.index') }}" class="btn btn-outline-primary btn-sm ml-1"><i class="bi bi-arrow-left-circle"></i></a>
+               
+                    </div>
+                <strong class="card-title">
+                 {{__('Usuario')}}
+                </strong>
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Voler</a>
+                    <a href="{{ route('home') }}" class="btn btn-outline-secondary btn-sm ml-1"><i class="bi bi-house"></i></a>
                 </div>
+            </div>
             </div>
             <div class="card-body">
                 <form action="{{ route('users.update', $user->id) }}" method="post">

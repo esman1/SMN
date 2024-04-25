@@ -10,12 +10,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="float-right">
+                                <a class="btn btn-outline-primary  btn-sm ml-2" href="{{ route('stock.index') }}" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+                            </div>
+                            <strong class="card-title">{{ __('Ver') }} Stock</strong>
                         <div class="float-left">
-                            <span class="card-title">{{ __('Ver') }} Stock</span>
+                            <a class="btn btn-outline-secondary  btn-sm ml-2" href="{{ route('home') }}" title="Panel Principal"><i class="bi bi-house"></i></a>
                         </div>
-                        <div class="float-right">
-                            <a class="btn btn-primary" href="{{ route('stock.index') }}"> {{ __('Volver') }}</a>
-                        </div>
+                       
+                    </div>
                     </div>
 
                     <div class="card-body">
@@ -24,7 +28,7 @@
                        
                         <div class="form-group">
                             <strong>N.Serie:</strong>
-                            {{ $stock->Nserie }}
+                            {{ $stock->Nserie ? $stock->Nserie : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Modelo:</strong>

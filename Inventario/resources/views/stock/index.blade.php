@@ -50,6 +50,7 @@
 										<th class="border">Procesador</th>
 										<th class="border">Memoria</th>
 										<th class="border">Disco Duro</th>
+                                        <th class="border">Estatus</th>
 
                                         <th class="border" style="width: 250px;">Acciones</th>
                                     </tr>
@@ -66,7 +67,7 @@
 											<td class="border">{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
 											<td class="border">{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
 											<td class="border">{{ $stock->discod ? $stock->discod->nomDis : 'N/A' }}</td>
-
+                                            <td class="border">{{ $stock->Estatus ? $stock->Estatus : 'N/A'}}
                                             <td>
                                                 <form action="{{ route('stock.destroy',$stock->id_stock) }}" method="POST">
                                                    @can('show-stock')

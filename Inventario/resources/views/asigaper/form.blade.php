@@ -7,7 +7,7 @@
             <select class="form-control select2" name="tipo_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($empleados as $empleado)
-                    <option value="{{ $empleado->id_empleado }}"{{$empleado->id_empleado == $asigaper->empleado_id ? 'selected' : '' }}>
+                    <option value="{{ $asigaper->empleado_id }}"{{$empleado->id_empleado == $asigaper->empleado_id ? 'selected' : '' }}>
                         {{ $empleado->Clave_empleado}} - {{ $empleado->nombre}}  {{ $empleado->apellidoP}}  {{ $empleado->apellidoM}}</option>
                 @endforeach
              </select>
@@ -18,7 +18,7 @@
                 <option value="">Selecciona una Opción...</option>
                 @foreach($stocks as $stock)
                     @if($stock->Estatus === 'Stock')
-                        <option value="{{ $stock->id_stock }}">
+                        <option value="{{ $stock->id_stock }}"{{$stock->id_stock == $asigaper->stock_id ? 'selected' : '' }}>
                             {{ $stock->Nserie }} - {{ $stock->Tipo->nomTipo }} - {{ $stock->modelo->nomMod }}
                         </option>
                     @endif

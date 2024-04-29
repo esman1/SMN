@@ -38,7 +38,15 @@ class PermissionSeeder extends Seeder
             'create-puesto',
             'show-puesto',
             'edit-puesto',
-            'delete-puesto'
+            'delete-puesto',
+            'create-sucursal',
+            'edit-sucursal',
+            'delete-sucursal',
+            'show-sucursal',
+            'create-departamento',
+            'show-departamento',
+            'edit-departamento',
+            'delete-departamento'
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

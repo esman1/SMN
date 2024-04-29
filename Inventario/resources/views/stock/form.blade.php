@@ -54,7 +54,7 @@
             <select class="form-control select2" name="tipo_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($proces as $proc)
-                    <option value="{{ $proc->id_proc }}"{{$proc->id_proc == $stock->proces_id? 'selected' : '' }}>
+                    <option value="{{ $stock->proces_id }}"{{$proc->id_proc == $stock->proces_id? 'selected' : '' }}>
                         {{ $proc->nomProc }}</option>
                 @endforeach
              </select>

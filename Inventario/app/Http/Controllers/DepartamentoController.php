@@ -10,7 +10,18 @@ use Illuminate\Http\Request;
  * @package App\Http\Controllers
  */
 class DepartamentoController extends Controller
+
 {
+
+
+    public function __construct()
+    {
+       $this->middleware('auth');
+       $this->middleware('permission:create-departamento|edit-departamento|delete-departamento|show-departamento', ['only' => ['index','show']]);
+       $this->middleware('permission:create-departamento', ['only' => ['create','store']]);
+       $this->middleware('permission:edit-departamento', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete-departamento', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

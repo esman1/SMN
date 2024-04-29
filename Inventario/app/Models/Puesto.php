@@ -22,7 +22,7 @@ class Puesto extends Model
 {
     
     static $rules = [
-		'id_puesto' => 'required',
+		
 		'Clave_puesto' => 'required',
 		'Des_cort_p' => 'string',
 		'descripcion' => 'required|string',
@@ -36,7 +36,7 @@ class Puesto extends Model
      * @var array
      */
     protected $primaryKey ='id_puesto';
-    protected $fillable = ['id_puesto','Clave_puesto','Des_cort_p','descripcion'];
+    protected $fillable = ['Clave_puesto','Des_cort_p','descripcion'];
 
 
     /**

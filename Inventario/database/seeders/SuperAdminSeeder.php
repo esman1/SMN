@@ -39,9 +39,9 @@ class SuperAdminSeeder extends Seeder
 
         // Creating Product Manager User
         $invitado = User::create([
-            'name' => 'Abdul Muqeet', 
-            'email' => 'muqeet@allphptricks.com',
-            'password' => Hash::make('muqeet1234')
+            'name' => 'Daniel Labastida Vazquez', 
+            'email' => 'dlabastida@smn.com.mx',
+            'password' => Hash::make('SMN2024.')
         ]);
         $invitado->assignRole('Invitado');
     }

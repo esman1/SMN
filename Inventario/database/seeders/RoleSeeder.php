@@ -36,13 +36,24 @@ class RoleSeeder extends Seeder
             'create-puesto',
             'show-puesto',
             'edit-puesto',
-            'delete-puesto'
+            'delete-puesto',
+            'create-sucursal',
+            'edit-sucursal',
+            'delete-sucursal',
+            'show-sucursal',
+            'create-departamento',
+            'show-departamento',
+            'edit-departamento',
+            'delete-departamento'
         ]);
 
         $invitado->givePermissionTo([
            'show-empleado',
            'show-stock',
            'show-asigaper',
+           'show-departamento',
+           'show-puesto',
+           'show-sucursal'
             
         ]);
     }

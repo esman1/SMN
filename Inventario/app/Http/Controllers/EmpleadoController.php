@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Empleado;
+use App\Models\Puesto;
+use App\Models\Departamento;
+use App\Models\Sucursal;
+use App\Models\Estatus;
 use Illuminate\Http\Request;
 
 /**
@@ -41,7 +45,11 @@ class EmpleadoController extends Controller
     public function create()
     {
         $empleado = new Empleado();
-        return view('empleado.create', compact('empleado'));
+        $puestos = Puesto::all();
+        $departamentos = Departamento::all();
+        $sucursales = Sucursal::all();
+        $estatus = Estatus::all();
+        return view('empleado.create', compact('empleado','puestos','departamentos','sucursales', 'estatus'));
     }
 
     /**
@@ -82,8 +90,11 @@ class EmpleadoController extends Controller
     public function edit($id)
     {
         $empleado = Empleado::find($id);
-
-        return view('empleado.edit', compact('empleado'));
+        $puestos = Puesto::All();
+        $departamentos = Departamento::All();
+        $sucursales = Sucursal::All();
+        $estatus = Estatus::All();
+        return view('empleado.edit', compact('empleado','puestos','departamentos','sucursales','estatus'));
     }
 
     /**
@@ -116,3 +127,4 @@ class EmpleadoController extends Controller
             ->with('success', 'Eliminado Exitosamente');
     }
 }
+

@@ -19,9 +19,9 @@ class SucursalController extends Controller
     public function index()
     {
         $sucursals = Sucursal::paginate();
-
-        return view('sucursal.index', compact('sucursals'))
-            ->with('i', (request()->input('page', 1) - 1) * $sucursals->perPage());
+        
+        return view('sucursal.index',['sucursals' => Sucursal::latest('id_sucursal')->paginate(8)]);
+            
     }
 
     /**

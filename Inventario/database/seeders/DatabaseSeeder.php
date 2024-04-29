@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
             PuestoSeeder::class,
             DepartamentoSeeder::class,
             SucursalSeeder::class,
+            EstatusSeeder::class,
             EmpleadoSeeder::class
             
         ]);

@@ -22,10 +22,10 @@ return new class extends Migration
          
             $table->string('celular', 55)->nullable()->nullable();
             $table->string('foto_emple', 255)->nullable();
-            $table->unsignedBigInteger('puesto_id')->nullable();
-            $table->unsignedBigInteger('departamento_id')->nullable();
-            $table->unsignedBigInteger('sucursal_id')->nullable();
-            $table->string('estatus', 55);
+            $table->unsignedBigInteger('puesto_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('departamento_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('sucursal_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('estatus_id')->nullable()->onDelete('set null');
             $table->datetime('fecha_contrat')->nullable();
             $table->datetime('fecha_alta')->nullable();
             $table->datetime('fecha_baja')->nullable();
@@ -34,6 +34,7 @@ return new class extends Migration
             $table->foreign('puesto_id')->references('id_puesto')->on('puestos');
             $table->foreign('departamento_id')->references('id_depart')->on('departamentos');
             $table->foreign('sucursal_id')->references('id_sucursal')->on('sucursals');
+            $table->foreign('estatus_id')->references('id_estat')->on('estatuses');
 
             $table->timestamps();
         });

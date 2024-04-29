@@ -3,6 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Stock;
+use App\Models\Tipo;
+use App\Models\Modelo;
+use App\Models\Marca;
+use App\Models\Sisop;
+use App\Models\Procesador;
+use App\Models\Memoria;
+use App\Models\Discod;
 use Illuminate\Http\Request;
 
 /**
@@ -41,8 +48,16 @@ class StockController extends Controller
     public function create()
     {
         $stock = new Stock();
-        return view('stock.create', compact('stock'));
+        $tipos = Tipo::all();
+        $modelos = Modelo::all();
+        $marcas = Marca::all();
+        $sisops = Sisop::all();
+        $proces =Procesador::all();
+        $mems = Memoria::all();
+        $discs = Discod::all();
+        return view('stock.create', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs'));
     }
+    
 
     /**
      * Store a newly created resource in storage.
@@ -82,8 +97,14 @@ class StockController extends Controller
     public function edit($id)
     {
         $stock = Stock::find($id);
-
-        return view('stock.edit', compact('stock'));
+        $tipos = Tipo::all();
+        $modelos = Modelo::all();
+        $marcas = Marca::all();
+        $sisops = Sisop::all();
+        $proces =Procesador::all();
+        $mems = Memoria::all();
+        $discs = Discod::all();
+        return view('stock.edit', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs'));
     }
 
     /**

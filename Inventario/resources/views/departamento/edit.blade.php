@@ -13,7 +13,23 @@
 
                 <div class="card card-default">
                     <div class="card-header">
-                        <span class="card-title">{{ __('Actualizar') }} Departamento</span>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div class="float-left">
+                                <a href="{{ route('departamento.index') }}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        
+                            </div>
+                            <strong id="card_title">
+                                {{ __('Departamento') }}
+                            </strong>
+
+                             <div class="float-right">
+                                  
+       
+        <a href="{{ route('home') }}" class="btn btn-outline-secondary btn-sm ml-2" title="Panel Principal"><i class="bi bi-house"></i></a>
+        
+                 </div>
+                        </div>
+                    
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('departamento.update', $departamento->id_depart) }}"  role="form" enctype="multipart/form-data">

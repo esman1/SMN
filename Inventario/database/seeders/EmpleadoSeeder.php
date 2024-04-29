@@ -27,7 +27,7 @@ class EmpleadoSeeder extends Seeder
                 'nombre'=>$data[1],
                 'apellidoP'=>$data[2],
                 'apellidoM'=>$data[3],
-                'estatus'=>$data[4],
+                'estatus_id'=>$data[4],
                 'departamento_id'=>$data[5],
                 'sucursal_id'=>$data[7],
                 'puesto_id'=>$data[9],

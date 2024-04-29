@@ -28,8 +28,7 @@ class PuestoController extends Controller
     {
         $puestos = Puesto::paginate();
 
-        return view('puesto.index', compact('puestos'))
-            ->with('i', (request()->input('page', 1) - 1) * $puestos->perPage());
+        return view('puesto.index', ['puestos' => Puesto::latest('id_puesto')->paginate(8)]);
     }
 
     /**
@@ -112,6 +111,6 @@ class PuestoController extends Controller
         $puesto = Puesto::find($id_puesto)->delete();
 
         return redirect()->route('puesto.index')
-            ->with('success', 'Puesto deleted successfully');
+            ->with('success', 'Eliminado Correctamente');
     }
 }

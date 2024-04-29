@@ -9,14 +9,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header ">
+                       <div style="display: flex; justify-content: space-between; align-items: center;">
+                       
                         <div class="float-left">
-                            <span class="card-title">{{ __('Visualizar') }} Empleado</span>
-                        </div>
+                            <a href="{{route ('empleado.index')}}" title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
+                        
+                            </div>
+                            <strong class="card-title" >{{ __('Visualizar') }} Empleado</strong>
+                            
                         <div class="float-right">
-                            <a class="btn btn-outline-primary" href="{{ route('empleado.index') }}"> {{ __('Regresar') }}</a>
+                            <a href="{{route('home')}}" title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2 "><i class="bi bi-house" aria-hidden="true"></i></a>
+                            
                         </div>
-                    </div>
+                       </div>
+                        
+                </div>  
+                    
 
                     <div class="card-body">
                         
@@ -31,15 +40,15 @@
                             {{ $empleado->Clave_empleado }}
                         </div>
                         <div class="form-group">
-                            <strong>Nombre:</strong>
+                            <strong>Nombre(s):</strong>
                             {{ $empleado->nombre }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidop:</strong>
+                            <strong>Apellido Paterno:</strong>
                             {{ $empleado->apellidoP }}
                         </div>
                         <div class="form-group">
-                            <strong>Apellidom:</strong>
+                            <strong>Apellido Materno:</strong>
                             {{ $empleado->apellidoM }}
                         </div>
                         <div class="form-group">
@@ -58,7 +67,7 @@
 						</div>
                         <div class="form-group">
                             <strong>Departamento:</strong>
-                            {{$empleado->departamento ? $empleado->departamento->Desc_corta_d : 'N/A' }}
+                            {{$empleado->departamento ? $empleado->departamento->Desc_d : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Sucursal:</strong>
@@ -66,18 +75,18 @@
                         </div>
                         <div class="form-group">
                             <strong>Estatus:</strong>
-                            {{ $empleado->estatus }}
+                            {{ $empleado->estatus ? $empleado->estatus->estat : 'N/A' }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Contrat:</strong>
+                            <strong>Fecha de Contratacion:</strong>
                             {{ $empleado->fecha_contrat }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Alta:</strong>
+                            <strong>Fecha de Alta:</strong>
                             {{ $empleado->fecha_alta }}
                         </div>
                         <div class="form-group">
-                            <strong>Fecha Baja:</strong>
+                            <strong>Fecha de Baja:</strong>
                             {{ $empleado->fecha_baja }}
                         </div>
 

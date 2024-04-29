@@ -15,13 +15,14 @@ return new class extends Migration
         Schema::create('stocks', function (Blueprint $table) {
             $table->id('id_stock');
             $table->string('Nserie', 50)->unique();
-            $table->unsignedBigInteger('modelo_id');
-            $table->unsignedBigInteger('tipo_id');
-            $table->unsignedBigInteger('marca_id');
-            $table->unsignedBigInteger('sisop_id');
-            $table->unsignedBigInteger('proces_id');
-            $table->unsignedBigInteger('mem_id');
-            $table->unsignedBigInteger('disc_d');
+            $table->unsignedBigInteger('modelo_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('tipo_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('marca_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('sisop_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('proces_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('mem_id')->nullable()->onDelete('set null');
+            $table->unsignedBigInteger('disc_d')->nullable()->onDelete('set null');
+            $table->string('Estatus', 12);
 
             $table->foreign('modelo_id')->references('id_modelo')->on('modelos');
             $table->foreign('tipo_id')->references('id_tipo')->on('tipos');

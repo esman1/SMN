@@ -52,7 +52,7 @@ class RoleController extends Controller
         $role->syncPermissions($permissions);
 
         return redirect()->route('roles.index')
-                ->withSuccess('New role is added successfully.');
+                ->withSuccess('Agregado Correctamente.');
     }
 
     /**
@@ -76,7 +76,8 @@ class RoleController extends Controller
     public function edit(Role $role): View
     {
         if($role->name=='Super Admin'){
-            abort(403, 'SUPER ADMIN ROLE CAN NOT BE EDITED');
+            abort(403, '
+            EL ROL DE SUPERADMINISTRO NO SE PUEDE EDITAR');
         }
 
         $rolePermissions = DB::table("role_has_permissions")->where("role_id",$role->id)
@@ -104,7 +105,7 @@ class RoleController extends Controller
         $role->syncPermissions($permissions);    
         
         return redirect()->back()
-                ->withSuccess('Role is updated successfully.');
+                ->withSuccess('Se actualizo correctamente.');
     }
 
     /**
@@ -113,13 +114,13 @@ class RoleController extends Controller
     public function destroy(Role $role): RedirectResponse
     {
         if($role->name=='Super Admin'){
-            abort(403, 'SUPER ADMIN ROLE CAN NOT BE DELETED');
+            abort(403, 'EL ROL DE SÚPER ADMINISTRADOR NO SE PUEDE ELIMINAR');
         }
         if(auth()->user()->hasRole($role->name)){
-            abort(403, 'CAN NOT DELETE SELF ASSIGNED ROLE');
+            abort(403, 'NO SE PUEDE ELIMINAR EL ROL AUTOASIGNADO');
         }
         $role->delete();
         return redirect()->route('roles.index')
-                ->withSuccess('Role is deleted successfully.');
+                ->withSuccess('Eliminado Correctamente.');
     }
 }

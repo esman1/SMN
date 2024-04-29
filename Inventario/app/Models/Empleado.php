@@ -41,10 +41,10 @@ class Empleado extends Model
 		'nombre' => 'required|string',
 		'apellidoP' => 'required|string',
 		'apellidoM' => 'required|string',
-		'email' => 'required|string',
-		'celular' => 'required|string',
+		'email' => 'string',
+		'celular' => 'string',
 		//'foto_emple' => 'required|image|mimes:jpeg,jpg,png,gif|max:2048',
-    	'foto_emple' => 'required|string',
+    	'foto_emple' => 'string',
         'puesto_id' => 'required',
 		'departamento_id' => 'required',
 		'sucursal_id' => 'required',
@@ -84,6 +84,10 @@ class Empleado extends Model
     public function sucursal()
     {
         return $this->belongsTo(\App\Models\Sucursal::class, 'sucursal_id', 'id_sucursal');
+    }
+    public function estatus()
+    {
+        return $this->belongsTo(\App\Models\Estatus::class, 'estatus_id', 'id_estat');
     }
     
     /**

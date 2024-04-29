@@ -11,20 +11,22 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-
-                            <span id="card_title">
+                            <div class="float-left">
+                                <a href="{{ route('home') }}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
+        
+                            </div>
+                            <strong id="card_title">
                                 {{ __('Puesto') }}
-                            </span>
+                            </strong>
 
                              <div class="float-right">
-                                <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm float-right"  data-placement="left">
-                                  {{ __('+') }}
-                                </a>
-                              </div>
+                                  @can('puesto-create')
+       
+        <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
+        
+        @endcan              </div>
                         </div>
                     </div>
-                  
-
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped table-hover">
@@ -35,7 +37,7 @@
 										<th class="border">Puesto</th>
 										<th class="border">Descripcion</th>
 
-                                <th ></th>
+                                <th class="border" style="width: 250px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -48,11 +50,11 @@
 
                                             <td>
                                                 <form action="{{ route('puesto.destroy',$puesto->id_puesto) }}" method="POST">
-                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('puesto.show',$puesto->id_puesto) }}"><i class="fa fa-fw fa-eye"></i> {{ __('Ver') }}</a>
-                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('puesto.edit',$puesto->id_puesto) }}"><i class="fa fa-fw fa-edit"></i> {{ __('Editar') }}</a>
+                                                    <a class="btn btn-sm btn-outline-primary " href="{{ route('puesto.show',$puesto->id_puesto) }}"><i class="bi bi-eye"></i> {{ __('Ver') }}</a>
+                                                    <a class="btn btn-sm btn-outline-warning" href="{{ route('puesto.edit',$puesto->id_puesto) }}"><i class="bi bi-pencil-square"></i> {{ __('Editar') }}</a>
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw fa-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>
                                                 </form>
                                             </td>
                                         </tr>

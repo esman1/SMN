@@ -5,24 +5,30 @@
     <div class="col-md-8">
         <div class="card">
             <div class="card-header">
-                <div class="float-start">
-                    User Information
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="float-left">
+                    <a href="{{ route('users.index') }}"title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle"></i></a>
                 </div>
+                <strong class="card-title">
+               {{__ ('Usuario')}}
+                </strong>
+                
                 <div class="float-end">
-                    <a href="{{ route('users.index') }}" class="btn btn-primary btn-sm">&larr; Back</a>
+                    <a href="{{ route('home') }}"title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2"><i class="bi bi-house"></i></a>
                 </div>
+            </div>
             </div>
             <div class="card-body">
 
                     <div class="mb-3 row">
-                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Name:</strong></label>
+                        <label for="name" class="col-md-4 col-form-label text-md-end text-start"><strong>Nombre:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->name }}
                         </div>
                     </div>
 
                     <div class="mb-3 row">
-                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Email Address:</strong></label>
+                        <label for="email" class="col-md-4 col-form-label text-md-end text-start"><strong>Correo Electronico:</strong></label>
                         <div class="col-md-6" style="line-height: 35px;">
                             {{ $user->email }}
                         </div>

@@ -25,7 +25,8 @@
             <div class="container">
                
                 <a class="navbar-brand" title="Panel Principal" href="{{ url('/home') }}">
-                    <img src="imagen/smn.png" width="auto" height="50"> 
+                    <img src="{{ asset('imagen/smn.png') }}" width="auto" height="50">
+                    
                   
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">

@@ -62,7 +62,7 @@ class AsigaperController extends Controller
         $asigaper = Asigaper::create($request->all());
 
         return redirect()->route('asigaper.index')
-            ->with('success', 'Asigaper created successfully.');
+            ->with('success', 'Creado Correctamente.');
     }
 
     /**
@@ -102,12 +102,12 @@ class AsigaperController extends Controller
      */
     public function update(Request $request, Asigaper $asigaper)
     {
-        request()->validate(Asigaper::$rules);
+        $request()->validate(Asigaper::$rules);
 
         $asigaper->update($request->all());
 
         return redirect()->route('asigaper.index')
-            ->with('success', 'Asigaper updated successfully');
+            ->with('success', 'Actualizado Correctamente.');
     }
 
     /**
@@ -120,6 +120,6 @@ class AsigaperController extends Controller
         $asigaper = Asigaper::find($id)->delete();
 
         return redirect()->route('asigaper.index')
-            ->with('success', 'Asigaper deleted successfully');
+            ->with('success', 'Eliminado Correctamnte.');
     }
 }

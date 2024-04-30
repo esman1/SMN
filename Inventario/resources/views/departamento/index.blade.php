@@ -52,11 +52,17 @@
 
                                             <td class="border">
                                                 <form action="{{ route('departamento.destroy',$departamento->id_depart) }}" method="POST">
+                                                    @can('show-departamento')
                                                     <a class="btn btn-sm btn-outline-primary " href="{{ route('departamento.show',$departamento->id_depart) }}"><i class="fa fa-fw bi-eye"></i> {{ __('Ver') }}</a>
+                                                    @endcan
+                                                    @can('edit-departamento')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('departamento.edit',$departamento->id_depart) }}"><i class="fa fa-fw bi-pencil-square"></i> {{ __('Editar') }}</a>
+                                                    @endcan
                                                     @csrf
                                                     @method('DELETE')
+                                                    @can('delete-departamento')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="fa fa-fw bi-trash"></i> {{ __('Eliminar ') }}</button>
+                                                    @endcan 
                                                 </form>
                                             </td>
                                         </tr>

@@ -1,8 +1,6 @@
 @extends('layouts.app')
 
-@section('template_title')
-    {{ __('Nuevo') }} Puesto
-@endsection
+
 
 @section('content')
     <section class="content container-fluid">

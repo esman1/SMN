@@ -14,7 +14,7 @@ class PuestoController extends Controller
     public function __construct()
     {
        $this->middleware('auth');
-       $this->middleware('permission:create-puestp|edit-puesto|delete-puesto|show-puesto', ['only' => ['index','show']]);
+       $this->middleware('permission:create-puesto|edit-puesto|delete-puesto|show-puesto', ['only' => ['index','show']]);
        $this->middleware('permission:create-puesto', ['only' => ['create','store']]);
        $this->middleware('permission:edit-puesto', ['only' => ['edit','update']]);
        $this->middleware('permission:delete-puesto', ['only' => ['destroy']]);
@@ -55,7 +55,7 @@ class PuestoController extends Controller
         $puesto = Puesto::create($request->all());
 
         return redirect()->route('puesto.index')
-            ->with('success', 'Puesto created successfully.');
+            ->with('success', 'Se agrego correctamente.');
     }
 
     /**

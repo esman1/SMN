@@ -20,7 +20,7 @@
                             </strong>
 
                              <div class="float-right">
-                                  @can('sucursal-create')
+                                  @can('create-sucursal')
        
         <a href="{{ route('sucursal.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
         
@@ -50,11 +50,17 @@
 
                                             <td class="border">
                                                 <form action="{{ route('sucursal.destroy',$sucursal->id_sucursal) }}" method="POST">
+                                                    @can('show-sucursal')
                                                     <a class="btn btn-sm btn-outline-primary " href="{{ route('sucursal.show',$sucursal->id_sucursal) }}"><i class="bi bi-eye"></i>{{ __(' Ver') }}</a>
+                                                    @endcan
+                                                    @can('edit-sucursal')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('sucursal.edit',$sucursal->id_sucursal) }}"><i class="bi bi-pencil-square"></i> {{ __(' Editar') }}</a>
+                                                    @endcan
                                                     @csrf
                                                     @method('DELETE')
+                                                    @can('delete-sucursal')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> {{ __(' Eliminar') }}</button>
+                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>

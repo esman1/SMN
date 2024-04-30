@@ -11,6 +11,15 @@ use Illuminate\Http\Request;
  */
 class SucursalController extends Controller
 {
+
+    public function __construct()
+    {
+       $this->middleware('auth');
+       $this->middleware('permission:create-sucursal|edit-sucursal|delete-sucursal|show-sucursal', ['only' => ['index','show']]);
+       $this->middleware('permission:create-sucursal', ['only' => ['create','store']]);
+       $this->middleware('permission:edit-sucursal', ['only' => ['edit','update']]);
+       $this->middleware('permission:delete-sucursal', ['only' => ['destroy']]);
+    }
     /**
      * Display a listing of the resource.
      *

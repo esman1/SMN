@@ -20,7 +20,7 @@
                             </strong>
 
                              <div class="float-right">
-                                  @can('puesto-create')
+                                  @can('create-puesto')
        
         <a href="{{ route('puesto.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
         
@@ -50,11 +50,17 @@
 
                                             <td>
                                                 <form action="{{ route('puesto.destroy',$puesto->id_puesto) }}" method="POST">
+                                                    @can('show-puesto')
                                                     <a class="btn btn-sm btn-outline-primary " href="{{ route('puesto.show',$puesto->id_puesto) }}"><i class="bi bi-eye"></i> {{ __('Ver') }}</a>
+                                                    @endcan
+                                                    @can('edit-puesto')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('puesto.edit',$puesto->id_puesto) }}"><i class="bi bi-pencil-square"></i> {{ __('Editar') }}</a>
+                                                  @endcan
+                                                    @can('delete-puesto')
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>
+                                                @endcan
                                                 </form>
                                             </td>
                                         </tr>

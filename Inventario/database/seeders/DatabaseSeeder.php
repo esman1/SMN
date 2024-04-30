@@ -21,7 +21,14 @@ class DatabaseSeeder extends Seeder
             DepartamentoSeeder::class,
             SucursalSeeder::class,
             EstatusSeeder::class,
-            EmpleadoSeeder::class
+            EmpleadoSeeder::class,
+            DiscoSeeder::class,
+            MarcaSeeder::class,
+            MemSeeder::class,
+            ModeloSeeder::class,
+            ProcSeeder::class,
+            SisopSeeder::class,
+            TipoSeeder::class
             
         ]);
     }

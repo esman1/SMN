@@ -10,6 +10,8 @@ use App\Http\Controllers\AsigaperController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\PuestoController;
+use App\Http\COntrollers\AsigsucController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,5 +40,6 @@ Route::resources([
     'asigaper'=> AsigaperController::class, 
     'departamento' => DepartamentoController::class, 
     'sucursal' => SucursalController::class,
-    'puesto' => PuestoController::class
+    'puesto' => PuestoController::class,
+    'asigsuc' => AsigsucController::class
 ]); 

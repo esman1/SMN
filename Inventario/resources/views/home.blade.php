@@ -51,6 +51,10 @@
                         <a class="btn btn-warning" href="{{ route('puesto.index') }}">
                             <i class="bi bi-person-workspace"></i> Puesto</a>
                     @endcanany
+                    @canany(['create-puesto', 'edit-puesto', 'delete-puesto','show-puesto'])
+                        <a class="btn btn-warning" href="{{ route('asigsuc.index') }}">
+                            <i class="bi bi-person-workspace"></i> Asignacion-Tiendas </a>
+                    @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>

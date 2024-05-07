@@ -46,7 +46,11 @@ class PermissionSeeder extends Seeder
             'create-departamento',
             'show-departamento',
             'edit-departamento',
-            'delete-departamento'
+            'delete-departamento',
+            'create-asigsuc',
+            'show-asigsuc',
+            'edit-asigsuc',
+            'delete-asigsuc'
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

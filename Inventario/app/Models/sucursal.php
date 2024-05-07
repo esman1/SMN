@@ -44,6 +44,9 @@ class Sucursal extends Model
     {
         return $this->hasMany(\App\Models\Empleado::class, 'id_sucursal', 'sucursal_id');
     }
-    
+    public function asigSuc()
+    {
+      return $this->hasMany(\App\Models\Asigsuc::class, 'id_sucursal','suc_id');
+    }
 
 }

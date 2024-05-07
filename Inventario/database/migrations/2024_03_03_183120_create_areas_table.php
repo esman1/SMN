@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('areas', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_area');
+            $table->string('nomArea');
             $table->timestamps();
         });
     }

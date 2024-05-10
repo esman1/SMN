@@ -41,9 +41,9 @@
                             <table class="table table-striped table-hover align-middle">
                                 <thead class="thead">
                                     <tr>
+                                        <th class="border">Folio</th>
                                        <th class="border">Sucursal</th>
-										<th class="border">Area</th>
-                                        <th class="border">Apertura</th>
+										<th class="border">Fecha de Asignacion</th>
                                         
                                         
 
@@ -54,10 +54,9 @@
                                 <tbody>
                                     @foreach ($asigsucs as $asigsuc)
                                         <tr>
-                                       
+                                       <td class="border">{{$asigsuc->nFol ? $asigsuc->nFol : 'n/A'}}</td>
         								<td class="border">{{$asigsuc->sucursal ? $asigsuc->sucursal->Nom_sucursal : 'N/A'}}</td>
-                                            <td class="border">{{$asigsuc->area ? $asigsuc->area->nomArea : 'N/A'}}</td>
-                                           	<td class="border">{{$asigsuc->created_at ? $asigsuc->created_at : 'N/A' }}</td>
+                                            	<td class="border">{{$asigsuc->created_at ? $asigsuc->created_at : 'N/A' }}</td>
                                            
                                             
                                             <td class="border" style="width: 250px;">

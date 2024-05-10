@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('asigsucs', function (Blueprint $table) {
             $table->id('id_asigsuc');
+            $table->string('nFol', 20)->unique();
             $table->unsignedBigInteger('suc_id')->nullable()->onDelete('set null');
             $table->unsignedBigInteger('area_id')->nullable()->onDelete('set null');
             $table->unsignedBigInteger('stock_id')->nullable()->onDelete('set null');

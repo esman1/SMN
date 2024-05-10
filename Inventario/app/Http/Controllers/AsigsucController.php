@@ -47,7 +47,8 @@ class AsigsucController extends Controller
         $asigsucs = new Asigsuc();
         $sucursals = Sucursal::All();
         $stocks = Stock::All();
-        return view('asigsuc.create', compact('asigsucs','sucursals','stocks'));
+        $areas = Area::All();
+        return view('asigsuc.create', compact('asigsucs','sucursals','stocks','areas'));
     }
 
     /**

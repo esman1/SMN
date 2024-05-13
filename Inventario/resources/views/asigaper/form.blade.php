@@ -20,7 +20,7 @@
                 <select class="form-control" name="stock_id" id="stock_id">
                     <option value="">Selecciona una Opción...</option>
                     @foreach($stocks as $stock)
-                        @if($stock->Estatus === 'Stock')
+                        @if($stock->Estatus === 'stock')
                             <option value="{{ $stock->id_stock }}"{{ $stock->id_stock == $asigaper->stock_id ? 'selected' : '' }}>
                                 {{ $stock->Nserie }} - {{ $stock->Tipo->nomTipo }} - {{ $stock->modelo->nomMod }}
                             </option>

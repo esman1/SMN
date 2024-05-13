@@ -79,7 +79,11 @@
                 @endforeach
              </select>
         </div>
+        <div class="form-group" >
+            {{Form::label('Estatus:')}}
+            
 
+        </div>
     </div>
     <div class="box-footer mt20">
         <button type="submit" class="btn btn-outline-primary">{{ __('Guardar') }}</button>

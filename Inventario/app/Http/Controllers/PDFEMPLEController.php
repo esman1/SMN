@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Dompdf\Dompdf;
-use App\Models\Asigsuc;
+use App\Models\Asigaper;
 
-class PDFController extends Controller
+class PDFEMPLEController extends Controller
 {
     public function generarPDF($id)
     {
-        $asigsuc = Asigsuc::find($id);
+        $asigaper = Asigaper::find($id);
         
         
         $pdf = new Dompdf();
@@ -67,11 +67,13 @@ class PDFController extends Controller
             <div class='form-group row mb-3'>
                             <div class='left'>
                                 <strong>Folio:</strong>
-                                " . ($asigsuc->nFol ? $asigsuc->nFol : 'N/A') . "
+                               
                             </div>
-                            <div class='right'col-md-3 text-md-right'>
-                                <strong>Sucursal:</strong>
-                                " . ($asigsuc->sucursal ? $asigsuc->sucursal->Nom_sucursal : 'N/A') . "
+                            <div class='right'>
+                            <strong>En Naucalpan, Edo. De Méx ' . date('d \d\e F \d\e Y') . '</strong>';
+
+
+                                
                             </div>
 
                 <div class='card'>
@@ -92,13 +94,7 @@ class PDFController extends Controller
                                 </thead>
                                 <tbody class='text-center'>
                                     <tr>
-                                        <td>" . ($asigsuc->area ? $asigsuc->area->nomArea : 'N/A') . "</td>
-                                        <td>" . ($asigsuc->stock ? $asigsuc->stock->tipo->nomTipo : 'N/A') . "</td>
-                                        <td>" . ($asigsuc->stock ? $asigsuc->stock->marca->nomMar : 'N/A') . "</td>
-                                        <td>" . ($asigsuc->stock ? $asigsuc->stock->modelo->nomMod : 'N/A') . "</td>
-                                        <td>" . ($asigsuc->stock ? $asigsuc->stock->Nserie : 'N/A') . "</td>
-                                        <td>" . ($asigsuc->nAct ? $asigsuc->nAct : 'N/A') . "</td>
-                                    </tr>
+                                          </tr>
                                 </tbody>
 
                             </table>
@@ -117,8 +113,8 @@ class PDFController extends Controller
         $pdf->setPaper('A4', 'landscape');
     
         $pdf->render();
-        $sucursalNombre = $asigsuc->sucursal ? $asigsuc->sucursal->Nom_sucursal : 'N/A';
-        $nombreArchivo = 'APERTURA_' . $sucursalNombre . '.pdf';
+        $AsigancionNombre = $asigaper->empleado ? $asigaper->empleado->nombre . ' ' . $asigaper->empleado->apellidoP : 'N/A' ;
+        $nombreArchivo = 'ASIGNACION_' . $AsigancionNombre . '.pdf';
     
         return $pdf->stream($nombreArchivo);
     }

@@ -36,9 +36,9 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table class="table table-striped table-hover align-middle">
+                            <table class="table table-striped table-hover align-middle ">
                                 <thead class="thead">
-                                    <tr>
+                                    <tr class="text-uppercase">
  
 
                                 
@@ -59,15 +59,22 @@
                                     @foreach ($stocks as $stock)
                                         <tr>
                                            
-											<td class="border">{{ $stock->Nserie }}</td>
-											<td class="border">{{ $stock->modelo ? $stock->modelo->nomMod : 'N/A' }}</td>
-											<td class="boder">{{ $stock->tipo ? $stock->tipo->nomTipo : 'N/A' }}</td>
-											<td class="border">{{ $stock->marca ? $stock->marca->nomMar : 'N/A' }}</td>
-											<td class="border">{{ $stock->sisop ? $stock->sisop->nomSis : 'N/A' }}</td>
-											<td class="border">{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
-											<td class="border">{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
-											<td class="border">{{ $stock->discod ? $stock->discod->nomDis : 'N/A' }}</td>
-                                            <td class="border">{{ $stock->Estatus ? $stock->Estatus : 'N/A'}}
+											<td class="border text-uppercase">{{ $stock->Nserie }}</td>
+											<td class="border text-uppercase">{{ $stock->modelo ? $stock->modelo->nomMod : 'N/A' }}</td>
+											<td class="boder text-uppercase">{{ $stock->tipo ? $stock->tipo->nomTipo : 'N/A' }}</td>
+											<td class="border text-uppercase">{{ $stock->marca ? $stock->marca->nomMar : 'N/A' }}</td>
+											<td class="border text-uppercase">{{ $stock->sisop ? $stock->sisop->nomSis : 'N/A' }}</td>
+											<td class="border text-uppercase">{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
+											<td class="border text-uppercase">{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
+											<td class="border text-uppercase">{{ $stock->discod ? $stock->discod->nomDis : 'N/A' }}</td>
+                                            <td class="border text-uppercase"> @if($stock->Estatus == 'stock')
+                                                <label class="text-warning">{{ $stock->Estatus ? $stock->Estatus: 'N/A'}}</label>
+                                            @elseif($stock->Estatus == 'asignado')
+                                                <label class="text-success">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
+                                            @elseif($stock->Estatus == 'baja')
+                                                <label class="text-danger">{{ $stock->Estatus? $stock->Estatus: 'N/A' }}</label>
+                                            @else
+                                                @endif
                                             <td>
                                                 <form action="{{ route('stock.destroy',$stock->id_stock) }}" method="POST">
                                                    @can('show-stock')
@@ -76,7 +83,7 @@
                                                    @can('edit-stock')
                                                     <a class="btn btn-sm btn-outline-warning" href="{{ route('stock.edit',$stock->id_stock) }}"><i class="bi bi-pencil-square"></i> {{ __('Editar') }}</a>
                                                    @endcan
-                                                   @can('delete-stock')
+                                                   @can('delete-stock')     
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-outline-danger btn-sm"onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>

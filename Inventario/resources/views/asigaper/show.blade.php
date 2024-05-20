@@ -78,17 +78,17 @@
                                         <td>{{ $asigaper->stock ? $asigaper->stock->Nserie : 'N/A' }}</td>
                                     </tr>
                                     
-                                
+                                    <!-- Agrega más filas aquí según tus necesidades -->
                                 </tbody>
                                 <tfoot>
                                     <tr class="text-right">
                                         <td colspan="6">
                                             <div class="float-center">
-                                                <a href="{{ route('pdfemple.generar', ['id' => $asigaper->id_asigaper]) }}" class="btn btn-light" target="_blank"><i class="bi bi-printer"></i> PDF</a>
-                                            </div>
+                                                <a href="{{ route('pdfemple.generar', ['id' => $asigaper->id_asigaper]) }}" class="btn btn-light" target="_blank"><i class="bi bi-printer"></i> PDF</a>                                       </div>
                                         </td>
                                     </tr>
                                 </tfoot>
+                                
                             </table>
                         </div>
                 </div>

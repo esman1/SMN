@@ -20,7 +20,7 @@
                             </strong>
 
                              <div class="float-right">
-                                  @can('departamento-create')
+                                  @can('create-departamento')
        
         <a href="{{ route('departamento.create') }}" class="btn btn-outline-success btn-sm ml-2" title="Agregar"><i class="bi bi-plus-circle"></i></a>
         

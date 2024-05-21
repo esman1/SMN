@@ -28,7 +28,8 @@ class DatabaseSeeder extends Seeder
             ModeloSeeder::class,
             ProcSeeder::class,
             SisopSeeder::class,
-            TipoSeeder::class
+            TipoSeeder::class,
+            EstatuStockSeeder::class
             
         ]);
     }

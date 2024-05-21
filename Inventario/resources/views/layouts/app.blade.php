@@ -25,7 +25,7 @@
             <div class="container">
                
                 <a class="navbar-brand" title="Panel Principal" href="{{ url('/home') }}">
-                    <img src="{{ asset('imagen/smn.png') }}" width="auto" height="50">
+                    <img  src="{{ asset('imagen/smn.png') }}" alt="Logo-SMN" width="auto" height="50">
                     
                   
                 </a>

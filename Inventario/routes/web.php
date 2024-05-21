@@ -10,6 +10,10 @@ use App\Http\Controllers\AsigaperController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\SucursalController;
 use App\Http\Controllers\PuestoController;
+use App\Http\Controllers\AsigsucController;
+use App\Http\Controllers\PDFController;
+use App\Http\Controllers\PDFEMPLEController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +33,9 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/generar-pdf/{id}', [PDFController::class, 'generarPDF'])->name('pdf.generar');
+Route::get('/pdf/generar/{id}', [PDFEMPLEController::class, 'generarPDF'])->name('pdfemple.generar');
+
 
 Route::resources([
     'roles' => RoleController::class,
@@ -38,5 +45,6 @@ Route::resources([
     'asigaper'=> AsigaperController::class, 
     'departamento' => DepartamentoController::class, 
     'sucursal' => SucursalController::class,
-    'puesto' => PuestoController::class
+    'puesto' => PuestoController::class,
+    'asigsuc' => AsigsucController::class
 ]); 

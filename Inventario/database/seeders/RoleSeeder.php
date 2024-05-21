@@ -44,7 +44,11 @@ class RoleSeeder extends Seeder
             'create-departamento',
             'show-departamento',
             'edit-departamento',
-            'delete-departamento'
+            'delete-departamento',
+            'create-asigsuc',
+            'show-asigsuc',
+            'edit-asigsuc',
+            'delete-asigsuc'
         ]);
 
         $invitado->givePermissionTo([
@@ -53,7 +57,8 @@ class RoleSeeder extends Seeder
            'show-asigaper',
            'show-departamento',
            'show-puesto',
-           'show-sucursal'
+           'show-sucursal',
+           'show-asigsuc'
             
         ]);
     }

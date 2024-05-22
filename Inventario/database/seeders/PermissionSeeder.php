@@ -50,7 +50,11 @@ class PermissionSeeder extends Seeder
             'create-asigsuc',
             'show-asigsuc',
             'edit-asigsuc',
-            'delete-asigsuc'
+            'delete-asigsuc',
+            'create-valid',
+            'show-valid',
+            'edit-valid',
+            'delete-valid'
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

@@ -14,6 +14,8 @@ use App\Http\Controllers\AsigsucController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PDFEMPLEController;
 
+use App\Http\Controllers\FilterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -37,6 +39,9 @@ Route::get('/generar-pdf/{id}', [PDFController::class, 'generarPDF'])->name('pdf
 Route::get('/pdf/generar/{id}', [PDFEMPLEController::class, 'generarPDF'])->name('pdfemple.generar');
 
 
+
+
+
 Route::resources([
     'roles' => RoleController::class,
     'users' => UserController::class,
@@ -46,5 +51,7 @@ Route::resources([
     'departamento' => DepartamentoController::class, 
     'sucursal' => SucursalController::class,
     'puesto' => PuestoController::class,
-    'asigsuc' => AsigsucController::class
+    'asigsuc' => AsigsucController::class,
+    'filter' => FilterController::class
+    
 ]); 

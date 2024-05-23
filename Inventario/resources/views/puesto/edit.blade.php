@@ -15,8 +15,10 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="float-left">
-                                <a href="{{ route('puesto.index') }}" class="btn btn-outline-primary btn-sm my-2" title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
-        
+                            
+                                <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                    <i class="bi bi-arrow-left-circle"></i>
+                                </a>
                             </div>
                             <strong id="card_title">
                                 {{ __('Puesto') }}

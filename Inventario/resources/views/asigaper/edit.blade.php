@@ -16,10 +16,12 @@
                     <div class="card-header">
                     <div style="display: flex; justify-content: space-between; align-items: center;">
                         <div class="float-left">
-                                
-                           
-                            <a href="{{route('asigaper.index')}}" class="btn btn-outline-primary btn-sm ml-2"title="Volver"><i class="bi bi-arrow-left-circle"></i></a>
-                                    </div>
+                            
+                                <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                    <i class="bi bi-arrow-left-circle"></i>
+                                </a>
+                            </div>
+                            
         
                     <strong class="card-title">{{ __('Editar') }} Asignacion-Personal</strong>
                     <div class="float-right">

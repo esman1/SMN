@@ -13,9 +13,11 @@
                        <div style="display: flex; justify-content: space-between; align-items: center;">
                        
                         <div class="float-left">
-                            <a href="{{route ('empleado.index')}}" title="Volver" class="btn btn-outline-primary btn-sm ml-2"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
-                        
-                            </div>
+                            
+                            <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                <i class="bi bi-arrow-left-circle"></i>
+                            </a>
+                        </div>
                             <strong class="card-title" >{{ __('Visualizar') }} Empleado</strong>
                             
                         <div class="float-right">

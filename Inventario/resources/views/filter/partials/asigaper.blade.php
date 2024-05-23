@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $asigaper->name ?? __('Ver') . " " . __('Asigaper') }}
+    {{ $data->name ?? __('Ver') . " " . __('Asigaper') }}
 @endsection
 
 @section('content')
@@ -31,12 +31,12 @@
                     <div class="card-body">
                         <div class="float-left mb-1">
                         <Strong >No.Empleado:</strong>
-                        <label>{{ $asigaper->empleado ? $asigaper->empleado->Clave_empleado : 'N/A' }}
+                        <label>{{ $data->empleado ? $data->empleado->Clave_empleado : 'N/A' }}
                     </div>
                     <div class="float-right mb-3">
                         <strong>Nombre:</strong>
 
-                        <label class="text-uppercase"> {{ $asigaper->empleado ? $asigaper->empleado->nombre . ' ' . $asigaper->empleado->apellidoP . ' ' . $asigaper->empleado->apellidoM : 'N/A' }}
+                        <label class="text-uppercase"> {{ $data->empleado ? $data->empleado->nombre . ' ' . $data->empleado->apellidoP . ' ' . $data->empleado->apellidoM : 'N/A' }}
                         </label>
                         </div>
                         <div class="container text-uppercase">
@@ -45,51 +45,44 @@
                                     <tr>
                                         
                                     <th scope="row">Tipo:</th>
-                                    <td>{{ $asigaper->stock ? $asigaper->stock->Tipo->nomTipo : 'N/A' }}</td>
+                                    <td>{{ $data->stock ? $data->stock->Tipo->nomTipo : 'N/A' }}</td>
                                 </tr>
                                     <tr>
                                         <th scope="row">Activo:</th>
-                                        <td>{{ $asigaper->Nactivo ? $asigaper->Nactivo : 'N/A' }}</td>
+                                        <td>{{ $data->Nactivo ? $data->Nactivo : 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Marca:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->marca->nomMar : 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->marca->nomMar : 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Modelo:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->modelo->nomMod : 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->modelo->nomMod : 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Sistema Operativo:</th>
-                                        <td>{{ $asigaper->stock? $asigaper->stock->sisop->nomSis: 'N/A' }}</td>
+                                        <td>{{ $data->stock? $data->stock->sisop->nomSis: 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Procesador:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->procesador->nomProc : 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->procesador->nomProc : 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Memoria:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->memoria->tipoMem: 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->memoria->tipoMem: 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">Disco Duro:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->discod->nomDis : 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->discod->nomDis : 'N/A' }}</td>
                                     </tr>
                                     <tr>
                                         <th scope="row">S/N:</th>
-                                        <td>{{ $asigaper->stock ? $asigaper->stock->Nserie : 'N/A' }}</td>
+                                        <td>{{ $data->stock ? $data->stock->Nserie : 'N/A' }}</td>
                                     </tr>
                                     
                                     <!-- Agrega más filas aquí según tus necesidades -->
                                 </tbody>
-                                <tfoot>
-                                    <tr class="text-right">
-                                        <td colspan="6">
-                                            <div class="float-center">
-                                                <a href="{{ route('pdfemple.generar', ['id' => $asigaper->id_asigaper]) }}" class="btn btn-light" target="_blank"><i class="bi bi-printer"></i> PDF</a>                                       </div>
-                                        </td>
-                                    </tr>
-                                </tfoot>
+                                
                                 
                             </table>
                         </div>

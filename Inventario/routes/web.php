@@ -37,9 +37,8 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/generar-pdf/{id}', [PDFController::class, 'generarPDF'])->name('pdf.generar');
 Route::get('/pdf/generar/{id}', [PDFEMPLEController::class, 'generarPDF'])->name('pdfemple.generar');
-
-
-
+Route::get('/filter', [FilterController::class, 'index'])->name('filter.index');
+Route::get('/filter/{filter}/{id}', [FilterController::class, 'show'])->name('filter.show');
 
 
 Route::resources([
@@ -51,7 +50,6 @@ Route::resources([
     'departamento' => DepartamentoController::class, 
     'sucursal' => SucursalController::class,
     'puesto' => PuestoController::class,
-    'asigsuc' => AsigsucController::class,
-    'filter' => FilterController::class
+    'asigsuc' => AsigsucController::class
     
 ]); 

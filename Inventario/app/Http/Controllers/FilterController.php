@@ -12,11 +12,11 @@ class FilterController extends Controller
     public function index(Request $request)
     {
         $filter = $request->get('filter');
-        $items = null; // Inicializar como null
+        $items = null;
 
         switch ($filter) {
             case 'empleados':
-                $items = Empleado::orderBy('Clave_empleado')->paginate(10); // Cambiar el 10 por la cantidad deseada por página
+                $items = Empleado::orderBy('Clave_empleado')->paginate(10);
                 break;
 
             case 'stock':
@@ -32,12 +32,35 @@ class FilterController extends Controller
                 break;
 
             default:
-                // Si no hay filtro seleccionado, no mostrar nada
                 $items = null; 
                 break;
         }
 
         return view('filter.index', compact('items'))
             ->with('i', (request()->input('page', 1) - 1) * ($items ? $items->perPage() : 0));
+    }
+
+    public function show($filter, $id)
+    {
+        $data = null;
+
+        switch ($filter) {
+            case 'empleados':
+                $data = Empleado::findOrFail($id);
+                break;
+            case 'stock':
+                $data = Stock::findOrFail($id);
+                break;
+            case 'asigaper':
+                $data = Asigaper::findOrFail($id);
+                break;
+            case 'asigsuc':
+                $data = Asigsuc::findOrFail($id);
+                break;
+            default:
+                abort(404);
+        }
+
+        return view('filter.show', compact('data', 'filter'));
     }
 }

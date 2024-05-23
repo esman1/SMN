@@ -17,6 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('empleado_id')->nullable()->onDelete('set null');
             $table->unsignedBigInteger('stock_id')->nullable()->onDelete('set null'); 
             $table->string('Nactivo',50)->unique();
+            $table->string('estatus',50);
            
             $table->timestamps();
             $table->foreign('empleado_id')->references('id_empleado')->on('empleados');

@@ -63,4 +63,28 @@ class FilterController extends Controller
 
         return view('filter.show', compact('data', 'filter'));
     }
+
+    public function edit($id)
+    {
+        $modelo = Modelo::find($id);
+
+        return view('modelo.edit', compact('modelo'));
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request $request
+     * @param  Modelo $modelo
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, Modelo $modelo)
+    {
+        request()->validate(Modelo::$rules);
+
+        $modelo->update($request->all());
+
+        return redirect()->route('modelos.index')
+            ->with('success', 'Modelo updated successfully');
+    }
 }

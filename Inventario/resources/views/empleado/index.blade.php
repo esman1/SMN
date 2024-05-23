@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
 @section('template_title')
@@ -23,7 +24,7 @@
                             
                              <div class="float-right">
                                 @can('create-empleado')
-                                     <a href="{{ route('empleado.create') }}"title="Nuevo" class="btn btn-outline-success btn-sm ml-2"><i class="bi bi-plus-circle"></i> </a>
+                                     <a href="{{ route('empleado.create') }}"title="Nuevo" class="btn btn-outline-success btn-sm ml-2"><i class="bi bi-plus-circle"></i></a>
                                     </a>
                                      @endcan
                                     
@@ -33,6 +34,12 @@
                         </div>
                     </div>
                     <div class="card-body">
+                       
+                        
+
+                        <div class="float-right">
+                            <input type="text" class="form-control mb-3 w-25" id="searchInput" placeholder="Buscar...">
+                        </div>
                         <div class="table-responsive">
                             <table class="table table-striped table-hover align-middle table-bordered">
                                 <thead class="thead">
@@ -48,8 +55,11 @@
                                         <th style="width: 250px;">Acciones</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="empleadoTableBody">
                                     @foreach ($empleados as $empleado)
+                                    @if($empleado->estatusv === 'validado')
+                                   
+                             
                                         <tr>
                                             <td>
                                                 <img src="/imagen/{{$empleado->foto_emple}}" width="80" height="50" >
@@ -76,7 +86,9 @@
                                                     @endcan
                                                 </form>
                                             </td>
+
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>
@@ -90,3 +102,24 @@
     </div>
 @endsection
 
+@section('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const tableRows = document.querySelectorAll('#empleadoTableBody tr');
+
+            searchInput.addEventListener('input', function() {
+                const searchValue = searchInput.value.toLowerCase();
+
+                tableRows.forEach(row => {
+                    const empleadoData = row.innerText.toLowerCase();
+                    if (empleadoData.includes(searchValue)) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+@endsection

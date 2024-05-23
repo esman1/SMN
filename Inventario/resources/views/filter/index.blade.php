@@ -26,13 +26,14 @@
                         </div>
                     </div>
     <form method="GET" action="{{ route('filter.index') }}">
-        <select class="form-select" name="filter" aria-label="Default select example" onchange="this.form.submit()">
+        <div class="float-right">
+        <select class="form-select w-25 mb-3 " name="filter" aria-label="Default select example" onchange="this.form.submit()">
             <option selected value="">Filtrar:</option>
             <option value="empleados" {{ request()->get('filter') == 'empleados' ? 'selected' : '' }}>Empleados</option>
             <option value="stock" {{ request()->get('filter') == 'stock' ? 'selected' : '' }}>Stock</option>
             <option value="asigsuc" {{ request()->get('filter') == 'asigsuc' ? 'selected' : '' }}>AsigSuc</option>
             <option value="asigaper" {{ request()->get('filter') == 'asigaper' ? 'selected' : '' }}>AsigAper</option>
-        </select>
+        </select>   </div>
     </form>
 
     <!-- Contenido de la vista -->
@@ -65,20 +66,23 @@
         </thead>
         <tbody>
             @foreach($items as $item)
+         
             @if(request()->get('filter') == 'empleados')
-            <tr class="table-row" data-url="{{ route('filter.show', ['filter' => 'empleados', 'id' => $item->id_empleado]) }}">
-                <td>{{ $item->Clave_empleado }}</td>
-                <td>{{ $item->nombre .' '.$item->apellidoP.' '.$item->apellidoM }}</td>
-                <td>{{ $item->puesto->descripcion }}</td>
-                <td class="text-center">
-                    <div class="form-check form-switch d-flex justify-content-center align-items-center">
-                        <input class="form-check-input validation-checkbox" type="checkbox" id="flexSwitchCheckDefault">
-                        <label class="form-check-label" for="flexSwitchCheckDefault"></label>
-                    </div>
-                </td>
-            </tr>
-          
+            @if($item->estatusv === 'no validado')
+                <tr class="table-row" data-url="{{ route('filter.show', ['filter' => 'empleados', 'id' => $item->id_empleado]) }}">
+                    <td>{{ $item->Clave_empleado }}</td>
+                    <td>{{ $item->nombre .' '.$item->apellidoP.' '.$item->apellidoM }}</td>
+                    <td>{{ $item->puesto->descripcion }}</td>
+                    <td class="text-center">
+                        <div class="form-check form-switch d-flex justify-content-center align-items-center">
+                            <input class="form-check-input validation-checkbox" type="checkbox" id="flexSwitchCheckDefault">
+                            <label class="form-check-label" for="flexSwitchCheckDefault"></label>
+                        </div>
+                    </td>
+                </tr>
+            @endif
             @elseif(request()->get('filter') == 'stock')
+            @if($item->estatusv === 'no validado')
             <tr class="table-row" data-url="{{ route('filter.show', ['id' => $item->id_stock, 'filter' => 'stock']) }}">
                 <td>{{ $item->Nserie }}</td>
                 <td>{{ $item->tipo->nomTipo }}</td>
@@ -90,7 +94,9 @@
                     </div>
                 </td>
             </tr>
+            @endif
             @elseif(request()->get('filter') == 'asigaper')
+            @if($item->estatusv === 'no validado')
             <tr class="table-row" data-url="{{ route('filter.show', ['id' => $item->id_asigaper, 'filter' => 'asigaper']) }}">
                 <td>{{ $item->stock->Nserie }}</td>
                 <td>{{ $item->empleado->Clave_empleado }}</td>
@@ -102,7 +108,9 @@
                     </div>
                 </td>
             </tr>
+            @endif
             @elseif(request()->get('filter') == 'asigsuc')
+            @if($item->estatusv === 'no validado')
             <tr class="table-row" data-url="{{ route('filter.show', ['id' => $item->id_asigsuc, 'filter' => 'asigsuc']) }}">
                 
                 <td>{{ $item->nFol }}</td>
@@ -115,6 +123,7 @@
                     </div>
                 </td>
             </tr>
+            @endif
             @endif
         @endforeach
         
@@ -130,6 +139,9 @@
                     });
                 });
             });
+
+
+      
         </script>
         
            

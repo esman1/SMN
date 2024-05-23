@@ -59,6 +59,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($stocks as $stock)
+                                    @if($stock->estatusv == 'validado')
                                         <tr>
                                            
 											<td class="border text-uppercase">{{ $stock->Nserie }}</td>
@@ -93,6 +94,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

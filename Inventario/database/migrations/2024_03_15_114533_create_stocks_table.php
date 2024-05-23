@@ -23,6 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('mem_id')->nullable()->onDelete('set null');
             $table->unsignedBigInteger('disc_d')->nullable()->onDelete('set null');
             $table->string('Estatus', 12);
+            $table->string('estatusv', 50);
 
             $table->foreign('modelo_id')->references('id_modelo')->on('modelos');
             $table->foreign('tipo_id')->references('id_tipo')->on('tipos');

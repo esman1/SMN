@@ -57,6 +57,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($asigapers as $asigaper)
+                                    @if($asigape->estatusv == 'validado')
                                         <tr>
                                         <td class="border" >
         <img src="/imagen/{{$asigaper->empleado ? $asigaper->empleado->foto_emple : 'N/A'}}" width="80" height="50" >
@@ -82,6 +83,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

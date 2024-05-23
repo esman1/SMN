@@ -55,6 +55,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($asigsucs as $asigsuc)
+                                    @if ($asigsuc->estatusv == 'validado')
                                         <tr>
                                        <td class="border">{{$asigsuc->nFol ? $asigsuc->nFol : 'n/A'}}</td>
         								<td class="border">{{$asigsuc->sucursal ? $asigsuc->sucursal->Nom_sucursal : 'N/A'}}</td>
@@ -77,6 +78,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

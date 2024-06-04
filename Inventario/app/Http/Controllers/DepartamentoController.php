@@ -29,8 +29,9 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
+        $departamentos = Departamento::orderBy("Clave_dep")->paginate(6);
         return view('departamento.index', [
-            'departamentos' => Departamento::latest('id_depart')->paginate(8)
+            'departamentos' => $departamentos
         ]);
     }
 
@@ -58,7 +59,7 @@ class DepartamentoController extends Controller
         $departamento = Departamento::create($request->all());
 
         return redirect()->route('departamento.index')
-            ->with('success', 'Departamento created successfully.');
+            ->with('success', 'Creado Correctamente.');
     }
 
     /**
@@ -101,7 +102,7 @@ class DepartamentoController extends Controller
         $departamento->update($request->all());
 
         return redirect()->route('departamento.index')
-            ->with('success', 'Se Actualizo Correctamente');
+            ->with('success', 'Actualizado Correctamente');
     }
 
     /**

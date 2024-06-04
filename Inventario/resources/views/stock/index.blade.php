@@ -12,8 +12,10 @@
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
                             <div class="float-left">
-                                <a href="{{route ('home')}}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
-                             
+                            
+                                <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                    <i class="bi bi-arrow-left-circle"></i>
+                                </a>
                             </div>
                             <strong id="card_title">
                                 {{ __('Stock') }}
@@ -57,6 +59,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($stocks as $stock)
+                                    @if($stock->estatusv == 'validado')
                                         <tr>
                                            
 											<td class="border text-uppercase">{{ $stock->Nserie }}</td>
@@ -67,14 +70,21 @@
 											<td class="border text-uppercase">{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
 											<td class="border text-uppercase">{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
 											<td class="border text-uppercase">{{ $stock->discod ? $stock->discod->nomDis : 'N/A' }}</td>
-                                            <td class="border text-uppercase"> @if($stock->Estatus == 'stock')
-                                                <label class="text-warning">{{ $stock->Estatus ? $stock->Estatus: 'N/A'}}</label>
-                                            @elseif($stock->Estatus == 'asignado')
-                                                <label class="text-success">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
-                                            @elseif($stock->Estatus == 'baja')
-                                                <label class="text-danger">{{ $stock->Estatus? $stock->Estatus: 'N/A' }}</label>
-                                            @else
+                                            <td class="border text-uppercase"> 
+                                                @php
+                                                    $estatus = strtolower($stock->Estatus);
+                                                @endphp
+                                            
+                                                @if($estatus == 'stock')
+                                                    <label class="text-warning">{{ $stock->Estatus ? $stock->Estatus : 'N/A'}}</label>
+                                                @elseif($estatus == 'asignado')
+                                                    <label class="text-success">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
+                                                @elseif($estatus == 'baja')
+                                                    <label class="text-danger">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
+                                                @else
                                                 @endif
+                                            </td>
+                                            
                                             <td>
                                                 <form action="{{ route('stock.destroy',$stock->id_stock) }}" method="POST">
                                                    @can('show-stock')
@@ -91,6 +101,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

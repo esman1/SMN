@@ -26,9 +26,9 @@ class PuestoController extends Controller
      */
     public function index()
     {
-        $puestos = Puesto::paginate();
+        $puestos = Puesto::orderBy("Clave_puesto")->paginate(6);
 
-        return view('puesto.index', ['puestos' => Puesto::latest('id_puesto')->paginate(8)]);
+        return view('puesto.index', ['puestos' => $puestos]);
     }
 
     /**
@@ -49,15 +49,21 @@ class PuestoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        request()->validate(Puesto::$rules);
+{
+    request()->validate(Empleado::$rules);
 
-        $puesto = Puesto::create($request->all());
+    $empleadoData = $request->only([
+        'Clave_empleado', 'nombre', 'apellidoP', 'apellidoM', 
+        'email', 'celular', 'foto_emple', 'puesto_id', 
+        'departamento_id', 'sucursal_id', 'estatus_id', 
+        'fecha_contrat', 'fecha_alta', 'fecha_baja'
+    ]); 
 
-        return redirect()->route('puesto.index')
-            ->with('success', 'Se agrego correctamente.');
-    }
+    $empleado = Empleado::create($empleadoData); 
 
+    return redirect()->route('empleado.index')
+        ->with('success', 'Creado Exitosamente');
+}
     /**
      * Display the specified resource.
      *

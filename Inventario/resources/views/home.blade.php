@@ -53,8 +53,16 @@
                     @endcanany
                     @canany(['create-asigsuc', 'edit-asigsuc', 'delete-asigsuc','show-asigsuc'])
                         <a class="btn btn-warning" href="{{ route('asigsuc.index') }}">
-                            <i class="bi bi-person-workspace"></i> Asignacion-Tiendas </a>
+                            <i class="bi bi-building-add"></i> Asignacion-Tiendas </a>
                     @endcanany
+                    @canany(['create-valid', 'edit-valid', 'delete-valid','show-valid'])
+                    <a class="btn btn-warning" href="{{ route('filter.index') }}">
+                        <i class="bi bi-check2-square"></i> Validacion de informacion</a>
+                @endcanany
+                @canany(['create-valid', 'edit-valid', 'delete-valid','show-valid'])
+                <a class="btn btn-warning" href="{{ route('calendar.index') }}">
+                    <i class="bi bi-calendar-week"></i> Calendario</a>
+            @endcanany
                     <p>&nbsp;</p>
                 </div>
             </div>

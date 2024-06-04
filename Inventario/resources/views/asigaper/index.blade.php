@@ -11,10 +11,12 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-<div class="float-left">
-    <a href="{{route ('home')}}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
-                             
-</div>
+                            <div class="float-left">
+                            
+                                <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                    <i class="bi bi-arrow-left-circle"></i>
+                                </a>
+                            </div>
                             <strong id="card_title text-center">
                                 {{ __('Asignacion de Equipo-Personal') }}
                             </strong>
@@ -55,6 +57,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($asigapers as $asigaper)
+                                    @if($asigape->estatusv == 'validado')
                                         <tr>
                                         <td class="border" >
         <img src="/imagen/{{$asigaper->empleado ? $asigaper->empleado->foto_emple : 'N/A'}}" width="80" height="50" >
@@ -80,6 +83,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

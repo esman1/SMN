@@ -34,6 +34,7 @@ class EmpleadoSeeder extends Seeder
                 'fecha_contrat'=>$data[11],
                 'fecha_baja'=>$data[12],
                 'fecha_alta'=>$data[13],
+                'estatusv'=> $data[14],
                
 
             ]);

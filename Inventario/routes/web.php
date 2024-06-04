@@ -13,6 +13,8 @@ use App\Http\Controllers\PuestoController;
 use App\Http\Controllers\AsigsucController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PDFEMPLEController;
+use App\Http\Controllers\CalendarController;
+use App\Http\Controllers\FilterController;
 
 
 /*
@@ -35,6 +37,17 @@ Auth::routes();
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/generar-pdf/{id}', [PDFController::class, 'generarPDF'])->name('pdf.generar');
 Route::get('/pdf/generar/{id}', [PDFEMPLEController::class, 'generarPDF'])->name('pdfemple.generar');
+Route::get('/filter', [FilterController::class, 'index'])->name('filter.index');
+Route::get('/filter/{filter}/{id}', [FilterController::class, 'show'])->name('filter.show');
+Route::get('/empleado/search', [EmpleadoController::class, 'search'])->name('empleado.search');
+
+Route::post('/actualizar-estado', [FilterController::class, 'updateStatus']);
+
+
+
+
+
+
 
 
 Route::resources([
@@ -46,5 +59,6 @@ Route::resources([
     'departamento' => DepartamentoController::class, 
     'sucursal' => SucursalController::class,
     'puesto' => PuestoController::class,
-    'asigsuc' => AsigsucController::class
+    'asigsuc' => AsigsucController::class,
+    'calendar' => CalendarController::class
 ]); 

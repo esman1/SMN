@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    {{ $asigsuc->name ?? __('Ver') . " " . __('Asigsuc') }}
+    {{ $data->name ?? __('Ver') . " " . __('Asigsuc') }}
 @endsection
 
 @section('content')
@@ -33,11 +33,11 @@
                         <div class="form-group row mb-3">
                             <div class="col-md-6">
                                 <strong>Folio:</strong>
-                                {{ $asigsucs->nFol ? $asigsucs->nFol : 'N/A' }}
+                                {{ $data->nFol ? $data->nFol : 'N/A' }}
                             </div>
                             <div class="col-md-3 text-md-right">
                                 <strong>Sucursal:</strong>
-                                {{$asigsucs->sucursal ? $asigsucs->sucursal->Nom_sucursal : 'N/A'}}
+                                {{$data->sucursal ? $data->sucursal->Nom_sucursal : 'N/A'}}
                             </div>
                         </div>
                         <div class="table-responsive text-center">
@@ -60,24 +60,16 @@
                             </thead>
                             <tbody>
                                     <tr>
-                                        <td>{{ $asigsucs->area->nomArea }}</td>
+                                        <td>{{ $data->area->nomArea }}</td>
                                         <!-- Aquí puedes agregar las columnas adicionales de acuerdo a tus necesidades -->
-                                        <td>{{$asigsucs->stock ? $asigsucs->stock->tipo->nomTipo : 'N/A'}}</td>
-                                        <td>{{$asigsucs->stock ? $asigsucs->stock->marca->nomMar : 'N/A'}}</td>
-                                        <td>{{$asigsucs->stock ? $asigsucs->stock->modelo->nomMod : 'N/A'}}</td>
-                                        <td>{{$asigsucs->stock ? $asigsucs->stock->Nserie : 'N/A'}}</td>
-                                        <td>{{$asigsucs->nAct ? $asigsucs->nAct : 'N/A'}}</td>
+                                        <td>{{$data->stock ? $data->stock->tipo->nomTipo : 'N/A'}}</td>
+                                        <td>{{$data->stock ? $data->stock->marca->nomMar : 'N/A'}}</td>
+                                        <td>{{$data->stock ? $data->stock->modelo->nomMod : 'N/A'}}</td>
+                                        <td>{{$data->stock ? $data->stock->Nserie : 'N/A'}}</td>
+                                        <td>{{$data->nAct ? $data->nAct : 'N/A'}}</td>
                                     </tr>
                             </tbody>
-                            <tfoot>
-                                <tr class="text-right">
-                                    <td colspan="6">
-                                        <div class="float-right">
-                                            <a href="{{ route('pdf.generar', ['id' => $asigsucs->id_asigsuc]) }}" class="btn btn-light" target="_blank"><i class="bi bi-printer"></i> PDF</a>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tfoot>
+                            
                             
                                
                         </table>

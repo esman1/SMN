@@ -18,6 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('area_id')->nullable()->onDelete('set null');
             $table->unsignedBigInteger('stock_id')->nullable()->onDelete('set null');
             $table->string('nAct',15)->nullable();
+            $table->string('estatusv', 50);
             $table->foreign('suc_id')->references('id_sucursal')->on('sucursals')->onDelete('set null');
             $table->foreign('area_id')->references('id_area')->on('areas')->onDelete('set null');
             $table->foreign('stock_id')->references('id_stock')->on('stocks')->onDelete('set null');

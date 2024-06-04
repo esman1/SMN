@@ -39,30 +39,28 @@
         </div>
         <div class="form-group">
             {{ Form::label('Puesto:') }}
-            <select class="form-control select2" name="tipo_id">
+            <select class="form-control select2" name="puesto_id"> 
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($puestos as $puesto)
-                    <option value="{{ $empleado->id_puesto }}"{{$puesto->id_puesto == $empleado->puesto_id ? 'selected' : '' }}>
-                        {{ $puesto->descripcion }}</option>
+                    <option value="{{ $puesto->id }}">{{ $puesto->descripcion }}</option> 
                 @endforeach
-             </select>
+            </select>
         </div>
         <div class="form-group">
             {{ Form::label('Departamento:') }}
-            <select class="form-control select2" name="tipo_id">
+            <select class="form-control select2" name="departamento_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($departamentos as $dep)
-                    <option value="{{ $empleado->id_depart }}"{{$dep->id_depart == $empleado->departamento_id ? 'selected' : '' }}>
-                        {{ $dep->Desc_d }}</option>
+                    <option value="{{ $dep->id_depart }}">{{$dep->Desc_d}} </option>
                 @endforeach
              </select>
         </div>
         <div class="form-group">
             {{ Form::label('Sucursal:') }}
-            <select class="form-control select2" name="puesto_id">
+            <select class="form-control select2" name="sucursal_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($sucursales as $suc)
-                    <option value="{{ $empleado->id_sucursal }}"{{$suc->id_sucursal == $empleado->sucursal_id ? 'selected' : '' }}>
+                    <option value="{{ $suc->id_sucursal }}">
                         {{ $suc->Nom_sucursal }}</option>
                 @endforeach
              </select>
@@ -72,7 +70,7 @@
             <select class="form-control select2" name="tipo_id">
                 <option value="">Selecciona una Opcion ...</option>
                 @foreach($estatus as $est)
-                    <option value="{{ $empleado->id_estat }}"{{$est->id_estat == $empleado->estatus_id ? 'selected' : '' }}>
+                    <option value="{{ $est->id_estat }}"{{$est->id_estat}}>
                         {{ $est->estat }}</option>
                 @endforeach
             </select>

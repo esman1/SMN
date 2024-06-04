@@ -11,10 +11,12 @@
                 <div class="card text-center">
                     <div class="card-header">
                         <div style="display: flex; justify-content: space-between; align-items: center;">
-<div class="float-left">
-    <a href="{{route ('home')}}" class="btn btn-outline-primary btn-sm ml-2" title="Volver"><i class="bi bi-arrow-left-circle" aria-hidden="true"></i></a> 
-                             
-</div>
+                            <div class="float-left">
+                            
+                                <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
+                                    <i class="bi bi-arrow-left-circle"></i>
+                                </a>
+                            </div>
                             <strong id="card_title text-center">
                                 {{ __('Asignacion de Equipo-Sucursal') }}
                             </strong>
@@ -53,6 +55,7 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($asigsucs as $asigsuc)
+                                    @if ($asigsuc->estatusv == 'validado')
                                         <tr>
                                        <td class="border">{{$asigsuc->nFol ? $asigsuc->nFol : 'n/A'}}</td>
         								<td class="border">{{$asigsuc->sucursal ? $asigsuc->sucursal->Nom_sucursal : 'N/A'}}</td>
@@ -75,6 +78,7 @@
                                                 </form>
                                             </td>
                                         </tr>
+                                        @endif
                                     @endforeach
                                 </tbody>
                             </table>

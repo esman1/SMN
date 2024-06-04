@@ -48,7 +48,12 @@ class RoleSeeder extends Seeder
             'create-asigsuc',
             'show-asigsuc',
             'edit-asigsuc',
-            'delete-asigsuc'
+            'delete-asigsuc', 
+            'create-valid',
+            'show-valid',
+            'edit-valid',
+            'delete-valid'
+            
         ]);
 
         $invitado->givePermissionTo([

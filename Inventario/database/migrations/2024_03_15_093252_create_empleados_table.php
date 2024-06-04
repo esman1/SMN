@@ -29,6 +29,7 @@ return new class extends Migration
             $table->datetime('fecha_contrat')->nullable();
             $table->datetime('fecha_alta')->nullable();
             $table->datetime('fecha_baja')->nullable();
+            $table->string('estatusv',50);
 
             
             $table->foreign('puesto_id')->references('id_puesto')->on('puestos');

@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             ProcSeeder::class,
             SisopSeeder::class,
             TipoSeeder::class,
-            EstatuStockSeeder::class
+            
             
         ]);
     }

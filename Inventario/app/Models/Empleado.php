@@ -95,7 +95,7 @@ class Empleado extends Model
      */
     public function asigapers()
     {
-        return $this->hasMany(\App\Models\Asigaper::class, 'id_empleado', 'empleado_id');
+        return $this->belongsTo(\App\Models\Asigaper::class, 'id_empleado', 'empleado_id');
     }
     
 

@@ -16,19 +16,19 @@ class FilterController extends Controller
 
         switch ($filter) {
             case 'empleados':
-                $items = Empleado::orderBy('Clave_empleado')->paginate(10);
+                $items = Empleado::where('estatusv', 'no validado')->orderBy('Clave_empleado')->paginate(10);
                 break;
 
             case 'stock':
-                $items = Stock::paginate(10);
+                $items = Stock::where('estatusv', 'no validado')->paginate(10);
                 break;
 
             case 'asigsuc':
-                $items = Asigsuc::orderBy('id_asigsuc')->paginate(10);
+                $items = Asigsuc::where('estatusv', 'no validado')->orderBy('id_asigsuc')->paginate(10);
                 break;
 
             case 'asigaper':
-                $items = Asigaper::orderBy('id_asigaper')->paginate(10);
+                $items = Asigaper::where('estatusv', 'no validado')->orderBy('id_asigaper')->paginate(10);
                 break;
 
             default:
@@ -85,6 +85,37 @@ class FilterController extends Controller
         $modelo->update($request->all());
 
         return redirect()->route('modelos.index')
-            ->with('success', 'Modelo updated successfully');
+            ->with('success', 'Actualizado Correctamente');
+    }
+
+    public function updateStatus(Request $request)
+    {
+        $request->validate([
+            'id' => 'required|integer',
+            'status' => 'required|string|in:validado,no validado',
+            'filter' => 'required|string|in:empleados,stock,asigaper,asigsuc',
+        ]);
+
+        switch ($request->filter) {
+            case 'empleados':
+                $item = Empleado::findOrFail($request->id);
+                break;
+            case 'stock':
+                $item = Stock::findOrFail($request->id);
+                break;
+            case 'asigaper':
+                $item = Asigaper::findOrFail($request->id);
+                break;
+            case 'asigsuc':
+                $item = Asigsuc::findOrFail($request->id);
+                break;
+            default:
+                abort(404);
+        }
+
+        $item->estatusv = $request->status;
+        $item->save();
+
+        return response()->json(['message' => 'Estado actualizado exitosamente']);
     }
 }

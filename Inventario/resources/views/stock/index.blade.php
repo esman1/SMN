@@ -70,14 +70,21 @@
 											<td class="border text-uppercase">{{ $stock->procesador ? $stock->procesador->nomProc : 'N/A' }}</td>
 											<td class="border text-uppercase">{{ $stock->memoria ? $stock->memoria->tipoMem: 'N/A' }}</td>
 											<td class="border text-uppercase">{{ $stock->discod ? $stock->discod->nomDis : 'N/A' }}</td>
-                                            <td class="border text-uppercase"> @if($stock->Estatus == 'stock')
-                                                <label class="text-warning">{{ $stock->Estatus ? $stock->Estatus: 'N/A'}}</label>
-                                            @elseif($stock->Estatus == 'asignado')
-                                                <label class="text-success">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
-                                            @elseif($stock->Estatus == 'baja')
-                                                <label class="text-danger">{{ $stock->Estatus? $stock->Estatus: 'N/A' }}</label>
-                                            @else
+                                            <td class="border text-uppercase"> 
+                                                @php
+                                                    $estatus = strtolower($stock->Estatus);
+                                                @endphp
+                                            
+                                                @if($estatus == 'stock')
+                                                    <label class="text-warning">{{ $stock->Estatus ? $stock->Estatus : 'N/A'}}</label>
+                                                @elseif($estatus == 'asignado')
+                                                    <label class="text-success">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
+                                                @elseif($estatus == 'baja')
+                                                    <label class="text-danger">{{ $stock->Estatus ? $stock->Estatus : 'N/A' }}</label>
+                                                @else
                                                 @endif
+                                            </td>
+                                            
                                             <td>
                                                 <form action="{{ route('stock.destroy',$stock->id_stock) }}" method="POST">
                                                    @can('show-stock')

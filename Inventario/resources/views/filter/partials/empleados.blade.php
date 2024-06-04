@@ -25,7 +25,7 @@
                             </div>
                         </div>
                     </div>
-
+<div class="form">
                     <div class="card-body text-uppercase">
                         <div class="form-group">
                             <img src="/imagen/{{ $data->foto_emple }}" width="100" height="80">
@@ -48,11 +48,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Email:</strong>
-                            {{ $data->email }}
+                            {{ $data->email ? $data->email : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Celular:</strong>
-                            {{ $data->celular }}
+                            {{ $data->celular ? $data->celular : 'N/A'}}
                         </div>
                         <div class="form-group">
                             <strong>Puesto:</strong>

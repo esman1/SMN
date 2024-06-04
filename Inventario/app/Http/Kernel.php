@@ -23,6 +23,10 @@ class Kernel extends HttpKernel
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \App\Http\Middleware\AddXContentTypeOptionsHeader::class,
         \App\Http\Middleware\FixCharsetHeader::class,
+     
+            \App\Http\Middleware\CacheControl::class,
+        
+        
     ];
 
     /**

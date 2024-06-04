@@ -55,11 +55,11 @@
                         </div>
                         <div class="form-group">
                             <strong>Email:</strong>
-                            {{ $empleado->email }}
+                            {{ $empleado->email ? $empleado->email : 'N/A' }}
                         </div>
                         <div class="form-group">
                             <strong>Celular:</strong>
-                            {{ $empleado->celular }}
+                            {{ $empleado->celular ? $empleado->celular : 'N/A' }}
                         </div>
                      
                         <div class="form-group">

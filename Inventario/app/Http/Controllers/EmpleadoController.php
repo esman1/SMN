@@ -30,10 +30,10 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::paginate();
+        $empleados = Empleado::orderBy("Clave_empleado")->paginate(6);
 
             return view('empleado.index', [
-                'empleados' => Empleado::latest('id_empleado')->paginate(6)
+                'empleados' => $empleados
             ]);
     }
 
@@ -125,6 +125,39 @@ class EmpleadoController extends Controller
 
         return redirect()->route('empleado.index')
             ->with('success', 'Eliminado Exitosamente');
+    }
+
+
+    public function search(Request $request)
+    {
+        $query = $request->get('query');
+        \Log::info('Search query: ' . $query);
+    
+        $empleados = Empleado::where('nombre', 'LIKE', "%{$query}%")
+            ->orWhere('apellidoP', 'LIKE', "%{$query}%")
+            ->orWhere('apellidoM', 'LIKE', "%{$query}%")
+            ->orWhere('Clave_empleado', 'LIKE', "%{$query}%")
+            ->with(['puesto', 'departamento', 'sucursal'])
+            ->get();
+    
+        \Log::info('Empleados found: ' . $empleados->count());
+    
+        return response()->json($empleados);
+    }
+
+    public function actualizarEstado(Request $request)
+    {
+        // Recibe el ID y el estado del checkbox del cliente
+        $id = $request->input('id_emplead');
+        $estado = $request->input('estatusv');
+
+        // Actualiza el estado en la base de datos
+        $dato = Empleado::find($id);
+        $dato->estatusv = $estado;
+        $dato->save();
+        return redirect()->route('filter.index')
+        ->with('success', 'Validado Exitosamente');
+        
     }
 }
 

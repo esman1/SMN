@@ -27,9 +27,9 @@ class SucursalController extends Controller
      */
     public function index()
     {
-        $sucursals = Sucursal::paginate();
+        $sucursals = Sucursal::orderBy("Clave_sucursal")->paginate(6);
         
-        return view('sucursal.index',['sucursals' => Sucursal::latest('id_sucursal')->paginate(8)]);
+        return view('sucursal.index',['sucursals' => $sucursals]);
             
     }
 

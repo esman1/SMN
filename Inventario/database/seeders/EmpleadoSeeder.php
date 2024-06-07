@@ -14,7 +14,7 @@ class EmpleadoSeeder extends Seeder
      */
     public function run()
     {
-        $excelFile = '/Users/usuario/Desktop/empleados.csv';
+        $excelFile = 'C:\Users\Ezequiel Perez\Desktop\SMN\empleados.csv';
         $spreadsheet = IOFactory::load($excelFile);
         $worksheet = $spreadsheet->getActiveSheet();
         foreach($worksheet->getRowIterator() as $row){

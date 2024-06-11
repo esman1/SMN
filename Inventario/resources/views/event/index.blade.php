@@ -14,10 +14,12 @@
             
         </div>
 </div>
+
 @canany('show-user')
 
         <a href="{{ route('event.create') }}" class="btn btn-primary">+ Agregar Evento</a>
   @endcanany
+
     </div>
 
     <div class="row">

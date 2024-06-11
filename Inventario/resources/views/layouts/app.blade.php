@@ -15,11 +15,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="icon" href="{{ asset('imagen/smn2.ico') }}" type="image/x-icon" sizes="10x15"/>
 
-
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-<<<<<<< Updated upstream
-=======
+
 
     <!-- Custom CSS for Sidebar -->
     <style>
@@ -34,7 +32,10 @@
             flex: 1;
         }
         .sidebar {
+
             width: 230px;
+
+
             background: #1B4332; /* Fondo oscuro */
             color: #fff;
             flex-shrink: 0;
@@ -68,7 +69,9 @@
         }
         .navbar-brand {
             background: #1B4332; /* Fondo oscuro */
+
             padding: 15px 10px;
+
         }
         .navbar {
             background-color: #1B4332;
@@ -85,20 +88,18 @@
         .navbar-brand,
         .navbar-nav .nav-link,
         .dropdown-menu .dropdown-item {
+
             color: black ; /* Asegura que el texto sea blanco */
         }
     </style>
->>>>>>> Stashed changes
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light">
             <div class="container">
-               
-                <a class="navbar-brand" title="Panel Principal" href="{{ url('/home') }}">
-                    <img  src="{{ asset('imagen/smn.png') }}" alt="Logo-SMN" width="auto" height="50">
-                    
-                  
+                <a class="navbar-brand" title="Panel Principal" href="{{ url('/home') }}" style="color: white;">
+                    <img src="{{ asset('imagen/smn.png') }}" alt="Logo-SMN">
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -106,35 +107,28 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
+                    <ul class="navbar-nav me-auto"></ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         @guest
-                          
-
-                       @else
+                        @else
                             <li class="nav-item dropdown">
-<<<<<<< Updated upstream
-                            
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-=======
+
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" style="color: white" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
->>>>>>> Stashed changes
+
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-<<<<<<< Updated upstream
+<
                                                      document.getElementById('logout-form').submit();">
-=======
-                                                 document.getElementById('logout-form').submit();" style="color: black;">
->>>>>>> Stashed changes
+
+                                                 
+
                                         {{ __('Cerrar Sesion') }}
                                     </a>
 
@@ -149,7 +143,7 @@
             </div>
         </nav>
 
-<<<<<<< Updated upstream
+
         <main class="py-4">
             <div class="container">
                 <div class="row justify-content-center mt-3">
@@ -164,7 +158,7 @@
                            @yield('content')
                         
                         <div class="row justify-content-center text-center mt-3">
-=======
+
         <div class="wrapper">
             @auth
             <nav id="sidebar" class="sidebar">
@@ -232,6 +226,7 @@
                     <li>
                         <a href="{{route('filter.index')}}" style="color:white;"><i class="bi bi-check2-square" style="font-size: 1.5rem"></i> Validacion</a>
                     </li>
+
                 </ul>
             </nav>
             @endauth
@@ -240,18 +235,27 @@
                 <main class="py-4">
                     <div class="container">
                         <div class="row justify-content-center mt-3">
->>>>>>> Stashed changes
+
                             <div class="col-md-12">
-                                
-                                <p>
-                                    © 2024 Ezequiel Perez. Todos los derechos reservados.</p>
+                                @if ($message = Session::get('success'))
+                                    <div class="alert alert-success text-center" role="alert">
+                                        {{ $message }}
+                                    </div>
+                                @endif
+
+                                @yield('content')
+
+                                <div class="row justify-content-center text-center mt-3">
+                                    <div class="col-md-12">
+                                        <p>© 2024 Ezequiel Perez. Todos los derechos reservados.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
-                </div>
+                </main>
             </div>
-        </main>
+        </div>
     </div>
 </body>
 </html>

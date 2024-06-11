@@ -14,11 +14,11 @@ class EmpleadoSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< Updated upstream
-        $excelFile = '/Users/usuario/Desktop/empleados.csv';
-=======
-        $excelFile = 'C:\xampp\htdocs\SMN\empleados.csv';
->>>>>>> Stashed changes
+
+        //$excelFile = 'C:\xampp\htdocs\SMN\empleados.csv';
+
+        $excelFile = 'C:\Users\Ezequiel Perez\Desktop\SMN\empleados.csv';
+
         $spreadsheet = IOFactory::load($excelFile);
         $worksheet = $spreadsheet->getActiveSheet();
         foreach($worksheet->getRowIterator() as $row){

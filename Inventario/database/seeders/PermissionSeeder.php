@@ -54,7 +54,11 @@ class PermissionSeeder extends Seeder
             'create-valid',
             'show-valid',
             'edit-valid',
-            'delete-valid'
+            'delete-valid',
+            'create-event',
+            'edit-event',
+            'show-event',
+            'delete-event',
          ];
  
           // Looping and Inserting Array's Permissions into Permission Table

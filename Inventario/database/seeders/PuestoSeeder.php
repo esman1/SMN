@@ -16,7 +16,11 @@ class PuestoSeeder extends Seeder
     public function run()
     {
         // Ruta completa del archivo Excel
+
+        //$excelFile = 'C:\xampp\htdocs\SMN\Puestos.csv'; // Reemplaza 'tu_usuario' con tu nombre de usuario en el sistema
+
         $excelFile = 'C:\Users\Ezequiel Perez\Desktop\SMN\Puestos.csv'; // Reemplaza 'tu_usuario' con tu nombre de usuario en el sistema
+
 
         // Cargar el archivo Excel
         $spreadsheet = IOFactory::load($excelFile);

@@ -18,6 +18,7 @@
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
+
     <!-- Custom CSS for Sidebar -->
     <style>
         html, body {
@@ -31,7 +32,10 @@
             flex: 1;
         }
         .sidebar {
-            width: 250px;
+
+            width: 230px;
+
+
             background: #1B4332; /* Fondo oscuro */
             color: #fff;
             flex-shrink: 0;
@@ -65,7 +69,9 @@
         }
         .navbar-brand {
             background: #1B4332; /* Fondo oscuro */
-            padding: 10px 20px;
+
+            padding: 15px 10px;
+
         }
         .navbar {
             background-color: #1B4332;
@@ -82,9 +88,11 @@
         .navbar-brand,
         .navbar-nav .nav-link,
         .dropdown-menu .dropdown-item {
-            color: white !important; /* Asegura que el texto sea blanco */
+
+            color: black ; /* Asegura que el texto sea blanco */
         }
     </style>
+
 </head>
 <body>
     <div id="app">
@@ -107,14 +115,20 @@
                         @guest
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" style="color: white" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();" style="color: white;">
+<
+                                                     document.getElementById('logout-form').submit();">
+
+                                                 
+
                                         {{ __('Cerrar Sesion') }}
                                     </a>
 
@@ -129,48 +143,88 @@
             </div>
         </nav>
 
+
+        <main class="py-4">
+            <div class="container">
+                <div class="row justify-content-center mt-3">
+                    <div class="col-md-12">
+                        
+                        @if ($message = Session::get('success'))
+                            <div class="alert alert-success text-center" role="alert">
+                                {{ $message }}
+                            </div>
+                        @endif
+
+                           @yield('content')
+                        
+                        <div class="row justify-content-center text-center mt-3">
+
         <div class="wrapper">
             @auth
             <nav id="sidebar" class="sidebar">
-                
+                <a class="navbar-brand" title="Panel Principal" href="{{ url('/home') }}" style="color: white;">
+                    <img src="{{ asset('imagen/smn.png') }}" alt="Logo-SMN">
+                </a>
 
                 <ul class="list-unstyled components ">
+                   
                     <li>
-                        <a href="{{ route('home') }}" style="color: white;">Dashboard</a>
+
+                        <a href="{{ route('home') }}" style="color: white;"><i class="bi bi-speedometer2" style="font-size: 1.5rem"></i> Dashboard</a>
                     </li>
+                   
+                    @canany(['create-role', 'edit-role', 'delete-role'])
                     <li>
-                        <a href="{{ route('roles.index') }}" style="color: white;">Roles</a>
+                        <a href="{{ route('roles.index') }}" style="color: white;"><i class="bi bi-person-gear" style="font-size: 1.5rem"></i>  Roles</a>
                     </li>
+                    @endcanany
+                    @canany(['create-user', 'edit-user', 'delete-user'])
                     <li>
-                        <a href="{{ route('users.index') }}" style="color: white;">Usuarios</a>
+                        <a href="{{ route('users.index') }}" style="color: white;"><i class="bi bi-person-bounding-box" style="font-size: 1.5rem"></i> Usuarios</a>
                     </li>
+                    @endcanany
+                    @canany(['create-empleado', 'edit-empleado', 'delete-empleado','show-empleado'])
                     <li>
-                        <a href="{{ route('empleado.index') }}" style="color: white;">Empleados</a>
+                        <a href="{{ route('empleado.index') }}" style="color: white;"><i class="bi bi-people" style="font-size: 1.5rem"></i> Empleados</a>
                     </li>
+                    @endcanany
+                    @canany(['create-stock', 'edit-stock', 'delete-stock','show-stock'])
                     <li>
-                        <a href="{{ route('stock.index') }}" style="color: white;">Stock</a>
+                        <a href="{{ route('stock.index') }}" style="color: white;"><i class="bi bi-box-seam" style="font-size: 1.5rem;"></i>  Stock</a>
                     </li>
+                    @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
                     <li>
-                        <a href="{{ route('asigaper.index') }}" style="color: white;">Inventario Personal</a>
+                        <a href="{{ route('asigaper.index') }}" style="color: white;"><i class="bi bi-person-workspace" style="font-size: 1.5rem;"></i>  Inventario Personal</a>
                     </li>
-                    
+                    @endcanany
+                    @canany(['create-asigsuc', 'edit-asigsuc', 'delete-asigsuc','show-asigsuc'])
                     <li>
-                        <a href="{{ route('asigsuc.index') }}" style="color: white;">Inventario Sucursales</a>
+                        <a href="{{ route('asigsuc.index') }}" style="color: white;"><i class="bi bi-clipboard2-check" style="font-size: 1.5rem"></i> Inventario Sucursales</a>
                     </li>
-                    
+                    @endcanany
+                 
                     <li>
-                        <a href="{{ route('event.index') }}" style="color: white;">Agenda</a>
+                        <a href="{{ route('event.index') }}" style="color: white;"><i class="bi bi-calendar-event" style="font-size: 1.5rem"></i> Agenda</a>
                     </li>
+                   
+                    @canany(['create-sucursal', 'edit-sucursal', 'delete-sucursal','show-sucursal'])
                     <li>
-                        <a href="{{ route('sucursal.index') }}" style="color: white;">Sucursales</a>
+                        <a href="{{ route('sucursal.index') }}" style="color: white;"><i class="bi bi-shop-window" style="font-size: 1.5rem"></i> Sucursales</a>
                     </li>
-                    
+                    @endcanany
+                    @canany(['create-asigaper', 'edit-asigaper', 'delete-asigaper','show-asigaper'])
                     <li>
-                        <a href="{{ route('departamento.index') }}" style="color: white;">Departamentos</a>
+                        <a href="{{ route('departamento.index') }}" style="color: white;"><i class="bi bi-building" style="font-size: 1.5rem"></i> Departamentos</a>
                     </li>
-                    
+                    @endcanany
+                      @canany(['create-puesto', 'edit-puesto', 'delete-puesto','show-puesto'])
                     <li>
-                        <a href="{{ route('puesto.index') }}" style="color: white;">Puestos</a>
+                        <a href="{{ route('puesto.index') }}" style="color: white;"><i class="bi bi-briefcase" style="font-size: 1.5rem"></i> Puestos</a>
+                    </li>
+                    @endcanany
+                    <li>
+                        <a href="{{route('filter.index')}}" style="color:white;"><i class="bi bi-check2-square" style="font-size: 1.5rem"></i> Validacion</a>
                     </li>
 
                 </ul>
@@ -181,6 +235,7 @@
                 <main class="py-4">
                     <div class="container">
                         <div class="row justify-content-center mt-3">
+
                             <div class="col-md-12">
                                 @if ($message = Session::get('success'))
                                     <div class="alert alert-success text-center" role="alert">

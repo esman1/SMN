@@ -35,47 +35,47 @@ class SuperAdminSeeder extends Seeder
             'password' => Hash::make('Smn2024.')
         ]);
         $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec = User::create([
             'name' => 'Oscar Daniel Labastida Vazquez', 
             'email' => 'dlabastida@smn.com.mx',
             'password' => Hash::make('Smn2024.')
         ]);
-        $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec->assignRole('Soportec'); 
+        $soportec = User::create([
             'name' => 'Albert Salmeron Cardoso ', 
             'email' => 'asalmeron@smn.com.mx',
             'password' => Hash::make('Smn2024.')
         ]);
-        $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec->assignRole('Soportec'); 
+        $soportec = User::create([
             'name' => 'Jesus Abdelrrague Nieto', 
             'email' => 'jabdelrrague@smn.com.mx',
             'password' => Hash::make('Smn2024.')
         ]);
-        $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec->assignRole('Soportec'); 
+        $soportec = User::create([
             'name' => 'Cesar Antonio Martinez', 
             'email' => 'cantonio@smn.com.mx',
             'password' => Hash::make('Smn2024.')
         ]);
-        $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec->assignRole('Soportec'); 
+        $soportec= User::create([
             'name' => 'Alejandro Guerrero Zavala', 
             'email' => 'eguerreo@smn.com.mx',
             'password' => Hash::make('Smn2024.')
         ]);
-        $admin->assignRole('Admin'); 
-        $admin = User::create([
+        $soportec->assignRole('Soportec'); 
+        $soportec = User::create([
             'name' => 'Jazmin Cortes Hernandez', 
             'email' => 'jcortes@smn.com.mx',
             'password' => Hash::make('Smn2024.')
-        ]);
-        $admin->assignRole('Admin'); 
+        ]); 
+        $soportec->assignRole('Soportec'); 
         // Creating Product Manager User
         $invitado = User::create([
             'name' => 'Daniel Labastida Vazquez', 
             'email' => 'dlabastda@smn.com.mx',
-            'password' => Hash::make('')
+            'password' => Hash::make('1234')
         ]);
         $invitado->assignRole('Invitado');
      

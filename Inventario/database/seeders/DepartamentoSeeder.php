@@ -17,11 +17,7 @@ class DepartamentoSeeder extends Seeder
        public function run()
        {
            // Ruta completa del archivo Excel
-<<<<<<< Updated upstream
            $excelFile = '/Users/usuario/Desktop/Departamentos.csv'; // Reemplaza 'tu_usuario' con tu nombre de usuario en el sistema
-=======
-           $excelFile = 'C:\xampp\htdocs\SMN\Departamentos.csv'; // Reemplaza 'tu_usuario' con tu nombre de usuario en el sistema
->>>>>>> Stashed changes
    
            // Cargar el archivo Excel
            $spreadsheet = IOFactory::load($excelFile);

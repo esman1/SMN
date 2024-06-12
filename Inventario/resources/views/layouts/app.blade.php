@@ -82,7 +82,7 @@
         .navbar-brand,
         .navbar-nav .nav-link,
         .dropdown-menu .dropdown-item {
-            color: white !important; /* Asegura que el texto sea blanco */
+            color: black; /* Asegura que el texto sea blanco */
         }
     </style>
 </head>
@@ -107,14 +107,14 @@
                         @guest
                         @else
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" style="color:white;" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
-                                                 document.getElementById('logout-form').submit();" style="color: white;">
+                                                 document.getElementById('logout-form').submit();" >
                                         {{ __('Cerrar Sesion') }}
                                     </a>
 

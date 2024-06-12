@@ -1,8 +1,7 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Empleado Hola
-    
+    Empleado
 @endsection
 
 @section('content')
@@ -89,7 +88,6 @@
             </div>
         </div>
     </div>
-<<<<<<< Updated upstream
 @endsection
 
 @section('scripts')
@@ -151,7 +149,3 @@
     });
 </script>
 @endsection
-=======
-</div>
- @endsection
->>>>>>> Stashed changes

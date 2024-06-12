@@ -60,7 +60,7 @@
                         <i class="bi bi-check2-square"></i> Validacion de informacion</a>
                 @endcanany
                 @canany(['create-valid', 'edit-valid', 'delete-valid','show-valid'])
-                <a class="btn btn-warning" href="{{ route('calendar.index') }}">
+                <a class="btn btn-warning" href="{{ route('event.index') }}">
                     <i class="bi bi-calendar-week"></i> Calendario</a>
             @endcanany
                     <p>&nbsp;</p>

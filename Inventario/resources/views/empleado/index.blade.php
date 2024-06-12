@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('template_title')
-    Empleado
+    Empleado Hola
+    
 @endsection
 
 @section('content')

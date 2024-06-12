@@ -30,7 +30,7 @@ class EmpleadoController extends Controller
      */
     public function index()
     {
-        $empleados = Empleado::orderBy("Clave_empleado")->paginate(6);
+        $empleados = Empleado::orderBy("Clave_empleado")->paginate(9);
 
             return view('empleado.index', [
                 'empleados' => $empleados

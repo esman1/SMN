@@ -16,6 +16,7 @@ class RoleSeeder extends Seeder
         Role::create(['name' => 'Super Admin']);
         $admin = Role::create(['name' => 'Admin']);
         $invitado = Role::create(['name' => 'Invitado']);
+        $soportec = Role::create(['name'=> 'Soporte Tecnico']);
 
         $admin->givePermissionTo([
             'create-user',
@@ -54,6 +55,40 @@ class RoleSeeder extends Seeder
             'edit-valid',
             'delete-valid'
             
+        ]);
+        $soportec->givePermissionTo([
+            'create-empleado', 
+            'edit-empleado', 
+            'delete-empleado',
+            'show-empleado',
+            'create-stock',
+            'show-stock',
+            'edit-stock',
+            'delete-stock',
+            'create-asigaper',
+            'show-asigaper',
+            'edit-asigaper',
+            'delete-asigaper',
+            'create-puesto',
+            'show-puesto',
+            'edit-puesto',
+            'delete-puesto',
+            'create-sucursal',
+            'edit-sucursal',
+            'delete-sucursal',
+            'show-sucursal',
+            'create-departamento',
+            'show-departamento',
+            'edit-departamento',
+            'delete-departamento',
+            'create-asigsuc',
+            'show-asigsuc',
+            'edit-asigsuc',
+            'delete-asigsuc', 
+            'create-valid',
+            'show-valid',
+            'edit-valid',
+            'delete-valid' 
         ]);
 
         $invitado->givePermissionTo([

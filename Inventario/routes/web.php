@@ -13,7 +13,7 @@ use App\Http\Controllers\PuestoController;
 use App\Http\Controllers\AsigsucController;
 use App\Http\Controllers\PDFController;
 use App\Http\Controllers\PDFEMPLEController;
-use App\Http\Controllers\EventController;
+use App\Http\Controllers\CalendarController;
 use App\Http\Controllers\FilterController;
 
 
@@ -60,5 +60,5 @@ Route::resources([
     'sucursal' => SucursalController::class,
     'puesto' => PuestoController::class,
     'asigsuc' => AsigsucController::class,
-    'event' => EventController::class
+    'calendar' => CalendarController::class
 ]); 

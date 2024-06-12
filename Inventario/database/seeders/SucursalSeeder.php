@@ -13,7 +13,7 @@ class SucursalSeeder extends Seeder
      */
     public function run(): void
     {
-        $excelFile = 'C:\Users\Ezequiel Perez\Desktop\SMN\Sucursales.csv';
+        $excelFile = 'C:\xampp\htdocs\SMN\Sucursales.csv';
         $spreadsheet = IOFactory::load($excelFile);
         $worksheet = $spreadsheet->getActiveSheet();
         foreach($worksheet->getRowIterator() as $row){

@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group">
                             <strong>Fecha de Baja:</strong>
-                            {{ $empleado->fecha_baja }}
+                            {{ $empleado->fecha_baja ? $empleado->fecha_baja : 'N/A' }}
                         </div>
 
                     </div>

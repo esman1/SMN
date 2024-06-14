@@ -32,7 +32,7 @@
                         <form method="POST" action="{{ route('stock.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            @include('stock.form')
+                           
 
                         </form>
                     </div>

@@ -2,17 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Models\Empleado;
 use App\Models\Puesto;
 use App\Models\Departamento;
 use App\Models\Sucursal;
 use App\Models\Estatus;
-use Illuminate\Http\Request;
 
-/**
- * Class EmpleadoController
- * @package App\Http\Controllers
- */
 class EmpleadoController extends Controller
 {
     public function __construct()
@@ -23,6 +19,7 @@ class EmpleadoController extends Controller
        $this->middleware('permission:edit-empleado', ['only' => ['edit','update']]);
        $this->middleware('permission:delete-empleado', ['only' => ['destroy']]);
     }
+
     /**
      * Display a listing of the resource.
      *
@@ -32,9 +29,9 @@ class EmpleadoController extends Controller
     {
         $empleados = Empleado::orderBy("Clave_empleado")->paginate(9);
 
-            return view('empleado.index', [
-                'empleados' => $empleados
-            ]);
+        return view('empleado.index', [
+            'empleados' => $empleados
+        ]);
     }
 
     /**
@@ -49,7 +46,8 @@ class EmpleadoController extends Controller
         $departamentos = Departamento::all();
         $sucursales = Sucursal::all();
         $estatus = Estatus::all();
-        return view('empleado.create', compact('empleado','puestos','departamentos','sucursales', 'estatus'));
+        
+        return view('empleado.create', compact('empleado', 'puestos', 'departamentos', 'sucursales', 'estatus'));
     }
 
     /**
@@ -59,14 +57,55 @@ class EmpleadoController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        request()->validate(Empleado::$rules);
+{
+   
+    $request->validate([
+        'Clave_empleado' => 'required|string|max:255',
+        'nombre' => 'required|string|max:255',
+        'apellidoP' => 'required|string|max:255',
+        'apellidoM' => 'required|string|max:255',
+        'email' => 'nullable|string|email|max:255',
+        'celular' => 'nullable|string|max:20',
+        'foto_emple' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'puesto_id' => 'required|exists:puestos,id_puesto',
+        'departamento_id' => 'required|exists:departamentos,id_depart',
+        'sucursal_id' => 'required|exists:sucursals,id_sucursal',
+        'estatus_id' => 'required|exists:estatuses,id_estat',
+        'fecha_contrat' => 'required|dateTime',
+        'fecha_alta' => 'nullable|dateTime',
+       
+    ]);
 
-        $empleado = Empleado::create($request->all());
-
-        return redirect()->route('empleado.index')
-            ->with('success', 'Creado Exitosamente');
+    $empleado = new Empleado();
+    $empleado->Clave_empleado = $request->Clave_empleado;
+    $empleado->nombre = $request->nombre;
+    $empleado->apellidoP = $request->apellidoP;
+    $empleado->apellidoM = $request->apellidoM;
+    $empleado->email = $request->email;
+    $empleado->celular = $request->celular;
+    $empleado->puesto_id = $request->puesto_id;
+    $empleado->departamento_id = $request->departamento_id;
+    $empleado->sucursal_id = $request->sucursal_id;
+    $empleado->estatus_id = $request->estatus_id;
+    $empleado->fecha_contrat = $request->fecha_contrat;
+    $empleado->fecha_alta = $request->fecha_alta;
+    
+    $empleado->estatusv = 'validado';
+    // Guardar imagen si se ha proporcionado
+    if ($request->hasFile('foto_emple')) {
+        $image = $request->file('foto_emple');
+        $imageName = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('imagen'), $imageName);
+        $empleado->foto_emple = $imageName;
     }
+
+    $empleado->save();
+
+    return redirect()->route('empleado.index')->with('success', 'Empleado creado exitosamente.');
+}
+
+
+ 
 
     /**
      * Display the specified resource.
@@ -76,7 +115,7 @@ class EmpleadoController extends Controller
      */
     public function show($id)
     {
-        $empleado = Empleado::find($id);
+        $empleado = Empleado::findOrFail($id);
 
         return view('empleado.show', compact('empleado'));
     }
@@ -89,61 +128,83 @@ class EmpleadoController extends Controller
      */
     public function edit($id)
     {
-        $empleado = Empleado::find($id);
-        $puestos = Puesto::All();
-        $departamentos = Departamento::All();
-        $sucursales = Sucursal::All();
-        $estatus = Estatus::All();
-        return view('empleado.edit', compact('empleado','puestos','departamentos','sucursales','estatus'));
+        $empleado = Empleado::findOrFail($id);
+        $puestos = Puesto::all();
+        $departamentos = Departamento::all();
+        $sucursales = Sucursal::all();
+        $estatus = Estatus::all();
+        
+        return view('empleado.edit', compact('empleado', 'puestos', 'departamentos', 'sucursales', 'estatus'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request $request
-     * @param  Empleado $empleado
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Empleado $empleado)
+    public function update(Request $request, $id)
     {
-        request()->validate(Empleado::$rules);
+        
+        $request->validate([
+        'Clave_empleado' => 'required|string|max:255',
+        'nombre' => 'required|string|max:255',
+        'apellidoP' => 'required|string|max:255',
+        'apellidoM' => 'required|string|max:255',
+        'email' => 'nullable|string|email|max:255',
+        'celular' => 'nullable|string|max:20',
+        'foto_emple' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+        'puesto_id' => 'required|exists:puestos,id_puesto',
+        'departamento_id' => 'required|exists:departamentos,id_depart',
+        'sucursal_id' => 'required|exists:sucursals,id_sucursal',
+        'estatus_id' => 'required|exists:estatuses,id_estat',
+       
+        'fecha_baja' => 'nullable|dateTime',
+        ]);
 
-        $empleado->update($request->all());
+        $empleado = Empleado::findOrFail($id);
+        $empleado->Clave_empleado = $request->Clave_empleado;
+        $empleado->nombre = $request->nombre;
+        $empleado->apellidoP = $request->apellidoP;
+        $empleado->apellidoM = $request->apellidoM;
+        $empleado->email = $request->email;
+        $empleado->celular = $request->celular;
+        $empleado->puesto_id = $request->puesto_id;
+        $empleado->departamento_id = $request->departamento_id;
+        $empleado->sucursal_id = $request->sucursal_id;
+        $empleado->estatus_id = $request->estatus_id;
+        $empleado->fecha_baja = $request->fecha_baja;
+        $empleado->estatusv = 'validado';
 
-        return redirect()->route('empleado.index')
-            ->with('success', 'Actualizado Exitosamente');
+        // Guardar nueva imagen si se ha proporcionado
+        if ($request->hasFile('foto_emple')) {
+            $image = $request->file('foto_emple');
+            $imageName = time() . '.' . $image->getClientOriginalExtension();
+            $image->move(public_path('imagen'), $imageName);
+            $empleado->foto_emple = $imageName;
+        }
+
+        $empleado->save();
+
+        return redirect()->route('empleado.index')->with('success', 'Empleado actualizado exitosamente.');
     }
 
     /**
-     * @param int $id
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Exception
+     * Remove the specified resource from storage.
+     *
+     * @param  int $id
+     * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $empleado = Empleado::find($id)->delete();
+        $empleado = Empleado::findOrFail($id);
+        $empleado->delete();
 
-        return redirect()->route('empleado.index')
-            ->with('success', 'Eliminado Exitosamente');
+        return redirect()->route('empleado.index')->with('success', 'Empleado eliminado exitosamente.');
     }
 
 
-    public function search(Request $request)
-    {
-        $query = $request->get('query');
-        \Log::info('Search query: ' . $query);
-    
-        $empleados = Empleado::where('nombre', 'LIKE', "%{$query}%")
-            ->orWhere('apellidoP', 'LIKE', "%{$query}%")
-            ->orWhere('apellidoM', 'LIKE', "%{$query}%")
-            ->orWhere('Clave_empleado', 'LIKE', "%{$query}%")
-            ->with(['puesto', 'departamento', 'sucursal'])
-            ->get();
-    
-        \Log::info('Empleados found: ' . $empleados->count());
-    
-        return response()->json($empleados);
-    }
 
     public function actualizarEstado(Request $request)
     {

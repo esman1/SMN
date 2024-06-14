@@ -8,7 +8,23 @@
 <div class="row justify-content-center">
     <div class="col-md-10">
         <div class="d-flex justify-content-between align-items-center mb-3">
-            <p></p>
+            <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Filtrar por
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#" data-filter="nombre">Nombre</a>
+                    <a class="dropdown-item" href="#" data-filter="apellidoP">Apellido Paterno</a>
+                    <a class="dropdown-item" href="#" data-filter="puesto">Puesto</a>
+                    <a class="dropdown-item" href="#" data-filter="departamento">Departamento</a>
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#" data-filter="estatus">Estado</a>
+                  </div>
+                </div>
+                <input type="search" class="form-control" id="filtroEmpleado" aria-label="Text input with dropdown button" placeholder="Ingresa el valor a filtrar">
+            </div>
+              
             @can('create-empleado')
                 <a href="{{ route('empleado.create') }}" title="Nuevo" class="btn btn-outline-success">
                     Crear Nuevo
@@ -16,7 +32,7 @@
             @endcan
         </div>
 
-        <div class="d-flex flex-wrap justify-content-center">
+        <div class="d-flex flex-wrap justify-content-center" id="resultadoEmpleados">
             @foreach ($empleados as $empleado)
             @if($empleado->estatusv === 'validado')
                 <div class="card m-2" style="width: 18rem;">
@@ -92,6 +108,52 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const filtroEmpleado = document.getElementById('filtroEmpleado');
+
+        // Escucha clics en el menú desplegable para filtrar empleados
+        document.querySelectorAll('.dropdown-menu a.dropdown-item').forEach(item => {
+            item.addEventListener('click', function (event) {
+                event.preventDefault();
+                const filtro = this.getAttribute('data-filter');
+                filtrarEmpleados(filtro);
+            });
+        });
+
+        // Escucha cambios en el campo de búsqueda para filtrar empleados en tiempo real
+        filtroEmpleado.addEventListener('input', function () {
+            const valor = this.value.trim().toLowerCase();
+            filtrarEmpleadosPorTexto(valor);
+        });
+
+        // Función para filtrar empleados según el filtro seleccionado
+        function filtrarEmpleados(filtro) {
+            const empleados = document.querySelectorAll('.card');
+            empleados.forEach(empleado => {
+                const textoFiltro = empleado.querySelector(`.${filtro}`)?.textContent.toLowerCase() || '';
+                empleado.style.display = textoFiltro.includes(filtro) ? 'block' : 'none';
+            });
+        }
+
+        // Función para filtrar empleados por el texto ingresado en el campo de búsqueda
+        function filtrarEmpleadosPorTexto(valor) {
+            const empleados = document.querySelectorAll('.card');
+            empleados.forEach(empleado => {
+                let encontrado = false;
+                empleado.querySelectorAll('.card-body *').forEach(elemento => {
+                    if (elemento.textContent.toLowerCase().includes(valor)) {
+                        encontrado = true;
+                    }
+                });
+                empleado.style.display = encontrado ? 'block' : 'none';
+            });
+        }
+    });
+</script>
 @endsection
 
 @section('styles')

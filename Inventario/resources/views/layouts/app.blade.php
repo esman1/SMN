@@ -172,6 +172,9 @@
                     <li>
                         <a href="{{ route('puesto.index') }}" style="color: white;">Puestos</a>
                     </li>
+                    <li>
+                        <a href="{{ route('filter.index') }}" style="color: white;">Validacion</a>
+                    </li>
 
                 </ul>
             </nav>

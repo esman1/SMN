@@ -10,7 +10,6 @@ use App\Models\Sisop;
 use App\Models\Procesador;
 use App\Models\Memoria;
 use App\Models\Discod;
-use App\Models\Estatus;
 use Illuminate\Http\Request;
 
 /**
@@ -34,7 +33,6 @@ class StockController extends Controller
      */
     public function index()
     {
-       
         $stocks = Stock::paginate();
 
         return view('stock.index', [
@@ -49,7 +47,6 @@ class StockController extends Controller
      */
     public function create()
     {
-
         $stock = new Stock();
         $tipos = Tipo::all();
         $modelos = Modelo::all();
@@ -58,8 +55,7 @@ class StockController extends Controller
         $proces =Procesador::all();
         $mems = Memoria::all();
         $discs = Discod::all();
-        $estatus = Estatus::all();
-        return view('stock.create', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs', 'estatus'));
+        return view('stock.create', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs'));
     }
     
 
@@ -71,36 +67,14 @@ class StockController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'Nserie' => 'required|string|max:50', 
-            'modelo_id' => 'required|exists:modelos,id_modelo',
-            'tipo_id' => 'required|exists:tipos,id_tipo',
-            'marca_id' => 'required|exists:marcas,id_marca',
-            'sisop_id' => 'required|exists:sisops,id_sisop',
-            'proces_id' => 'required|exists:procesadors,id_proc',
-            'mem_id' => 'required|exists:memorias,id_mem',
-            'disc_d' => 'required|exists:discods,id_disc',
-            'estatus_id' => 'required|exists:estatuses,id_estat',
-        ]);
-    
-        $stock = new Stock();
-    
-        $stock->Nserie = $request->input('Nserie');
-        $stock->modelo_id = $request->input('modelo_id');
-        $stock->tipo_id = $request->input('tipo_id');
-        $stock->marca_id = $request->input('marca_id');
-        $stock->sisop_id = $request->input('sisop_id');
-        $stock->proces_id = $request->input('proces_id');
-        $stock->mem_id = $request->input('mem_id');
-        $stock->disc_d = $request->input('disc_d');
-        $stock->estatus_id = $request->input('estatus_id');
-        $stock->estatusv = 'validado';
-        $stock->save();
-    
+        request()->validate(Stock::$rules);
+
+        $stock = Stock::create($request->all());
+
         return redirect()->route('stock.index')
-            ->with('success', 'Registrado correctamente.');
+            ->with('success', 'Registrado Correctamente.');
     }
-    
+
     /**
      * Display the specified resource.
      *
@@ -130,8 +104,7 @@ class StockController extends Controller
         $proces =Procesador::all();
         $mems = Memoria::all();
         $discs = Discod::all();
-        $estatus = Estatus::all();
-        return view('stock.edit', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs','estatus'));
+        return view('stock.edit', compact('stock', 'tipos', 'modelos','marcas','sisops','proces','mems','discs'));
     }
 
     /**
@@ -141,35 +114,11 @@ class StockController extends Controller
      * @param  Stock $stock
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Stock $stock)
     {
-          //dd($request->all());
-          request()->validate ([
-            'Nserie' => 'required|string|max:50', 
-            'modelo_id' => 'required|exists:modelos,id_modelo',
-            'tipo_id' => 'required|exists:tipos,id_tipo',
-            'marca_id' => 'required|exists:marcas,id_marca',
-            'sisop_id' => 'required|exists:sisops,id_sisop',
-            'proces_id' => 'required|exists:procesadors,id_proc',
-            'mem_id' => 'required|exists:memorias,id_mem',
-            'disc_d' => 'required|exists:discods,id_disc',
-            'estatus_id' => 'required|exists:estatuses,id_estat',
+        request()->validate(Stock::$rules);
 
-        ]);
-
-        $stock =Stock::findOrFail($id);
-   
-        $stock -> Nserie = $request -> Nserie;
-        $stock -> modelo_id = $request -> modelo_id;
-        $stock -> tipo_id = $request -> tipo_id;
-        $stock -> marca_id = $request -> marca_id;
-        $stock -> sisop_id = $request -> sisop_id;
-        $stock -> proces_id = $request -> proces_id;
-        $stock -> mem_id = $request -> mem_id;
-        $stock -> disc_d = $request -> disc_d;
-        $stock -> estatus_id = $request -> estatus_id;
-        $stock->estatusv = 'validado';
-        $stock->save();
+        $stock->update($request->all());
 
         return redirect()->route('stock.index')
             ->with('success', 'Actualizado Correctamente');

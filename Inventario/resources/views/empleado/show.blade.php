@@ -5,93 +5,96 @@
 @endsection
 
 @section('content')
+    <section class="content container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header ">
+                       <div style="display: flex; justify-content: space-between; align-items: center;">
+                       
                         <div class="float-left">
-<section class="content container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-md-10">
-            <div class="card">
-                <div class="card-header">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div>
-                            <a class="btn btn-outline-primary btn-sm" href="javascript:history.back()" title="Volver">
+                            
+                            <a class="btn btn-outline-primary btn-sm ml-2" href="javascript:history.back()" title="Volver">
                                 <i class="bi bi-arrow-left-circle"></i>
                             </a>
                         </div>
-                        <strong class="card-title">{{ __('Visualizar') }} Empleado</strong>
-                        <div>
-                            <a href="{{ route('home') }}" title="Panel Principal" class="btn btn-outline-secondary btn-sm">
-                                <i class="bi bi-house"></i>
-                            </a>
+                            <strong class="card-title" >{{ __('Visualizar') }} Empleado</strong>
+                            
+                        <div class="float-right">
+                            <a href="{{route('home')}}" title="Panel Principal" class="btn btn-outline-secondary btn-sm ml-2 "><i class="bi bi-house" aria-hidden="true"></i></a>
+                            
                         </div>
-                    </div>
-                </div>
+                       </div>
+                        
+                </div>  
+                    
 
-                <div class="card-body">
-                    <div class="text-center mb-3">
-                        <img src="/imagen/{{ $empleado->foto_emple }}" class="rounded-circle" alt="Foto de {{ $empleado->nombre }}" width="100" height="100">
-                    </div>
+                    <div class="card-body">
+                        
+											
+                        
+                        <div class="form-group">
+                        
+        <img src="/imagen/{{$empleado->foto_emple}}" width="100" height="80" >
+     </div>
+                        <div class="form-group">
+                            <strong>Clave Empleado:</strong>
+                            {{ $empleado->Clave_empleado }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Nombre(s):</strong>
+                            {{ $empleado->nombre }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Apellido Paterno:</strong>
+                            {{ $empleado->apellidoP }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Apellido Materno:</strong>
+                            {{ $empleado->apellidoM }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Email:</strong>
+                            {{ $empleado->email ? $empleado->email : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Celular:</strong>
+                            {{ $empleado->celular ? $empleado->celular : 'N/A' }}
+                        </div>
+                     
+                        <div class="form-group">
+                            <strong>Puesto:</strong>
+                            {{ $empleado->puesto ? $empleado->puesto->descripcion : 'N/A' }}
 
-                    <div class="table-responsive">
-                        <table class="table table-striped">
-                            <tbody>
-                                <tr>
-                                    <th scope="row">Clave Empleado:</th>
-                                    <td>{{ $empleado->Clave_empleado }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Nombre(s):</th>
-                                    <td>{{ $empleado->nombre }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Apellido Paterno:</th>
-                                    <td>{{ $empleado->apellidoP }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Apellido Materno:</th>
-                                    <td>{{ $empleado->apellidoM }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Email:</th>
-                                    <td>{{ $empleado->email ? $empleado->email : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Celular:</th>
-                                    <td>{{ $empleado->celular ? $empleado->celular : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Puesto:</th>
-                                    <td>{{ $empleado->puesto ? $empleado->puesto->descripcion : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Departamento:</th>
-                                    <td>{{ $empleado->departamento ? $empleado->departamento->Desc_d : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Sucursal:</th>
-                                    <td>{{ $empleado->sucursal ? $empleado->sucursal->Nom_sucursal : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Estatus:</th>
-                                    <td>{{ $empleado->estatus ? $empleado->estatus->estat : 'N/A' }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Fecha de Contratación:</th>
-                                    <td>{{ $empleado->fecha_contrat }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Fecha de Alta:</th>
-                                    <td>{{ $empleado->fecha_alta }}</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">Fecha de Baja:</th>
-                                    <td>{{ $empleado->fecha_baja ? $empleado->fecha_baja : 'N/A' }}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+						</div>
+                        <div class="form-group">
+                            <strong>Departamento:</strong>
+                            {{$empleado->departamento ? $empleado->departamento->Desc_d : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Sucursal:</strong>
+                            {{ $empleado->sucursal ? $empleado->sucursal->Nom_sucursal : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Estatus:</strong>
+                            {{ $empleado->estatus ? $empleado->estatus->estat : 'N/A' }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha de Contratacion:</strong>
+                            {{ $empleado->fecha_contrat }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha de Alta:</strong>
+                            {{ $empleado->fecha_alta }}
+                        </div>
+                        <div class="form-group">
+                            <strong>Fecha de Baja:</strong>
+                            {{ $empleado->fecha_baja ? $empleado->fecha_baja : 'N/A' }}
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 @endsection

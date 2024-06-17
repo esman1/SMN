@@ -43,7 +43,7 @@ class Stock extends Model
 		'proces_id' => 'required',
 		'mem_id' => 'required',
 		'disc_d' => 'required',
-        'Estatus' =>'required'
+        'estatus_id' =>'required'
     ];
 
     protected $perPage = 20;
@@ -54,7 +54,7 @@ class Stock extends Model
      * @var array
      */
     protected $primaryKey = 'id_stock';
-    protected $fillable = ['Nserie','modelo_id','tipo_id','marca_id','sisop_id','proces_id','mem_id','disc_d','Estatus'];
+    protected $fillable = ['Nserie','modelo_id','tipo_id','marca_id','sisop_id','proces_id','mem_id','disc_d','estatus_id'];
 
 
     /**
@@ -120,6 +120,12 @@ class Stock extends Model
     {
         return $this->hasMany(\App\Models\Asigaper::class, 'id_stock', 'stock_id');
     }
-    
+    public function estatus()
+    {
+       
+        
+            return $this->belongsTo(\App\Models\Estatus::class, 'id_estat', 'estatus_id');
+        
+    }
 
 }

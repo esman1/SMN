@@ -28,6 +28,18 @@ class EstatusSeeder extends Seeder
             'estat' => 'BAJA'
             
         ]);
+        Estatus::create([
+            
+            
+            'estat' => 'STOCK'
+            
+        ]);
+        Estatus::create([
+            
+            
+            'estat' => 'ASIGNADO'
+            
+        ]);
     
 }
 }

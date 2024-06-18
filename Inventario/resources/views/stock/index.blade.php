@@ -96,12 +96,34 @@
                                                    @can('delete-stock')     
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit" class="btn btn-outline-danger btn-sm"onclick="return confirm('Seguro que quieres eliminarlo?');"><i class="bi bi-trash"></i> {{ __('Eliminar') }}</button>
+                                                    <button class="btn btn-sm btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $stock->id_stock }}"><i class="bi bi-trash"></i> {{__('Eliminar')}}</button>
                                                    @endcan
                                                 </form>
                                             </td>
                                         </tr>
                                         @endif
+
+                                        <div class="modal fade" id="deleteModal{{ $stock->id_stock }}" tabindex="-1" aria-labelledby="deleteModalLabel{{ $stock->id_stock }}" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteModalLabel{{ $stock->id_stock }}">Confirmar Eliminación</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        ¿Estás seguro de que quieres eliminar a este registro?
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                                        <form action="{{ route('empleado.destroy', $stock->id_stock) }}" method="POST">
+                                                            @csrf
+                                                            @method('DELETE')
+                                                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     @endforeach
                                 </tbody>
                             </table>
@@ -110,6 +132,7 @@
                 </div>
                 {!! $stocks->links() !!}
             </div>
+            
         </div>
     </div>
 @endsection

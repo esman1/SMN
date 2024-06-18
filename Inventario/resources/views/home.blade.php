@@ -63,6 +63,8 @@
                 <a class="btn btn-warning" href="{{ route('event.index') }}">
                     <i class="bi bi-calendar-week"></i> Calendario</a>
             @endcanany
+
+          
                     <p>&nbsp;</p>
                 </div>
             </div>

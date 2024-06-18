@@ -58,7 +58,8 @@ class EmpleadoController extends Controller
      */
     public function store(Request $request)
 {
-   
+    dd($request->all());
+
     $request->validate([
         'Clave_empleado' => 'required|string|max:255',
         'nombre' => 'required|string|max:255',
@@ -71,8 +72,8 @@ class EmpleadoController extends Controller
         'departamento_id' => 'required|exists:departamentos,id_depart',
         'sucursal_id' => 'required|exists:sucursals,id_sucursal',
         'estatus_id' => 'required|exists:estatuses,id_estat',
-        'fecha_contrat' => 'required|dateTime',
-        'fecha_alta' => 'nullable|dateTime',
+        'fecha_contrat' => 'required|date',
+        'fecha_alta' => 'nullable|date',
        
     ]);
 
@@ -160,7 +161,7 @@ class EmpleadoController extends Controller
         'sucursal_id' => 'required|exists:sucursals,id_sucursal',
         'estatus_id' => 'required|exists:estatuses,id_estat',
        
-        'fecha_baja' => 'nullable|dateTime',
+        'fecha_baja' => 'nullable|date',
         ]);
 
         $empleado = Empleado::findOrFail($id);

@@ -133,8 +133,7 @@
             @auth
             <nav id="sidebar" class="sidebar">
                 
-
-                <ul class="list-unstyled components ">
+               <ul class="list-unstyled components ">
                     <li>
                         <a href="{{ route('home') }}" style="color: white;">Dashboard</a>
                     </li>

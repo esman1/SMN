@@ -57,13 +57,23 @@ class AsigaperController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Asigaper::$rules);
-
-        $asigaper = Asigaper::create($request->all());
-
+        $request->validate([
+            'empleado_id' => 'required|exists:empleados,id_empleado',
+            'stock_id' => 'required|exists:stocks,id_stock',
+            'Nactivo' => 'required|string|max:50',
+        ]);
+    
+        $asigaper = new Asigaper();
+        $asigaper->empleado_id = $request->empleado_id;
+        $asigaper->stock_id = $request->stock_id;
+        $asigaper->Nactivo = $request->Nactivo;
+        $asigaper->estatusv = 'validado';
+        $asigaper->save();
+    
         return redirect()->route('asigaper.index')
             ->with('success', 'Creado Correctamente.');
     }
+    
 
     /**
      * Display the specified resource.
@@ -100,12 +110,15 @@ class AsigaperController extends Controller
      * @param  Asigaper $asigaper
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Asigaper $asigaper)
+    public function update(Request $request, $id)
     {
-        $request()->validate(Asigaper::$rules);
-
-        $asigaper->update($request->all());
-
+      
+        $asigaper = Asigaper::findOrFail($id);
+$asigaper-> empleado_id = $request->empleado_id;
+$asigaper-> stock_id = $request->stock_id;
+$asigaper->Nactivo = $request->Nactivo;
+$asigaper->estatusv = 'validado';
+$asigaper->save();
         return redirect()->route('asigaper.index')
             ->with('success', 'Actualizado Correctamente.');
     }

@@ -59,9 +59,26 @@ class AsigsucController extends Controller
      */
     public function store(Request $request)
     {
-        request()->validate(Asigsuc::$rules);
+        //dd($request->all());
+        $request->validate([
+'nFol'=>'required|string|max:20',
+'suc_id'=>'required|exists:sucursals,id_sucursal',
+'area_id'=>'required|exists:areas,id_area',
+'stock_id'=>'required|exists:stocks,id_stock',
+'nAct'=>'required|string|max:15'
 
-        $asigsucs = Asigsuc::create($request->all());
+        ]);
+       
+        $asigsuc=new Asigsuc();
+        $asigsuc->nfol = $request->nFol;
+        $asigsuc->suc_id = $request->suc_id;
+        $asigsuc->area_id = $request->area_id;
+        $asigsuc->stock_id = $request->stock_id;
+        $asigsuc->nAct = $request->nAct;
+        $asigsuc->estatusv = 'validado';
+        
+
+        $asigsuc->save();
 
         return redirect()->route('asigsuc.index')
             ->with('success', 'Creado Correctamente.');
@@ -91,7 +108,8 @@ class AsigsucController extends Controller
         $asigsucs = Asigsuc::find($id);
         $sucursals = Sucursal::All();
         $stocks = Stock::All();
-        return view('asigsuc.edit', compact('asigsucs','sucursals','stocks'));
+        $areas=Area::All();
+        return view('asigsuc.edit', compact('asigsucs','sucursals','stocks', 'areas'));
         
     }
 
@@ -102,12 +120,28 @@ class AsigsucController extends Controller
      * @param  Asigaper $asigaper
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Asigsuc $asigsucs)
+    public function update(Request $request,$id)
     {
-        $request()->validate(Asigsuc::$rules);
-
-        $asigsucs->update($request->all());
-
+        //dd($request->all());
+        $request->validate([
+            'nFol'=>'required|string|max:20',
+            'suc_id'=>'required|exists:sucursals,id_sucursal',
+            'area_id'=>'required|exists:areas,id_area',
+            'stock_id'=>'required|exists:stocks,id_stock',
+            'nAct'=>'required|string|max:15'
+            
+                    ]);
+                   
+                    $asigsuc=Asigsuc::findOrFail($id);
+                    $asigsuc->nfol = $request->nFol;
+                    $asigsuc->suc_id = $request->suc_id;
+                    $asigsuc->area_id = $request->area_id;
+                    $asigsuc->stock_id = $request->stock_id;
+                    $asigsuc->nAct = $request->nAct;
+                    $asigsuc->estatusv = 'validado';
+                    
+            
+                    $asigsuc->save();
         return redirect()->route('asigsuc.index')
             ->with('success', 'Actualizado Correctamente.');
     }

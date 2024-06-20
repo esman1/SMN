@@ -99,11 +99,13 @@ class StockController extends Controller
             'proces' => Procesador::all(),
             'mems' => Memoria::all(),
             'discs' => Discod::all(),
+            
         ]);
     }
 
     public function update(Request $request, $id)
     {
+        //dd($request->all());
         $request->validate([
             'Nserie' => 'required|string|max:50',
             'modelo_id' => 'required|exists:modelos,id_modelo',

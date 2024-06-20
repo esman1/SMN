@@ -152,7 +152,17 @@
                 empleado.style.display = encontrado ? 'block' : 'none';
             });
         }
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+        modal.addEventListener('hide.bs.modal', function (event) {
+            console.log('Modal is closing:', event.target.id);
+        });
     });
+});
+
 </script>
 @endsection
 

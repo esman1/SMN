@@ -82,6 +82,9 @@
                             <strong>Fecha de Baja:</strong>
                             {{ $data->fecha_baja }}
                         </div>
+                        @can('edit-empleado')
+                        <button class="btn btn-sm btn-outline-warning" href="{{ route('empleado.edit', $data->id_empleado) }}">Editar</button>
+                        @endcan
                     </div>
                 </div>
             </div>

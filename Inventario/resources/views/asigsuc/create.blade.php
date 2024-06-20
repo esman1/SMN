@@ -31,14 +31,16 @@
                         <form method="POST" action="{{ route('asigsuc.store') }}"  role="form" enctype="multipart/form-data">
                             @csrf
 
-                            <div class="">
+                            <div class="form-goup">
                                 {{ Form::label('Folio:') }}
-                                <input type="text" class="form-control" value="" readonly>
+                                {{ Form::text('nFol', old('nFol'), ['class' => 'form-control' . ($errors->has('nFol') ? ' is-invalid' : ''), 'placeholder' => 'Folio']) }}
+                                {!! $errors->first('nFol', '<div class="invalid-feedback">:message</div>') !!}
+                          
                                   </div>
         
-                            <div class="">
+                            <div class="form-goup">
                                 {{Form::label('Sucursal:')}}
-                                <select class="form-control" name="stock_id" id="stock_id">
+                                <select class="form-control" name="suc_id" id="suc_id">
                                     <option value="">Selecciona una Opción...</option>
                                     @foreach($sucursals as $sucursal)
                                        
@@ -51,9 +53,9 @@
                            
                            
                             </div>
-                            <div class="">
+                            <div class="form-goup">
                                 {{Form::label('Area:')}}
-                                <select class="form-control" name="stock_id" id="stock_id">
+                                <select class="form-control" name="area_id" id="area_id">
                                     <option value="">Selecciona una Opción...</option>
                                     @foreach($areas as $area)
                                       
@@ -63,21 +65,28 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="">
+                            <div class="form-goup">
                                 {{Form::label('Equipo:')}}
                                 <select class="form-control" name="stock_id" id="stock_id">
+                                    
                                     <option value="">Selecciona una Opción...</option>
                                     @foreach($stocks as $stock)
-                                       
-                                            <option value="{{ $stock->id_stock }}"{{ $stock->id_stock == $asigsucs->stock_id ? 'selected' : '' }}>
+                                        @if($stock->Estatus === 'stock')
+                                            <option value="{{ $stock->id_stock }}">
                                                 {{ $stock->Nserie }} - {{ $stock->Tipo->nomTipo }} - {{ $stock->modelo->nomMod }}
                                             </option>
-                                     
-                                            
+                                        @endif
                                     @endforeach
                                 </select>
                             </div> 
+                            <div class="form-goup">
+                                {{ Form::label('Activo:') }}
+                                {{ Form::text('nAct', old('nAct'), ['class' => 'form-control' . ($errors->has('nAct') ? ' is-invalid' : ''), 'placeholder' => 'Activo']) }}
+                                {!! $errors->first('nAct', '<div class="invalid-feedback">:message</div>') !!}
+                          
+                                  </div>
 
+                                  <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>
                     </div>
                 </div>
